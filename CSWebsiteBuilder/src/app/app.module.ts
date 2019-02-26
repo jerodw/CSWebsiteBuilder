@@ -1,13 +1,36 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { TaInfoPageComponent } from './ta-info-page/ta-info-page.component';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
+const appRoutes: Routes = [
+  { path: 'home', component: HomePageComponent },
+  { path: 'ta-information', component: TaInfoPageComponent },
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
+  { path: '**', component: PageNotFoundComponent }
+]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomePageComponent,
+    TaInfoPageComponent,
+    NavigationBarComponent,
+    PageNotFoundComponent
   ],
   imports: [
+    RouterModule.forRoot(
+      appRoutes
+    ),
     BrowserModule
   ],
   providers: [],
