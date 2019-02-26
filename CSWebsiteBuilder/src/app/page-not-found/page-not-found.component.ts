@@ -10,6 +10,7 @@ export class PageNotFoundComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log("If you are a website developer, add the desired link to the app.module.ts file")
   }
 
 }
