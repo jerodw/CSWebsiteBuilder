@@ -1,0 +1,23 @@
+<h1>Schedule</h1>
+<hr>
+<p>On this page you can find links to the assignments for each class this semester.</p>
+<br>
+<div *ngFor="let class of config.classValues">
+    <span class="float-right">{{class.date | date}}</span>
+    <h2>{{class.title}}</h2>
+    <p></p>
+    <table class="table table-hover" *ngIf="class.resources.length > 0">
+        <thead>
+            <th>Assignment Name</th>
+            <th>Download Link</th>
+        </thead>
+        <tbody id="table_body">
+            <tr *ngFor="let resource of class.resources">
+              <td>{{resource.title}}</td>
+              <td *ngIf="this.isDownloadable(resource)"><a href="#">Download</a></td>
+              <td *ngIf="!this.isDownloadable(resource)"><a title="Not avaliable until {{resource.avaliableDate | date}}" href="#">Not Avaliable</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+</div>

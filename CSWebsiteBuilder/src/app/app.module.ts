@@ -7,10 +7,12 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { TaInfoPageComponent } from './ta-info-page/ta-info-page.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'ta-information', component: TaInfoPageComponent },
+  { path: 'schedule', component: ScheduleComponent },
   {
     path: '',
     redirectTo: '/home',
@@ -25,7 +27,8 @@ const appRoutes: Routes = [
     HomePageComponent,
     TaInfoPageComponent,
     NavigationBarComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ScheduleComponent
   ],
   imports: [
     RouterModule.forRoot(
