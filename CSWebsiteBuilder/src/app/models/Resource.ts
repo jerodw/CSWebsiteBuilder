@@ -1,12 +1,12 @@
 export class Resource{
     static DEFAULT_DATE = new Date();
     title: string;
-    downloadLink: string;
+    link: string;
     avaliableDate: Date;
 
-    constructor(title:string, downloadLink:string, avaliableDate = Resource.DEFAULT_DATE){
+    constructor(title:string, link:string, avaliableDate = Resource.DEFAULT_DATE){
         this.title = title;
-        this.downloadLink = downloadLink;
+        this.link = link;
         // the date that this resource will be viewable
         this.avaliableDate = avaliableDate;
     }
