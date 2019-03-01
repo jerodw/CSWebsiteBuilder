@@ -1,23 +1,29 @@
 <h1>TA Information</h1>
 
-    <div id="ta_rows">
-        
-    </div>
+<div id="ta_rows">
 
-    <h1>TA Schedule</h1> 
-    <table class="table table-bordered">
-        <thead>
-            <th></th>
-            <th>Monday</th>
-            <th>Tuesday</th>
-            <th>Wednesday</th>
-            <th>Thursday</th>
-            <th>Friday</th>
-            <th>Saturday</th>
-        </thead>
-        <tbody id="table_body">
-            <tr>
-              <td>8:00am</td>
-            </tr>
-        </tbody>
-    </table>
+</div>
+
+<h1>TA Schedule</h1>
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+      <th></th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+      <th>Saturday</th>
+    </thead>
+    <tbody id="table_body">
+      <tr *ngFor="let hour of this.tableHours">
+        <th>{{getTimeString(hour)}}</th>
+        <td *ngFor="let weekDay of this.weekDays"
+          [ngClass]="getPeopleWorking(weekDay, hour).length > 0 ? 'table-working' : 'table-not-working'">
+          {{this.getTANames(weekDay, hour)}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
