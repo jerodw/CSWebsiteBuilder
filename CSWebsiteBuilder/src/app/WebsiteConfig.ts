@@ -77,7 +77,9 @@ export class WebsiteConfig {
         // the information of the TAs for the class
         this.courseTAs = [
             new TA(
-                "Ryan", "Remer", null, "ryandremer@gmail.com",
+                "Ryan", "Remer",
+                "http://1.bp.blogspot.com/-YrBGAA9oQDA/VT-GyJOBBqI/AAAAAAAAGeU/c1sJIi378SI/s1600/P4221212.JPG",
+                "ryandremer@gmail.com",
                 [
                     new TimeSlot(WeekDay.Tuesday, 12, 17),
                     new TimeSlot(WeekDay.Thursday, 12, 17),
