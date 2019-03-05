@@ -8,6 +8,7 @@ import { TaInfoPageComponent } from './pages/ta-info-page/ta-info-page.component
 import { NavigationBarComponent } from './widgets/navigation-bar/navigation-bar.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { ScheduleComponent } from './pages/schedule/schedule.component';
+import { ProfessorViewComponent } from './widgets/professor-view/professor-view.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomePageComponent },
@@ -28,7 +29,8 @@ const appRoutes: Routes = [
     TaInfoPageComponent,
     NavigationBarComponent,
     PageNotFoundComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    ProfessorViewComponent
   ],
   imports: [
     RouterModule.forRoot(

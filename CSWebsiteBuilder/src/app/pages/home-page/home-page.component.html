@@ -1,3 +1,12 @@
-<p>
-  home-page works!
-</p>
+<h1>{{config.courseName}} Home Page</h1>
+<hr>
+
+<div>
+  
+</div>
+
+
+<h2>Professors</h2>
+<div id="professor-rows" *ngFor="let professor of this.config.courseProfessors">
+  <app-professor-view [professor]="professor"></app-professor-view>
+</div>

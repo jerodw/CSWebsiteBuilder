@@ -9,12 +9,12 @@ import { Professor } from "./models/Professor";
 
 export class WebsiteConfig {
     courseName: string;
+    courseProfessors: Professor[];
     navigationLinks: NavigationLink[];
     resourceFilePath: string;
     classValues: ClassValue[];
     taOffice: TAOffice;
     courseTAs: TA[];
-    courseProfessors: Professor[];
     announcements: any[];
 
     constructor() {
@@ -25,16 +25,29 @@ export class WebsiteConfig {
         this.courseProfessors = [
             new Professor(
                 "Jerod", "Wilkerson",
+                "https://cs.byu.edu/sites/default/files/styles/faculty_listing/public/pictures/picture-27467-1534965535.jpg?itok=kZC3pHdB",
                 "email@email.com",
                 "###-###-####",
-                "by email",
+                "By email",
                 "Talmage ####",
                 [
                     new TimeSlot(WeekDay.Monday, 15, 17),
                     new TimeSlot(WeekDay.Wednesday, 15, 17),
-                    new TimeSlot(WeekDay.Friday, 15, 17)
+                    new TimeSlot(WeekDay.Friday, 15, 17),
                 ]
-            )
+            ),
+            new Professor(
+                "Mark", "Clement",
+                "https://cs.byu.edu/sites/default/files/styles/faculty_listing/public/pictures/picture-17190-1456265954.png?itok=rweznO6J",
+                "email@email.com",
+                "###-###-####",
+                "By email",
+                "Talmage ####",
+                [
+                    new TimeSlot(WeekDay.Monday, 15, 17),
+                    new TimeSlot(WeekDay.Friday, 15, 17),
+                ]
+            ),
         ]
 
         // the links at the top of the website
@@ -51,7 +64,7 @@ export class WebsiteConfig {
             new ClassValue(new Date(2019, 1, 25), "What is Software Engineering?", [
                 new Resource("What is Software Engineering.pptx", "/What is Software Engineering/What is Software Engineering_.pptx"),
             ]),
-            new ClassValue(new Date(2019, 1, 26),"UI Design Basics",[
+            new ClassValue(new Date(2019, 1, 26), "UI Design Basics", [
                 new Resource("Pre-Class Assignment", "/UI Design Basics/Pre-Class Assignments.pdf"),
                 new Resource("In-Class Assignment", "UI Design Basics.pdf", new Date(2020, 1, 27))
             ]),
