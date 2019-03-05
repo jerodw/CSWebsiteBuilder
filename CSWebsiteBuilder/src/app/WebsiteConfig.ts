@@ -6,6 +6,7 @@ import { TimeSlot } from "./models/TimeSlot";
 import { WeekDay } from "@angular/common";
 import { TAOffice } from "./models/TAOffice";
 import { Professor } from "./models/Professor";
+import { Announcement } from "./models/Announcement";
 
 export class WebsiteConfig {
     courseName: string;
@@ -15,7 +16,7 @@ export class WebsiteConfig {
     classValues: ClassValue[];
     taOffice: TAOffice;
     courseTAs: TA[];
-    announcements: any[];
+    announcements: Announcement[];
 
     constructor() {
         // name of the course you are teaching
@@ -81,6 +82,14 @@ export class WebsiteConfig {
                     new TimeSlot(WeekDay.Tuesday, 12, 17),
                     new TimeSlot(WeekDay.Thursday, 12, 17),
                 ]
+            )
+        ]
+
+        // add announcements to put on the home page
+        this.announcements = [
+            new Announcement(
+                "Welcome to class!",
+                "<p>We hope you have a great semester. </p>"
             )
         ]
     }
