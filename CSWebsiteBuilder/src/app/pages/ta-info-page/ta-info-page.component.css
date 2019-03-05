@@ -5,3 +5,13 @@
 .table-not-working{
     background-color: #F9FBE7
 }
+
+.ta-img {
+    width:100%;
+    max-width: 200px;
+    margin-top: 10px;
+}
+
+.ta-row{
+    margin-top: 20px;
+}

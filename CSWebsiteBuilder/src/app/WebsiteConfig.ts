@@ -5,6 +5,7 @@ import { TA } from "./models/TA";
 import { TimeSlot } from "./models/TimeSlot";
 import { WeekDay } from "@angular/common";
 import { TAOffice } from "./models/TAOffice";
+import { Professor } from "./models/Professor";
 
 export class WebsiteConfig {
     courseName: string;
@@ -13,10 +14,28 @@ export class WebsiteConfig {
     classValues: ClassValue[];
     taOffice: TAOffice;
     courseTAs: TA[];
+    courseProfessors: Professor[];
+    announcements: any[];
 
     constructor() {
         // name of the course you are teaching
         this.courseName = "CS202";
+
+        // professors teaching the course
+        this.courseProfessors = [
+            new Professor(
+                "Jerod", "Wilkerson",
+                "email@email.com",
+                "###-###-####",
+                "by email",
+                "Talmage ####",
+                [
+                    new TimeSlot(WeekDay.Monday, 15, 17),
+                    new TimeSlot(WeekDay.Wednesday, 15, 17),
+                    new TimeSlot(WeekDay.Friday, 15, 17)
+                ]
+            )
+        ]
 
         // the links at the top of the website
         this.navigationLinks = [

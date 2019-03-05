@@ -36,6 +36,13 @@ export class TaInfoPageComponent implements OnInit {
     }
   }
 
+  getTAImage(ta:TA): string{
+    if (ta.imgRef == null){
+      return "https://www.fkbga.com/wp-content/uploads/2018/07/person-icon-6.png";
+    }
+    return ta.imgRef
+  }
+
   getTANames(weekDay:WeekDay, hour:number):string {
     var peopleWorking = this.getPeopleWorking(weekDay, hour);
     var names = "";
