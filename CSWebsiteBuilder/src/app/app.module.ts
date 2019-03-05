@@ -9,11 +9,13 @@ import { NavigationBarComponent } from './widgets/navigation-bar/navigation-bar.
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { ScheduleComponent } from './pages/schedule/schedule.component';
 import { ProfessorViewComponent } from './widgets/professor-view/professor-view.component';
+import { PolicyPageComponent } from './pages/policy-page/policy-page.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'ta-information', component: TaInfoPageComponent },
   { path: 'schedule', component: ScheduleComponent },
+  { path: 'policies', component: PolicyPageComponent },
   {
     path: '',
     redirectTo: '/home',
@@ -30,7 +32,8 @@ const appRoutes: Routes = [
     NavigationBarComponent,
     PageNotFoundComponent,
     ScheduleComponent,
-    ProfessorViewComponent
+    ProfessorViewComponent,
+    PolicyPageComponent
   ],
   imports: [
     RouterModule.forRoot(
