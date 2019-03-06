@@ -12,13 +12,13 @@ import { ProfessorViewComponent } from './widgets/professor-view/professor-view.
 import { PolicyPageComponent } from './pages/policy-page/policy-page.component';
 
 const appRoutes: Routes = [
-  { path: 'home', component: HomePageComponent },
+  { path: 'index.html', component: HomePageComponent },
   { path: 'ta-information', component: TaInfoPageComponent },
   { path: 'schedule', component: ScheduleComponent },
   { path: 'policies', component: PolicyPageComponent },
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '/index.html',
     pathMatch: 'full'
   },
   { path: '**', component: PageNotFoundComponent }
