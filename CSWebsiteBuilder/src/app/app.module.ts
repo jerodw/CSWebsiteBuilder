@@ -3,19 +3,22 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import { TaInfoPageComponent } from './ta-info-page/ta-info-page.component';
-import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ScheduleComponent } from './schedule/schedule.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { TaInfoPageComponent } from './pages/ta-info-page/ta-info-page.component';
+import { NavigationBarComponent } from './widgets/navigation-bar/navigation-bar.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { ScheduleComponent } from './pages/schedule/schedule.component';
+import { ProfessorViewComponent } from './widgets/professor-view/professor-view.component';
+import { PolicyPageComponent } from './pages/policy-page/policy-page.component';
 
 const appRoutes: Routes = [
-  { path: 'home', component: HomePageComponent },
+  { path: 'index.html', component: HomePageComponent },
   { path: 'ta-information', component: TaInfoPageComponent },
   { path: 'schedule', component: ScheduleComponent },
+  { path: 'policies', component: PolicyPageComponent },
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '/index.html',
     pathMatch: 'full'
   },
   { path: '**', component: PageNotFoundComponent }
@@ -28,7 +31,9 @@ const appRoutes: Routes = [
     TaInfoPageComponent,
     NavigationBarComponent,
     PageNotFoundComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    ProfessorViewComponent,
+    PolicyPageComponent
   ],
   imports: [
     RouterModule.forRoot(

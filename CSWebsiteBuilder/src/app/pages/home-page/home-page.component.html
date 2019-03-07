@@ -1,0 +1,14 @@
+<h1>{{config.courseName}} Home Page</h1>
+<hr>
+
+<div *ngFor="let announcement of this.config.announcements">
+  <h3>{{announcement.title}}</h3>
+  <span [innerHtml]="announcement.body"></span>
+  <hr>
+</div>
+
+
+<h2>Professors</h2>
+<div id="professor-rows" *ngFor="let professor of this.config.courseProfessors">
+  <app-professor-view [professor]="professor"></app-professor-view>
+</div>
