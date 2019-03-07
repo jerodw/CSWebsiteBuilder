@@ -864,8 +864,8 @@
     loader-utils "^1.1.0"
 
 "@types/node@*":
-  version "11.9.6"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.9.6.tgz#c632bbcc780a1349673a6e2e9b9dfa8c369d3c74"
+  version "11.10.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.10.0.tgz#08eeb736ae678ccf9ca0922063f3a08795894ede"
 
 "@types/q@^1.5.1":
   version "1.5.1"
@@ -5858,8 +5858,8 @@ p-try@^2.0.0:
   resolved "https://registry.yarnpkg.com/p-try/-/p-try-2.0.0.tgz#85080bb87c64688fa47996fe8f7dfbe8211760b1"
 
 pako@~1.0.5:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/pako/-/pako-1.0.9.tgz#410f6784fbba83e5e743be90899fa050e9c6f787"
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/pako/-/pako-1.0.10.tgz#4328badb5086a426aa90f541977d4955da5c9732"
 
 parallel-transform@^1.1.0:
   version "1.1.0"
