@@ -7,10 +7,8 @@ export class App extends Component {
     return (
       <html>
         <Head /> 
-         <Header />
-            <div className="App">
-          <div dangerouslySetInnerHTML={ {__html: this.props.template } }>
-          </div>
+        <Header baseURL={''} />
+        <div className="App container content" dangerouslySetInnerHTML={ {__html: this.props.template } }>
         </div>
       </html>
     );
