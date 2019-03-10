@@ -5,7 +5,6 @@ export class Header extends Component {
         const policiesActive = this.props.activePage === 'policies';
         const scheduleActive = this.props.activePage === 'schedule';
         const taInformationActive = this.props.activePage === 'ta-information';
-        
 
         return (
             <header className="navbar navbar-expand-lg navbar-dark background-primary">
