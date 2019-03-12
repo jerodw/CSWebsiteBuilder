@@ -1,15 +1,18 @@
-export class ContactInformation {
-    name: String;
-    email: String;
-    phoneNumber: String;
-    officeLocation: String;
+import { Config } from './Config';
+export class ContactInformation extends Config {
+    name: string;
+    email: string;
+    phoneNumber: string;
+    officeLocation: string;
 
 
-    constructor(name: String, email: String, phoneNumber: String, officeLocation: String,) {
+    constructor({name, email, phoneNumber, officeLocation}: 
+        {name: string, email: string, phoneNumber: string, officeLocation: string}) {
+        super();
         this.name = name;
         this.email = email;
         this.phoneNumber = phoneNumber;
-        this.officeLocation = officeLocation
+        this.officeLocation = officeLocation;
     }
 
 }
