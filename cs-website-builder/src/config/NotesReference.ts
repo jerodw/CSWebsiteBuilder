@@ -1,14 +1,20 @@
+import { Config } from './Config';
 import { FileReference } from "./FileReference";
 
-export class NotesReference {
+// TODO Add ability to handle a directory rather than list each file explicitly
+export class NotesReference extends Config {
     fileReference: FileReference
-    avalivableDate: Date
+    availableDate: Date
 
-    constructor(fileReference: FileReference, avalivableDate: Date = null){
-        if (avalivableDate == null){
-            avalivableDate = new Date();
+    constructor({fileReference, availableDate = null}:
+         {fileReference: string, availableDate: string}) {
+        super();
+        if (availableDate == null){
+            this.availableDate = new Date();
+        } else {
+            this.availableDate = new Date(availableDate);
         }
-        this.fileReference = fileReference;
-        this.avalivableDate = avalivableDate;
+        
+        this.fileReference = new FileReference(fileReference);    
     }
 }

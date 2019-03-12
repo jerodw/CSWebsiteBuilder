@@ -1,16 +1,16 @@
+import { Config } from './Config';
 import { FileReference } from "./FileReference";
 
-export class Assignment {
+export class Assignment extends Config {
     bodyReference: FileReference
     scriptReference: FileReference
     avalivableDate: Date
 
-    constructor(bodyReference: FileReference, scriptReference: FileReference = null, avalivableDate: Date = null) {
-        if (avalivableDate == null) {
-            avalivableDate = new Date();
-        }
-        this.bodyReference = bodyReference;
-        this.scriptReference = scriptReference;
-        this.avalivableDate = avalivableDate;
+    constructor({bodyReference, scriptReference = null, availableDate = null}:
+         {bodyReference: string, scriptReference: string, availableDate: string}) {
+        super();
+        this.bodyReference = new FileReference(bodyReference);
+        this.scriptReference = scriptReference ? new FileReference(scriptReference) : null;
+        this.avalivableDate = availableDate ? new Date(availableDate) : new Date();
     }
 }
