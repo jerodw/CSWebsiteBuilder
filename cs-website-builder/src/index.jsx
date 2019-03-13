@@ -3,6 +3,9 @@ import ReactDOMServer from 'react-dom/server';
 import { App } from './App.jsx';
 import fs from 'fs';
 import {WebsiteConfig} from './config/WebsiteConfig.ts';
+import {Config} from './config/Config.ts';
+
+Config.NO_ERRORS = true;
 
 // get the config file location
 const args = process.argv.slice(2);
