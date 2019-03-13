@@ -2,9 +2,9 @@
 This is a angular project that will allow a CS Class Website to be built based on a Configuration
 
 # Instructions
-1. Download these files
-2. Open the config object in src/models/WebsiteConfig
-3. Fill in your course information
-4. Type "ng-serve" in terminal to check your information
-5. Type "ng-build --prod --base-href ./" to build your website to the dist folder
-6. Copy the files of the dist folder into the "public_html" cs department directory for your class
+1. Clone these files
+2. Open up cs-website-builder
+3. Open the config and put in your classes information
+4. run "npm run build" to build the website
+5. run "python -m http.server 8080" to view the site
+
