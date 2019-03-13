@@ -2,7 +2,7 @@
     "baseURL": "https://students.cs.byu.edu/~remerrd/",
     "courseName": "CS202",
     "policies": {
-        "policyBody": "template-test.html",
+        "policyBody": "template-test1.html",
         "gradeScale": [{
             "letter": "A",
             "percentLow": 1,
