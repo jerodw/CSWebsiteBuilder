@@ -35,5 +35,6 @@ fs.writeFile(buildDirectory + 'index.html', index, function (err) {
         console.error(err);
         return;
     }
+    // TODO get actual build path (shows /src/build when it isn't /src/build)
     console.log("built website to " + __dirname + "\\build\\");
 });
