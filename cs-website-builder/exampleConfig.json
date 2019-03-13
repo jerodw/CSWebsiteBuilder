@@ -1,0 +1,8 @@
+{
+    "baseURL": "https://students.cs.byu.edu/~remerrd/",
+    "courseName": "CS202",
+    "policies": "any",
+    "professors": "string[]",
+    "tas": "string[]",
+    "classNotes": "string[]"
+}

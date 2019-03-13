@@ -1,28 +1,33 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import {App} from './App.jsx';
+import { App } from './App.jsx';
 import fs from 'fs';
 
 // get the config file location
 var args = process.argv.slice(2);
-if (args.length == 0){
+if (args.length == 0) {
     console.log("Usage: npm run build <config-file> \n config-file: relative location of the course config file.")
     process.exit();
 }
 
+const configFilePath = args[0];
+const configJSON = fs.readFileSync(configFilePath);
+const configObj = JSON.parse(configJSON);
+console.log(configObj);
+
 // builds the build directory if it doesn't exist
 const buildDirectory = "./build/"
-if (!fs.existsSync(buildDirectory)){
+if (!fs.existsSync(buildDirectory)) {
     fs.mkdirSync(buildDirectory);
 }
 
 
 // build the website
 const template = fs.readFileSync('./templates/template-test.html', { 'encoding': 'utf8' });
-const index = ReactDOMServer.renderToString( < App template={ template } / > );
+const index = ReactDOMServer.renderToString(< App template={template} />);
 
-fs.writeFile(buildDirectory + 'index.html', index, function (err){
-    if (err){
+fs.writeFile(buildDirectory + 'index.html', index, function (err) {
+    if (err) {
         console.error(err);
         return;
     }
