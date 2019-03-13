@@ -3,12 +3,21 @@ import ReactDOMServer from 'react-dom/server';
 import {App} from './App.jsx';
 import fs from 'fs';
 
+// get the config file location
+var args = process.argv.slice(2);
+if (args.length == 0){
+    console.log("Usage: npm run build <config-file> \n config-file: relative location of the course config file.")
+    process.exit();
+}
+
 // builds the build directory if it doesn't exist
 const buildDirectory = "./build/"
 if (!fs.existsSync(buildDirectory)){
     fs.mkdirSync(buildDirectory);
 }
 
+
+// build the website
 const template = fs.readFileSync('./templates/template-test.html', { 'encoding': 'utf8' });
 const index = ReactDOMServer.renderToString( < App template={ template } / > );
 
