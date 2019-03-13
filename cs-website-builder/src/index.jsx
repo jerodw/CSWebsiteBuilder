@@ -2,17 +2,18 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { App } from './App.jsx';
 import fs from 'fs';
+import {WebsiteConfig} from './config/WebsiteConfig.ts';
 
 // get the config file location
-var args = process.argv.slice(2);
-if (args.length == 0) {
+const args = process.argv.slice(2);
+if (args.length === 0) {
     console.log("Usage: npm run build <config-file> \n config-file: relative location of the course config file.")
     process.exit();
 }
 
 const configFilePath = args[0];
 const configJSON = fs.readFileSync(configFilePath);
-const configObj = JSON.parse(configJSON);
+const configObj = new WebsiteConfig(JSON.parse(configJSON));
 console.log(configObj);
 
 // builds the build directory if it doesn't exist
