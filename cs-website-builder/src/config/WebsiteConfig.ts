@@ -15,8 +15,8 @@ export class WebsiteConfig extends Config {
     private _policies: Policies;
     
 
-    constructor({baseURL, policies, courseName, professors, tas, classNotes = null}:
-        {baseURL: string, policies: any, courseName: string, professors: string[], tas:string[], classNotes: string[]}) {
+    constructor({baseURL, policies, courseName, professors, tas, classNotes = null, assignments}:
+        {baseURL: string, policies: any, courseName: string, professors: string[], tas:string[], classNotes: string[], assignments:string[]}) {
         super();
         if (!courseName || courseName === '') {
             this.throwError('Error: Missing required parameter courseName');
@@ -36,12 +36,14 @@ export class WebsiteConfig extends Config {
         }
         if (classNotes && classNotes.length) {
             this.classNotes = classNotes.map((notes: any) => new NotesReference(notes));
+        } else {
+            this.classNotes = [];
         }
         this.baseURL = baseURL;
         this.courseName = courseName;
         this.policies = new Policies(policies);
-        this.assignments = this.assignments.map((assignment: any) => new Assignment(assignment));
-        this.professors = this.professors.map((professor: any) => new PersonInformation(professor));
+        this.assignments = assignments.map((assignment: any) => new Assignment(assignment));
+        this.professors = professors.map((professor: any) => new PersonInformation(professor));
     }
 
     public get classNotes(): NotesReference[] {
