@@ -5,7 +5,12 @@
         {
             "title": "Home",
             "templateRef": "home-template",
-            "filename": "index.html"
+            "filename": "home.html"
+        },
+        {
+            "title": "Custom",
+            "templateRef": "template-test.html",
+            "filename": "test.html"
         }
     ],
     "professors": [

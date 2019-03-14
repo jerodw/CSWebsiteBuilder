@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { App } from './App.jsx';
 import fs from 'fs';
-import {WebsiteConfig} from './config/WebsiteConfig.ts';
-import {Config} from './config/Config.ts';
-import {NavLink} from './config/NavLink.ts';
+import { WebsiteConfig } from './config/WebsiteConfig.ts';
+import { Config } from './config/Config.ts';
+import { NavLink } from './config/NavLink.ts';
 
 Config.NO_ERRORS = false;
 
@@ -26,30 +26,46 @@ if (!fs.existsSync(buildDirectory)) {
     fs.mkdirSync(buildDirectory);
 }
 
-const navLinks = configObj.navLinks;
-
+// define our pre-made templates
 var builderTemplates = new Map();
 builderTemplates["home-template"] = "<Home />"
 
-function buildWebsitePage(navLink) {
-    // if the navLink.template is a builderTemplate, render its string, otherwise build a custom page
-    // build the page to navLink.filename
-    // each page needs a navigation bar that has each navLink title and href using the filename
+// build the website based on the navigation links from the config file
+const navLinks = configObj.navLinks;
+
+for (var i = 0; i < navLinks.length; i++) {
+    var navLink = navLinks[i];
+
+    // check to see if the navLink.templateRef is a pre-made component (that we make)
+    if (!builderTemplates[navLink.templateRef] != null) {
+        // build one of our pre-made react components (like the ta page, etc)
+        // buildTemplate(navLink);
+    } else {
+        buildCustomPage(navLink)
+    }
+
+    console.log("Built " + navLink.filename);
 }
 
-function buildCustomPage(navLink){
-
+function buildTemplate(navLink) {
+    const template = builderTemplates[navLink.templateRef];
+    const webpage = ReactDOMServer.renderToString(template);
+    fs.writeFile(buildDirectory + navLink.filename, webpage, onError)
 }
 
-// build the website
-const template = fs.readFileSync('./templates/template-test.html', { 'encoding': 'utf8' });
-const index = ReactDOMServer.renderToString(< App template={template} />);
+function buildCustomPage(navLink) {
+    const template = fs.readFileSync('./templates/' + navLink.templateRef, { 'encoding': 'utf8' });
+    const webpage = ReactDOMServer.renderToString(< App template={template} />);
+    fs.writeFile(buildDirectory + navLink.filename, webpage, onError)
+}
 
-fs.writeFile(buildDirectory + 'index.html', index, function (err) {
+function onError(err) {
     if (err) {
         console.error(err);
         return;
     }
-    // TODO get actual build path (shows /src/build when it isn't /src/build)
-    console.log("built website to " + __dirname + "\\build\\");
-});
+}
+
+// TODO get actual build path (shows /src/build when it isn't /src/build)
+console.log("built website to " + __dirname + "\\build\\");
+console.log("Finished Build")
