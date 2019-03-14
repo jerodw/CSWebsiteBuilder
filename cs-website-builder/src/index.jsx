@@ -4,8 +4,9 @@ import { App } from './App.jsx';
 import fs from 'fs';
 import {WebsiteConfig} from './config/WebsiteConfig.ts';
 import {Config} from './config/Config.ts';
+import {NavLink} from './config/NavLink.ts';
 
-Config.NO_ERRORS = true;
+Config.NO_ERRORS = false;
 
 // get the config file location
 const args = process.argv.slice(2);
@@ -25,6 +26,20 @@ if (!fs.existsSync(buildDirectory)) {
     fs.mkdirSync(buildDirectory);
 }
 
+const navLinks = configObj.navLinks;
+
+var builderTemplates = new Map();
+builderTemplates["home-template"] = "<Home />"
+
+function buildWebsitePage(navLink) {
+    // if the navLink.template is a builderTemplate, render its string, otherwise build a custom page
+    // build the page to navLink.filename
+    // each page needs a navigation bar that has each navLink title and href using the filename
+}
+
+function buildCustomPage(navLink){
+
+}
 
 // build the website
 const template = fs.readFileSync('./templates/template-test.html', { 'encoding': 'utf8' });

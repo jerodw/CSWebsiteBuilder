@@ -1,26 +1,37 @@
 {
     "baseURL": "https://students.cs.byu.edu/~remerrd/",
     "courseName": "CS202",
-    "policies": {
-        "policyBody": "template-test1.html",
-        "gradeScale": [{
-            "letter": "A",
-            "percentLow": 1,
-            "percentHigh": 100
-        }]
-    },
-    "professors": [{
-        "pictureReference": "template-test.html",
-        "contactInformation": {
-            "email": "dummy@dummy.com",
-            "phoneNumber": "801-867-5309",
-            "officeLocation": "In a black hole",
-            "name": "Your Worst Nightmare"
-        },
-        "officeHours": [],
-        "byAppointment": true
-    }],
+    "navLinks": [
+        {
+            "title": "Home",
+            "templateRef": "home-template",
+            "filename": "index.html"
+        }
+    ],
+    "professors": [
+        {
+            "pictureReference": "template-test.html",
+            "contactInformation": {
+                "email": "dummy@dummy.com",
+                "phoneNumber": "801-867-5309",
+                "officeLocation": "In a black hole",
+                "name": "Your Worst Nightmare"
+            },
+            "officeHours": [],
+            "byAppointment": true
+        }
+    ],
     "tas": [],
     "classNotes": [],
-    "assignments": []
+    "assignments": [],
+    "policies": {
+        "policyBody": "template-test.html",
+        "gradeScale": [
+            {
+                "letter": "A",
+                "percentLow": 1,
+                "percentHigh": 100
+            }
+        ]
+    }
 }

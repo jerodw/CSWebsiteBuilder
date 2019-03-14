@@ -4,6 +4,7 @@ import { PersonInformation } from './PersonInformation';
 import { NotesReference } from './NotesReference';
 import { Assignment } from './Assignment';
 import { Policies } from './Policies';
+import { NavLink } from './NavLink';
 
 export class WebsiteConfig extends Config {
     private _courseName: string;
@@ -13,10 +14,11 @@ export class WebsiteConfig extends Config {
     private _assignments: Assignment[];
     private _baseURL: string;
     private _policies: Policies;
+    private _navLinks: NavLink[]
     
 
-    constructor({baseURL, policies, courseName, professors, tas, classNotes = null, assignments}:
-        {baseURL: string, policies: any, courseName: string, professors: string[], tas:string[], classNotes: string[], assignments:string[]}) {
+    constructor({baseURL, courseName, navLinks, professors, tas, classNotes = null, assignments, policies}:
+        {baseURL: string, courseName: string, navLinks:string[], professors: string[], tas:string[], classNotes: string[], assignments:string[], policies: any}) {
         super();
         if (!courseName || courseName === '') {
             this.throwError('Error: Missing required parameter courseName');
@@ -24,6 +26,9 @@ export class WebsiteConfig extends Config {
         if (!baseURL || baseURL === '') {
             baseURL = `https://students.cs.byu.edu/~cs${courseName}ta/`;
             this.throwWarning('Warning: creating baseURL from courseName, URL is: ' + baseURL);
+        }
+        if (!navLinks || !navLinks.length) {
+            this.throwError('Error: Missing navigation links');
         }
         if (!professors || !professors.length) {
             this.throwError('Error: No professors for the course, at least one professor is required');
@@ -44,6 +49,15 @@ export class WebsiteConfig extends Config {
         this.policies = new Policies(policies);
         this.assignments = assignments.map((assignment: any) => new Assignment(assignment));
         this.professors = professors.map((professor: any) => new PersonInformation(professor));
+        this.navLinks = navLinks.map((navLink:any)=> new NavLink(navLink));
+    }
+
+    public get navLinks():NavLink[] {
+        return this._navLinks
+    }
+
+    public set navLinks(value: NavLink[]) {
+        this._navLinks = value;
     }
 
     public get classNotes(): NotesReference[] {
