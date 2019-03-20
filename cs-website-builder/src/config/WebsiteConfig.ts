@@ -15,10 +15,10 @@ export class WebsiteConfig extends Config {
     private _baseURL: string;
     private _policies: Policies;
     private _navLinks: NavLink[]
-    
 
-    constructor({baseURL, courseName, navLinks, professors, tas, classNotes = null, assignments, policies}:
-        {baseURL: string, courseName: string, navLinks:string[], professors: string[], tas:string[], classNotes: string[], assignments:string[], policies: any}) {
+
+    constructor({ baseURL, courseName, navLinks, professors, tas, classNotes = null, assignments, policies }:
+        { baseURL: string, courseName: string, navLinks: string[], professors: string[], tas: string[], classNotes: string[], assignments: string[], policies: any }) {
         super();
         if (!courseName || courseName === '') {
             this.throwError('Error: Missing required parameter courseName');
@@ -49,10 +49,10 @@ export class WebsiteConfig extends Config {
         this.policies = new Policies(policies);
         this.assignments = assignments.map((assignment: any) => new Assignment(assignment));
         this.professors = professors.map((professor: any) => new PersonInformation(professor));
-        this.navLinks = navLinks.map((navLink:any)=> new NavLink(navLink));
+        this.navLinks = navLinks.map((navLink: any) => new NavLink(navLink));
     }
 
-    public get navLinks():NavLink[] {
+    public get navLinks(): NavLink[] {
         return this._navLinks
     }
 
@@ -102,7 +102,7 @@ export class WebsiteConfig extends Config {
     public get professors(): PersonInformation[] {
         return this._professors;
     }
-    
+
     public set professors(value: PersonInformation[]) {
         this._professors = value;
     }
@@ -110,7 +110,7 @@ export class WebsiteConfig extends Config {
     public get courseName(): string {
         return this._courseName;
     }
-    
+
     public set courseName(value: string) {
         this._courseName = value;
     }
