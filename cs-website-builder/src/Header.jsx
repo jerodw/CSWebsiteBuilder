@@ -19,10 +19,11 @@ export class Header extends Component {
     }
 
     render() {
+        const config = this.props.config;
         return (
             <header className="navbar navbar-expand-lg navbar-dark background-primary">
-                <a className="navbar-brand" href={this.props.config.baseURL}>
-                    <img src="https://cs.byu.edu/sites/all/themes/apolleux/img/logo.png" style={{ width: "40px" }} alt={this.props.className} /> CS202
+                <a className="navbar-brand" href={config.baseURL}>
+                    <img src="https://cs.byu.edu/sites/all/themes/apolleux/img/logo.png" style={{ width: "40px" }} alt={config.courseName} /> {config.courseName}
                 </a>
                 <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" className="navbar-toggler collapsed" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
                     <span className="navbar-toggler-icon"></span>
