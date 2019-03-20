@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { App } from './App.jsx';
+import { Home } from './builderTemplates/Home.jsx'
 import fs from 'fs';
 import { WebsiteConfig } from './config/WebsiteConfig.ts';
 import { Config } from './config/Config.ts';
-import { NavLink } from './config/NavLink.ts';
 
 Config.NO_ERRORS = false;
 
@@ -28,7 +28,7 @@ if (!fs.existsSync(buildDirectory)) {
 
 // define our pre-made templates
 var builderTemplates = new Map();
-builderTemplates["home-template"] = "<Home />"
+builderTemplates["home-template"] = <Home config={configObj} />
 
 // build the website based on the navigation links from the config file
 const navLinks = configObj.navLinks;
@@ -39,7 +39,7 @@ for (var i = 0; i < navLinks.length; i++) {
     // check to see if the navLink.templateRef is a pre-made component (that we make)
     if (builderTemplates[navLink.templateRef] != undefined) {
         // build one of our pre-made react components (like the ta page, etc)
-        // buildTemplate(navLink);
+        buildTemplate(navLink);
     } else {
         buildCustomPage(navLink)
     }
