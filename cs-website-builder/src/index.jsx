@@ -66,6 +66,7 @@ function onError(err) {
     }
 }
 
-// TODO get actual build path (shows /src/build when it isn't /src/build)
-console.log("built website to " + __dirname + "\\build\\");
+// tell the user where to find the built website
+var pathToSrc = __dirname.slice(0, __dirname.length - 4);
+console.log("built website to " + pathToSrc + "\\build\\");
 console.log("Finished Build")
