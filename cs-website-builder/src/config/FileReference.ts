@@ -6,10 +6,12 @@ export class FileReference extends Config {
 
     constructor(filePath: string){
         super();
-        if (fs.existsSync(`templates/${filePath}`)) {
-            this.filePath = filePath;
-        } else {
-            this.throwError(`Error: File ${filePath} does not exist`);
+        if (filePath.includes("http") == false){
+            if (fs.existsSync(`templates/${filePath}`) == false) {
+                this.throwError(`Error: File ${filePath} does not exist`);
+            } 
         }
+        
+        this.filePath = filePath;
     }
 }

@@ -15,12 +15,12 @@
     ],
     "professors": [
         {
-            "pictureReference": "template-test.html",
+            "pictureReference": "https://cs.byu.edu/sites/default/files/styles/faculty_listing/public/pictures/picture-27467-1534965535.jpg?itok=kZC3pHdB",
             "contactInformation": {
-                "email": "dummy@dummy.com",
+                "email": "jwilkerson@cs.byu.edu",
                 "phoneNumber": "801-867-5309",
-                "officeLocation": "In a black hole",
-                "name": "Your Worst Nightmare"
+                "officeLocation": "2218 TMCB",
+                "name": "Jerod Wilkerson"
             },
             "officeHours": [],
             "byAppointment": true
