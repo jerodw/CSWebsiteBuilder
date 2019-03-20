@@ -37,26 +37,30 @@ for (var i = 0; i < navLinks.length; i++) {
     var navLink = navLinks[i];
 
     // check to see if the navLink.templateRef is a pre-made component (that we make)
-    if (!builderTemplates[navLink.templateRef] != null) {
+    if (builderTemplates[navLink.templateRef] != undefined) {
         // build one of our pre-made react components (like the ta page, etc)
         // buildTemplate(navLink);
     } else {
         buildCustomPage(navLink)
     }
-
-    console.log("Built " + navLink.filename);
 }
 
 function buildTemplate(navLink) {
     const template = builderTemplates[navLink.templateRef];
+    console.log("Building " + navLink.filename);
     const webpage = ReactDOMServer.renderToString(template);
+    console.log("Writing to " + navLink.filename)
     fs.writeFile(buildDirectory + navLink.filename, webpage, onError)
+    console.log("Built " + navLink.filename);
 }
 
 function buildCustomPage(navLink) {
     const template = fs.readFileSync('./templates/' + navLink.templateRef, { 'encoding': 'utf8' });
-    const webpage = ReactDOMServer.renderToString(< App template={template} />);
+    console.log("Building " + navLink.filename);
+    const webpage = ReactDOMServer.renderToString(< App config={configObj} template={template} />);
+    console.log("Writing to " + navLink.filename)
     fs.writeFile(buildDirectory + navLink.filename, webpage, onError)
+    console.log("Built " + navLink.filename);
 }
 
 function onError(err) {
