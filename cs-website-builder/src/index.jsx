@@ -37,7 +37,7 @@ for (var i = 0; i < navLinks.length; i++) {
     var navLink = navLinks[i];
 
     // check to see if the navLink.templateRef is a pre-made component (that we make)
-    if (builderTemplates[navLink.templateRef] != undefined) {
+    if (builderTemplates[navLink.templateRef] !==    undefined) {
         // build one of our pre-made react components (like the ta page, etc)
         buildTemplate(navLink);
     } else {
