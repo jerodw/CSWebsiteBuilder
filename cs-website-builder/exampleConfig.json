@@ -49,16 +49,13 @@
         ],
         "byAppointment": true
     }],
-    "classNotes": [],
-    "assignments": [],
-    "policies": {
-        "policyBody": "template-test.html",
-        "gradeScale": [{
-            "letter": "A",
-            "percentLow": 1,
-            "percentHigh": 100
-        }]
-    },
+    "classPeriods": [
+        {
+            "name" : "UI Design Basics",
+            "classNotes" : [],
+            "assignments" : []
+        }
+    ],
     "baseTemplatePath": "./templates/",
     "outDir": "./out/"
 }

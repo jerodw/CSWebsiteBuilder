@@ -1,26 +1,22 @@
 import { FileReference } from './FileReference';
 import { Config } from './Config';
 import { PersonInformation } from './PersonInformation';
-import { NotesReference } from './NotesReference';
-import { Assignment } from './Assignment';
-import { Policies } from './Policies';
 import { NavLink } from './NavLink';
 import fs from 'fs';
+import { ClassPeriod } from './ClassPeriod';
 
 export class WebsiteConfig extends Config {
     private _courseName: string;
     private _professors: PersonInformation[];
     private _tas: PersonInformation[];
-    private _classNotes: NotesReference[];
-    private _assignments: Assignment[];
+    private _classPeriods: ClassPeriod[];
     private _baseURL: string;
-    private _policies: Policies;
     private _navLinks: NavLink[];
     private _outputDirectory: string;
 
 
-    constructor({ baseURL, courseName, navLinks, professors, tas, classNotes = null, assignments, policies, baseTemplatePath = './templates', outDir = './build' }:
-        { baseURL: string, courseName: string, navLinks: string[], professors: string[], tas: string[], classNotes: string[], assignments: string[], policies: any, baseTemplatePath: string, outDir: string }) {
+    constructor({ baseURL, courseName, navLinks, professors, tas, classPeriods, baseTemplatePath = './templates', outDir = './build' }:
+        { baseURL: string, courseName: string, navLinks: string[], professors: string[], tas: string[], classPeriods: string[], baseTemplatePath: string, outDir: string }) {
         super();
         if (!courseName || courseName === '') {
             this.throwError('Error: Missing required parameter courseName');
@@ -36,15 +32,12 @@ export class WebsiteConfig extends Config {
             this.throwError('Error: No professors for the course, at least one professor is required');
         }
         if (!tas || !tas.length) {
-            this.throwWarning("Warning: No TAs are defined, no TA page will be generated");
-            this.tas = null;
-        } else {
-            this.tas = tas.map((ta: any) => new PersonInformation(ta));
+            this.throwWarning("Warning: No TAs are defined");
+            this.tas = [];
         }
-        if (classNotes && classNotes.length) {
-            this.classNotes = classNotes.map((notes: any) => new NotesReference(notes));
-        } else {
-            this.classNotes = [];
+        if (!classPeriods || !classPeriods.length) {
+            this.throwWarning("Warning: No class periods found in config file");
+            classPeriods = [];
         }
         if (fs.existsSync(baseTemplatePath)) {
             FileReference.basePath = baseTemplatePath;
@@ -56,8 +49,8 @@ export class WebsiteConfig extends Config {
         }
         this.baseURL = baseURL;
         this.courseName = courseName;
-        this.policies = new Policies(policies);
-        this.assignments = assignments.map((assignment: any) => new Assignment(assignment));
+        this.classPeriods = classPeriods.map((classPeriod: any) => new ClassPeriod(classPeriod));
+        this.tas = tas.map((ta: any) => new PersonInformation(ta));
         this.professors = professors.map((professor: any) => new PersonInformation(professor));
         this.navLinks = navLinks.map((navLink: any) => new NavLink(navLink));
         this.outputDirectory = outDir;
@@ -71,19 +64,11 @@ export class WebsiteConfig extends Config {
         this._navLinks = value;
     }
 
-    public get classNotes(): NotesReference[] {
-        return this._classNotes;
+    public get classPeriods(): ClassPeriod[] {
+        return this._classPeriods;
     }
-    public set classNotes(value: NotesReference[]) {
-        this._classNotes = value;
-    }
-
-    public get assignments(): Assignment[] {
-        return this._assignments;
-    }
-
-    public set assignments(value: Assignment[]) {
-        this._assignments = value;
+    public set classPeriods(value: ClassPeriod[]) {
+        this._classPeriods = value;
     }
 
     public get baseURL(): string {
@@ -92,14 +77,6 @@ export class WebsiteConfig extends Config {
 
     public set baseURL(value: string) {
         this._baseURL = value;
-    }
-
-    public get policies(): Policies {
-        return this._policies;
-    }
-
-    public set policies(value: Policies) {
-        this._policies = value;
     }
 
     public get tas(): PersonInformation[] {
