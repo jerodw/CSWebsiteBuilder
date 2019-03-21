@@ -5,6 +5,7 @@ import { NotesReference } from './NotesReference';
 import { Assignment } from './Assignment';
 import { Policies } from './Policies';
 import { NavLink } from './NavLink';
+import fs from 'fs';
 
 export class WebsiteConfig extends Config {
     private _courseName: string;
@@ -14,11 +15,12 @@ export class WebsiteConfig extends Config {
     private _assignments: Assignment[];
     private _baseURL: string;
     private _policies: Policies;
-    private _navLinks: NavLink[]
+    private _navLinks: NavLink[];
+    private _outputDirectory: string;
 
 
-    constructor({ baseURL, courseName, navLinks, professors, tas, classNotes = null, assignments, policies }:
-        { baseURL: string, courseName: string, navLinks: string[], professors: string[], tas: string[], classNotes: string[], assignments: string[], policies: any }) {
+    constructor({ baseURL, courseName, navLinks, professors, tas, classNotes = null, assignments, policies, baseTemplatePath = './templates', outDir = './build' }:
+        { baseURL: string, courseName: string, navLinks: string[], professors: string[], tas: string[], classNotes: string[], assignments: string[], policies: any, baseTemplatePath: string, outDir: string }) {
         super();
         if (!courseName || courseName === '') {
             this.throwError('Error: Missing required parameter courseName');
@@ -44,12 +46,21 @@ export class WebsiteConfig extends Config {
         } else {
             this.classNotes = [];
         }
+        if (fs.existsSync(baseTemplatePath)) {
+            FileReference.basePath = baseTemplatePath;
+        } else {
+            this.throwError(`Error: template path ${baseTemplatePath} does not exist`);
+        }
+        if (!fs.existsSync(outDir)) {
+            fs.mkdirSync(outDir);
+        }
         this.baseURL = baseURL;
         this.courseName = courseName;
         this.policies = new Policies(policies);
         this.assignments = assignments.map((assignment: any) => new Assignment(assignment));
         this.professors = professors.map((professor: any) => new PersonInformation(professor));
         this.navLinks = navLinks.map((navLink: any) => new NavLink(navLink));
+        this.outputDirectory = outDir;
     }
 
     public get navLinks(): NavLink[] {
@@ -114,4 +125,12 @@ export class WebsiteConfig extends Config {
     public set courseName(value: string) {
         this._courseName = value;
     }
+
+    public get outputDirectory(): string {
+        return this._outputDirectory;
+    }
+    public set outputDirectory(value: string) {
+        this._outputDirectory = value;
+    }
+
 }
