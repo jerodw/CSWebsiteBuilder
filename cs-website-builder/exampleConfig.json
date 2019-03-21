@@ -8,6 +8,11 @@
             "filename": "home.html"
         },
         {
+            "title": "TA Information",
+            "templateRef": "taInfo-template",
+            "filename": "taInfo.html"
+        },
+        {
             "title": "Custom",
             "templateRef": "template-test.html",
             "filename": "test.html"
@@ -26,7 +31,30 @@
             "byAppointment": true
         }
     ],
-    "tas": [],
+    "tas": [
+        {
+            "pictureReference": "https://cs.byu.edu/sites/default/files/styles/faculty_listing/public/pictures/picture-27467-1534965535.jpg?itok=kZC3pHdB",
+            "contactInformation": {
+                "email": "jwilkerson@cs.byu.edu",
+                "phoneNumber": "801-867-5309",
+                "officeLocation": "2218 TMCB",
+                "name": "Jerod"
+            },
+            "officeHours": [
+                {
+                    "dayOfWeek" : "Monday",
+                    "startHour" : 8,
+                    "stopHour" : 12
+                },
+                {
+                    "dayOfWeek" : "Tuesday",
+                    "startHour" : 10,
+                    "stopHour" : 14
+                }
+            ],
+            "byAppointment": true
+        }
+    ],
     "classNotes": [],
     "assignments": [],
     "policies": {

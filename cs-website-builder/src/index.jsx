@@ -5,6 +5,7 @@ import { Home } from './builderTemplates/Home.jsx'
 import fs from 'fs';
 import { WebsiteConfig } from './config/WebsiteConfig.ts';
 import { Config } from './config/Config.ts';
+import { TAInfo } from './builderTemplates/TAInfo.jsx';
 
 Config.NO_ERRORS = false;
 
@@ -18,7 +19,6 @@ if (args.length === 0) {
 const configFilePath = args[0];
 const configJSON = fs.readFileSync(configFilePath);
 const configObj = new WebsiteConfig(JSON.parse(configJSON));
-console.log(configObj);
 
 // builds the build directory if it doesn't exist
 const buildDirectory = "./build/"
@@ -29,6 +29,7 @@ if (!fs.existsSync(buildDirectory)) {
 // define our pre-made templates
 var builderTemplates = new Map();
 builderTemplates["home-template"] = <Home config={configObj} />
+builderTemplates["taInfo-template"] = <TAInfo config={configObj} />
 
 // build the website based on the navigation links from the config file
 const navLinks = configObj.navLinks;
@@ -47,18 +48,14 @@ for (var i = 0; i < navLinks.length; i++) {
 
 function buildTemplate(navLink) {
     const template = builderTemplates[navLink.templateRef];
-    console.log("Building " + navLink.filename);
     const webpage = ReactDOMServer.renderToString(template);
-    console.log("Writing to " + navLink.filename)
     fs.writeFile(buildDirectory + navLink.filename, webpage, onError)
     console.log("Built " + navLink.filename);
 }
 
 function buildCustomPage(navLink) {
     const template = fs.readFileSync('./templates/' + navLink.templateRef, { 'encoding': 'utf8' });
-    console.log("Building " + navLink.filename);
     const webpage = ReactDOMServer.renderToString(< App config={configObj} template={template} />);
-    console.log("Writing to " + navLink.filename)
     fs.writeFile(buildDirectory + navLink.filename, webpage, onError)
     console.log("Built " + navLink.filename);
 }

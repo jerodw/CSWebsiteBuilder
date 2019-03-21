@@ -6,9 +6,9 @@ import { PersonInformation } from './helperComponenets/PersonInfromation.jsx';
 export class Home extends Component {
 
   renderProfessors = () => {
-    console.log(this.props.config.professors)
-    return this.props.config.professors.map((professor, index) =>{
-      return <PersonInformation person={professor}/>
+    const professors = this.props.config.professors
+    return professors.map((professor) =>{
+      return <PersonInformation key={professor} person={professor}/>
     })
   }
 
