@@ -1,8 +1,7 @@
 {
     "baseURL": "http://localhost:8080/",
     "courseName": "CS202",
-    "navLinks": [
-        {
+    "navLinks": [{
             "title": "Home",
             "templateRef": "home-template",
             "filename": "home.html"
@@ -18,53 +17,48 @@
             "filename": "test.html"
         }
     ],
-    "professors": [
-        {
-            "pictureReference": "https://cs.byu.edu/sites/default/files/styles/faculty_listing/public/pictures/picture-27467-1534965535.jpg?itok=kZC3pHdB",
-            "contactInformation": {
-                "email": "jwilkerson@cs.byu.edu",
-                "phoneNumber": "801-867-5309",
-                "officeLocation": "2218 TMCB",
-                "name": "Jerod Wilkerson"
+    "professors": [{
+        "pictureReference": "https://cs.byu.edu/sites/default/files/styles/faculty_listing/public/pictures/picture-27467-1534965535.jpg?itok=kZC3pHdB",
+        "contactInformation": {
+            "email": "jwilkerson@cs.byu.edu",
+            "phoneNumber": "801-867-5309",
+            "officeLocation": "2218 TMCB",
+            "name": "Jerod Wilkerson"
+        },
+        "officeHours": [],
+        "byAppointment": true
+    }],
+    "tas": [{
+        "pictureReference": "https://cs.byu.edu/sites/default/files/styles/faculty_listing/public/pictures/picture-27467-1534965535.jpg?itok=kZC3pHdB",
+        "contactInformation": {
+            "email": "jwilkerson@cs.byu.edu",
+            "phoneNumber": "801-867-5309",
+            "officeLocation": "2218 TMCB",
+            "name": "Jerod"
+        },
+        "officeHours": [{
+                "dayOfWeek": "Monday",
+                "startHour": 8,
+                "stopHour": 12
             },
-            "officeHours": [],
-            "byAppointment": true
-        }
-    ],
-    "tas": [
-        {
-            "pictureReference": "https://cs.byu.edu/sites/default/files/styles/faculty_listing/public/pictures/picture-27467-1534965535.jpg?itok=kZC3pHdB",
-            "contactInformation": {
-                "email": "jwilkerson@cs.byu.edu",
-                "phoneNumber": "801-867-5309",
-                "officeLocation": "2218 TMCB",
-                "name": "Jerod"
-            },
-            "officeHours": [
-                {
-                    "dayOfWeek" : "Monday",
-                    "startHour" : 8,
-                    "stopHour" : 12
-                },
-                {
-                    "dayOfWeek" : "Tuesday",
-                    "startHour" : 10,
-                    "stopHour" : 14
-                }
-            ],
-            "byAppointment": true
-        }
-    ],
+            {
+                "dayOfWeek": "Tuesday",
+                "startHour": 10,
+                "stopHour": 14
+            }
+        ],
+        "byAppointment": true
+    }],
     "classNotes": [],
     "assignments": [],
     "policies": {
         "policyBody": "template-test.html",
-        "gradeScale": [
-            {
-                "letter": "A",
-                "percentLow": 1,
-                "percentHigh": 100
-            }
-        ]
-    }
+        "gradeScale": [{
+            "letter": "A",
+            "percentLow": 1,
+            "percentHigh": 100
+        }]
+    },
+    "baseTemplatePath": "./templates/",
+    "outDir": "./out/"
 }
