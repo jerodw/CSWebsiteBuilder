@@ -6,6 +6,7 @@ import fs from 'fs';
 import { WebsiteConfig } from './config/WebsiteConfig.ts';
 import { Config } from './config/Config.ts';
 import { TAInfo } from './builderTemplates/TAInfo.jsx';
+import { FileReference } from './config/FileReference';
 
 Config.NO_ERRORS = false;
 
@@ -20,11 +21,8 @@ const configFilePath = args[0];
 const configJSON = fs.readFileSync(configFilePath);
 const configObj = new WebsiteConfig(JSON.parse(configJSON));
 
-// builds the build directory if it doesn't exist
-const buildDirectory = "./build/"
-if (!fs.existsSync(buildDirectory)) {
-    fs.mkdirSync(buildDirectory);
-}
+const buildDirectory = configObj.outputDirectory;
+const templateDirectory = FileReference.basePath;
 
 // define our pre-made templates
 var builderTemplates = new Map();
@@ -34,11 +32,14 @@ builderTemplates["taInfo-template"] = <TAInfo config={configObj} />
 // build the website based on the navigation links from the config file
 const navLinks = configObj.navLinks;
 
+console.log('Copying stylesheet to build directory...');
+fs.copyFileSync('styles.css', `${buildDirectory}/styles.css`);
+
 for (var i = 0; i < navLinks.length; i++) {
     var navLink = navLinks[i];
 
     // check to see if the navLink.templateRef is a pre-made component (that we make)
-    if (builderTemplates[navLink.templateRef] !==    undefined) {
+    if (builderTemplates[navLink.templateRef] !== undefined) {
         // build one of our pre-made react components (like the ta page, etc)
         buildTemplate(navLink);
     } else {
@@ -54,7 +55,7 @@ function buildTemplate(navLink) {
 }
 
 function buildCustomPage(navLink) {
-    const template = fs.readFileSync('./templates/' + navLink.templateRef, { 'encoding': 'utf8' });
+    const template = fs.readFileSync(`${templateDirectory}${navLink.templateRef}`, { 'encoding': 'utf8' });
     const webpage = ReactDOMServer.renderToString(< App config={configObj} template={template} />);
     fs.writeFile(buildDirectory + navLink.filename, webpage, onError)
     console.log("Built " + navLink.filename);
@@ -69,5 +70,5 @@ function onError(err) {
 
 // tell the user where to find the built website
 var pathToSrc = __dirname.slice(0, __dirname.length - 4);
-console.log("built website to " + pathToSrc + "\\build\\");
+console.log("built website to " + pathToSrc + buildDirectory.slice(1));
 console.log("Finished Build")
