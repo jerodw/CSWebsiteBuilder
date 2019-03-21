@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { OfficeHour } from '../../config/OfficeHour';
+import { OfficeHour } from '../config/OfficeHour';
 
 export class PersonInformation extends Component {
 
   renderOfficeHour = (officeHour) => {
-    console.log(officeHour)
     return (
       <span key={officeHour}>{officeHour.dayOfWeek} {OfficeHour.toTimeString(officeHour.startHour)}-{OfficeHour.toTimeString(officeHour.stopHour)}<br/></span> 
     )

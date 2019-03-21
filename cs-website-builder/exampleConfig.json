@@ -1,5 +1,5 @@
 {
-    "baseURL": "/home.html",
+    "baseURL": "http://localhost:8080/",
     "courseName": "CS202",
     "navLinks": [
         {

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import { Head } from '../Head.jsx';
-import { Header } from '../Header.jsx';
-import { PersonInformation } from './helperComponenets/PersonInfromation.jsx';
+import { Head } from '../helperComponenets/Head.jsx';
+import { Header } from '../helperComponenets/Header.jsx';
+import { PersonInformation } from '../helperComponenets/PersonInfromation.jsx';
 import { DayOfWeek, OfficeHour } from '../config/OfficeHour'
 
 const workingStyle = {
