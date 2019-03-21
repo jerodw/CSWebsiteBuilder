@@ -5,7 +5,7 @@ export class FileReference extends Config {
     static basePath: string;
     filePath: string;
 
-    constructor(filePath: string, basePath: string){
+    constructor(filePath: string){
         super();
          // If the path is a URL, don't check if it's a valid filepath in the file system
         if (filePath.includes("http") == false) {
