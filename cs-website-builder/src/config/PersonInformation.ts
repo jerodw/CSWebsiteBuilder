@@ -1,5 +1,5 @@
 import { ContactInformation } from "./ContactInformation";
-import { OfficeHour } from "./OfficeHour";
+import { OfficeHour, DayOfWeek } from "./OfficeHour";
 import { Config } from "./Config";
 import { FileReference } from "./FileReference";
 
@@ -17,4 +17,14 @@ export class PersonInformation extends Config {
             this.officeHours = officeHours.map((officeHour: any) => new OfficeHour(officeHour));
             this.byAppointment = byAppointment;
         }
+
+    public isWorking(weekday: DayOfWeek, hour: number){
+        for (let i = 0; i < this.officeHours.length; i++){
+            var officeHour = this.officeHours[i]
+            if (officeHour.isInOffice(weekday, hour)){
+                return true;
+            }
+        }
+        return false;
+    }
 }

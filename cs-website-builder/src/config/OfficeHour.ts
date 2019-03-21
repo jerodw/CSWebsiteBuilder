@@ -46,6 +46,23 @@ export class OfficeHour extends Config {
         }
     }
 
+    public isInOffice(dayOfWeek:DayOfWeek, hour: number){
+        if (dayOfWeek != this._dayOfWeek){
+            return false;
+        }
+        return (this.startHour <= hour && hour < this.stopHour)
+    }
+
+    static toTimeString = (hour) => {
+        if (hour < 12){
+          return (hour) + ":00am"
+        } else if (hour > 12) {
+          return (hour - 12) + ":00pm"
+        } else {
+          return "12:00pm"
+        }
+      }
+
     public get dayOfWeek(): DayOfWeek {
         return this._dayOfWeek;
     }
@@ -71,7 +88,7 @@ export class OfficeHour extends Config {
     }
 }
 
-enum DayOfWeek {
+export enum DayOfWeek {
     Monday = 'Monday',
     Tuesday = 'Tuesday',
     Wednesday = 'Wednesday',

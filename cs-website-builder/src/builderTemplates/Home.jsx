@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import {Head} from '../Head.jsx';
-import {Header} from '../Header.jsx';
-import { PersonInformation } from './helperComponenets/PersonInfromation.jsx';
+import {Head} from '../helperComponenets/Head.jsx';
+import {Header} from '../helperComponenets/Header.jsx';
+import { PersonInformation } from '../helperComponenets/PersonInfromation.jsx';
 
 export class Home extends Component {
 
   renderProfessors = () => {
-    console.log(this.props.config.professors)
-    return this.props.config.professors.map((professor, index) =>{
-      return <PersonInformation person={professor}/>
+    const professors = this.props.config.professors
+    return professors.map((professor) =>{
+      return <PersonInformation key={professor} person={professor}/>
     })
   }
 
