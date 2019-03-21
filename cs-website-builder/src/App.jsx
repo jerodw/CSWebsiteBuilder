@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {Head} from './helperComponenets/Head.jsx';
-import {Header} from './helperComponenets/Header.jsx';
+import {Head} from './helperComponents/Head.jsx';
+import {Header} from './helperComponents/Header.jsx';
 
 export class App extends Component {
   render() {
