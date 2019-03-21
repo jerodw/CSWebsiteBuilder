@@ -11,7 +11,7 @@ export class PersonInformation extends Component {
     return (
       <div class="row mt-3">
         <div class="col-md-2 text-center">
-          <img class="img-responsive rounded professor-img" src={person.pictureReference.filePath} />
+          <img class="img-responsive rounded professor-img" alt={`${contactInformation.name}'s picture`} src={person.pictureReference.filePath} />
         </div>
         <div class="col-md-10 mt-2">
           <h3>{contactInformation.name}</h3>
