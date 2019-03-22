@@ -22,15 +22,12 @@ export class FileBuilder extends Config {
 
     build() {
         // write the file to the build directory
-        console.log("Building Directories....")
+        console.log("FileBuilder: Building Directories....")
         this.buildDir(this.config.outputDirectory);
         this.buildDir(`${this.config.outputDirectory}${FileBuilder.assetPath}`);
         this.buildDir(`${this.config.outputDirectory}${FileBuilder.assignmentPath}`);
 
-        console.log(FileBuilder.assetPath);
-        console.log(FileBuilder.assignmentPath);
-
-        console.log("Building Class Resources")
+        console.log("FileBuilder: Building Class Resources")
         this.config.classPeriods.forEach((classPeriod) => {
             classPeriod.classNotes.forEach((classNote) => this.buildClassNote(classNote))
             classPeriod.assignments.forEach((assignment) => this.buildAssignment(assignment))
@@ -46,7 +43,7 @@ export class FileBuilder extends Config {
     buildClassNote(classNote) {
         const filePath = classNote.fileReference.filePath;
 
-        console.log(`copying resources for "${classNote.title}"`)
+        console.log(`FileBuilder: Copying resources for "${classNote.title}"`)
         fs.copyFileSync(`${FileReference.basePath}/${filePath}`,
             `${this.config.outputDirectory}/${FileBuilder.assetPath}/${filePath}`)
     }
@@ -54,7 +51,7 @@ export class FileBuilder extends Config {
     buildAssignment(assignment) {
         const filePath = assignment.bodyReference.filePath;
 
-        console.log(`building html for "${assignment.title}"`);
+        console.log(`FileBuilder: Building html for "${assignment.title}"`);
 
         const template = fs.readFileSync(`${FileReference.basePath}${filePath}`, { 'encoding': 'utf8' });
         const webpage = ReactDOMServer.renderToString(< App config={this.config} template={template} />);
