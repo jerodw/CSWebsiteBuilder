@@ -4,6 +4,7 @@ import { PersonInformation } from './PersonInformation';
 import { NavLink } from './NavLink';
 import fs from 'fs';
 import { ClassPeriod } from './ClassPeriod';
+import { FileBuilder } from './FileBuilder';
 
 export class WebsiteConfig extends Config {
     private _courseName: string;
@@ -44,9 +45,8 @@ export class WebsiteConfig extends Config {
         } else {
             this.throwError(`Error: template path ${baseTemplatePath} does not exist`);
         }
-        if (!fs.existsSync(outDir)) {
-            fs.mkdirSync(outDir);
-        }
+
+    
         this.baseURL = baseURL;
         this.courseName = courseName;
         this.classPeriods = classPeriods.map((classPeriod: any) => new ClassPeriod(classPeriod));
@@ -54,6 +54,9 @@ export class WebsiteConfig extends Config {
         this.professors = professors.map((professor: any) => new PersonInformation(professor));
         this.navLinks = navLinks.map((navLink: any) => new NavLink(navLink));
         this.outputDirectory = outDir;
+        
+        var fileBuilder = new FileBuilder(this);
+        fileBuilder.build();
     }
 
     public get navLinks(): NavLink[] {

@@ -7,6 +7,11 @@
             "filename": "home.html"
         },
         {
+            "title": "Schedule",
+            "templateRef": "schedule-template",
+            "filename": "schedule.html"
+        },
+        {
             "title": "TA Information",
             "templateRef": "taInfo-template",
             "filename": "taInfo.html"
@@ -51,9 +56,20 @@
     }],
     "classPeriods": [
         {
-            "name" : "UI Design Basics",
-            "classNotes" : [],
-            "assignments" : []
+            "title" : "UI Design Basics",
+            "classNotes" : [
+                {
+                    "title": "What is Software Enginerring",
+                    "fileReference": "What is Software Engineering_.pptx",
+                    "availableDate": "2019-03-21T23:50:50.259Z"
+                }
+            ],
+            "assignments" : [
+                {
+                    "title": "Lab",
+                    "bodyReference": "template-test.html"
+                }
+            ]
         }
     ],
     "baseTemplatePath": "./templates/",

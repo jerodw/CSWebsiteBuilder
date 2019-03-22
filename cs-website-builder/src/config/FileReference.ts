@@ -11,7 +11,7 @@ export class FileReference extends Config {
         if (filePath.includes("http") == false) {
             if (fs.existsSync(`${FileReference.basePath}/${filePath}`) == false) {
                 this.throwError(`Error: File ${filePath} does not exist`);
-            } 
+            }  
         }
         
         this.filePath = filePath;

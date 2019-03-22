@@ -7,6 +7,7 @@ import { WebsiteConfig } from './config/WebsiteConfig.ts';
 import { Config } from './config/Config.ts';
 import { TAInfo } from './builderTemplates/TAInfo.jsx';
 import { FileReference } from './config/FileReference';
+import { Schedule } from './builderTemplates/Schedule.jsx';
 
 Config.NO_ERRORS = false;
 
@@ -28,6 +29,7 @@ const templateDirectory = FileReference.basePath;
 var builderTemplates = new Map();
 builderTemplates["home-template"] = <Home config={configObj} />
 builderTemplates["taInfo-template"] = <TAInfo config={configObj} />
+builderTemplates["schedule-template"] = <Schedule config={configObj} />
 
 // build the website based on the navigation links from the config file
 const navLinks = configObj.navLinks;
