@@ -8,6 +8,7 @@ import { Config } from './config/Config.ts';
 import { TAInfo } from './builderTemplates/TAInfo.jsx';
 import { FileReference } from './config/FileReference';
 import { Schedule } from './builderTemplates/Schedule.jsx';
+import { FileBuilder } from './FileBuilder.jsx';
 
 Config.NO_ERRORS = false;
 
@@ -24,6 +25,11 @@ const configObj = new WebsiteConfig(JSON.parse(configJSON));
 
 const buildDirectory = configObj.outputDirectory;
 const templateDirectory = FileReference.basePath;
+
+// build the template files
+var fileBuilder = new FileBuilder(configObj);
+fileBuilder.build();
+
 
 // define our pre-made templates
 var builderTemplates = new Map();

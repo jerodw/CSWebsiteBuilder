@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Head } from '../helperComponents/Head.jsx';
 import { Header } from '../helperComponents/Header.jsx';
-import {FileBuilder} from '../config/FileBuilder.ts'
+import { FileBuilder } from '../FileBuilder.jsx';
 
 export class Schedule extends Component {
 
