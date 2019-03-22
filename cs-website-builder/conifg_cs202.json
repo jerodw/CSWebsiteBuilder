@@ -15,6 +15,11 @@
             "title": "TA Information",
             "templateRef": "taInfo-template",
             "filename": "taInfo.html"
+        },
+        {
+            "title": "Policies",
+            "templateRef": "policies.html",
+            "filename": "policies.html"
         }
     ],
     "professors": [{
