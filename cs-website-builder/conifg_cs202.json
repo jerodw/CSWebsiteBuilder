@@ -4,7 +4,7 @@
     "navLinks": [{
             "title": "Home",
             "templateRef": "home-template",
-            "filename": "home.html"
+            "filename": "index.html"
         },
         {
             "title": "Schedule",
