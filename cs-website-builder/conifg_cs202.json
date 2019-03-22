@@ -136,7 +136,16 @@
         {
             "title" : "Using an IDE Debugger",
             "classNotes" : [],
-            "assignments" : []
+            "assignments" : [
+                {
+                    "title": "Pre-Class Assignment",
+                    "bodyReference": "ide_debugger/ide_debugger_pre.html"
+                },
+                {
+                    "title": "Tutorial",
+                    "bodyReference": "ide_debugger/ide_debugger_tutorial.html"
+                }
+            ]
         }
     ],
     "baseTemplatePath": "./CS202/",
