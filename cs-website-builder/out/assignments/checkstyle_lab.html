@@ -1,0 +1,213 @@
+<html data-reactroot=""><head><link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script><link type="text/css" rel="stylesheet" href="/styles.css"/></head><header class="navbar navbar-expand-lg navbar-dark background-primary"><a class="navbar-brand" href="http://localhost:8080/"><img src="https://cs.byu.edu/sites/all/themes/apolleux/img/logo.png" style="width:40px" alt="CS202"/> <!-- -->CS202</a><button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler collapsed" data-target="#navbarSupportedContent" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button><div class="navbar-collapse collapse" id="navbarSupportedContent"><ul class="navbar-nav mr-auto"><li class="nav-item"><a class="nav-link" href="/home.html">Home</a></li><li class="nav-item"><a class="nav-link" href="/schedule.html">Schedule</a></li><li class="nav-item"><a class="nav-link" href="/taInfo.html">TA Information</a></li></ul><a href="https://byu.edu"><img alt="BYU" class="float-right" src="https://cas.byu.edu/cas/images/BYUBar.png"/></a></div></header><div class="App container content"><p><span>Checkstyle</span></p>
+<p><span></span></p>
+<p><span>Overview</span></p>
+<p><span>Checkstyle is a tool designed to help enforce good coding style in Java programs. It
+        is particularly helpful with large projects where enforcing style can be tedious and difficult with multiple
+        developers working in a large codebase. Checkstyle automates style enforcement by reading an XML file that
+        contains a list of rules to enforce. Once you&rsquo;ve provided Checkstyle with this file, you can run
+        Checkstyle on your program and it will check your entire program for styling errors for you to fix.</span>
+</p>
+<p><span></span></p>
+<p><span>For this lab period, you will complete a Checkstyle tutorial followed by a short
+        mini-lab. The mini-lab will test what you learned in the tutorial.</span></p>
+<h1><span>Tutorials:</span></h1>
+<h2><span>Checkstyle from the Command Line:</span></h2>
+<ol start="1">
+    <li><span>&nbsp;</span><span>Downloading Checkstyle</span></li>
+</ol>
+<ol start="1">
+    <li><span>Go to </span><span><a
+                href="https://www.google.com/url?q=https://github.com/checkstyle/checkstyle/releases/&amp;sa=D&amp;ust=1553286017988000">https://github.com/checkstyle/checkstyle/releases/</a></span>
+    </li>
+    <li><span>Under the &ldquo;Assets&rdquo; dropdown for the latest release, click on the
+            link that says &ldquo;checkstyle-&lt;release_number-all&gt;.jar&rdquo;. The download should start
+            automatically. See image below.</span></li>
+</ol>
+<p><span></span></p>
+<p><span
+        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 1.33px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 488.07px; height: 269.50px;"><img
+            alt="" src="images/image1.png"
+            style="width: 638.48px; height: 269.50px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+            title=""></span></p>
+<p><span></span></p>
+<ol start="2">
+    <li><span>Running Checkstyle from the command line</span></li>
+</ol>
+<ol start="1">
+    <li><span>&nbsp;</span><span>You can run a check using the following
+            command:</span></li>
+</ol>
+<ul class="c2 lst-kix_u2612ht3thjy-2 start">
+    <li><span>&nbsp;</span><span>java -jar
+            checkstyle-&lt;release_number&gt;.jar -c &lt;name_of_config_file&gt;.xml
+            &lt;name_of_source_file&gt;.java -o &lt;name_of_results_file&gt;.txt</span></li>
+    <li><span>&nbsp;</span><span>Note: these methods of running Checkstyle assume that
+            you have a Configuration file in the same directory as your source file. You can download a
+            configuration file for checking code against the Sun style guide </span><span><a
+                href="https://www.google.com/url?q=https://raw.githubusercontent.com/checkstyle/checkstyle/master/src/main/resources/sun_checks.xml&amp;sa=D&amp;ust=1553286017989000">here</a></span><span>&nbsp;</span><span>or
+            the Google style guide </span><span><a
+                href="https://www.google.com/url?q=https://raw.githubusercontent.com/checkstyle/checkstyle/master/src/main/resources/google_checks.xml&amp;sa=D&amp;ust=1553286017989000">here</a></span><span
+           >. You must provide the classpaths for the files or navigate to the correct directory using
+            cd. Use the CheckstyleExample.java file provided for you as the source file, and name your results file
+            whatever you would like.</span></li>
+</ul>
+<h2><span>Configuring your IDE to work with Checkstyle</span></h2>
+<p><span>Most of your software development work will probably be done with an Integrated
+        Development Environment (IDE). Thus it is useful to learn how to use Checkstyle from within your IDE. There
+        are Checkstyle plugins for many different IDEs and the process for configuring these plugins will vary from
+        IDE to IDE. In this tutorial, we will demonstrate how to use Checkstyle with Intellij IDEA. We encourage you
+        to look into how to configure any other of your favorite IDEs to work with Checkstyle on your own.</span>
+</p>
+<p><span></span></p>
+<p><span>You should have already downloaded and set up Intellij IDEA as part of a pre-class
+        assignment. You will not be able to proceed unless you can access Intellij IDEA. </span></p>
+<p><span></span></p>
+<ol start="1">
+    <li><span>Navigate to the Settings menu for IDEA. </span></li>
+</ol>
+<ol start="1">
+    <li><span>On Windows, you can reach this menu by clicking on the &ldquo;File&rdquo;
+            drop-down menu and then clicking on &ldquo;Settings.&rdquo; </span></li>
+    <li><span>On Mac, click on the &ldquo;Intellij IDEA&rdquo; drop-down menu and then click
+            on &ldquo;Preferences.&rdquo;</span></li>
+</ol>
+<p><span></span></p>
+<ol start="2">
+    <li><span>Click on &ldquo;Plugins.&rdquo; You should arrive at a screen that looks
+            something like this:</span></li>
+</ol>
+<p><span></span></p>
+<p><span
+        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 584.28px; height: 331.50px;"><img
+            alt="" src="images/image5.png"
+            style="width: 584.28px; height: 331.50px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+            title=""></span></p>
+<p><span></span></p>
+<ol start="3">
+    <li><span>In the search bar at the top, type in &ldquo;checkstyle&rdquo; and hit enter. Find the
+            plugin that is titled &ldquo;CheckStyle-IDEA&rdquo; and click the Install button underneath it.</span>
+    </li>
+</ol>
+<p><span
+        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 375.50px; height: 194.20px;"><img
+            alt="" src="images/image4.png"
+            style="width: 375.50px; height: 194.20px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+            title=""></span><span>&nbsp;</span></p>
+<p><span>If you don&rsquo;t see a CheckStyle-IDEA plugin, select &ldquo;Browse
+        Repositories&hellip;&rdquo; and repeat the search in the new dialog that appears.</span></p>
+<p><span></span></p>
+<ol start="4">
+    <li><span>After the Checkstyle plugin has finished downloading, restart the IDE.</span>
+    </li>
+</ol>
+<p><span></span></p>
+<ol start="5">
+    <li><span>Navigate back to the &ldquo;Settings&rdquo; menu as you did in step 1. You
+            should now have a menu item labeled &ldquo;Checkstyle&rdquo; in the left navigation bar. Click on it to
+            bring up the Checkstyle menu.</span></li>
+</ol>
+<p><span></span></p>
+<ol start="6">
+    <li><span>This page allows you to configure Checkstyle for your own use. You can change
+            the version of Checkstyle you want to use, select configuration files, add custom checks, and a few
+            other options. Select the checkbox next to &ldquo;Treat Checkstyle errors as warnings&rdquo; and the
+            checkbox next to &ldquo;Sun Checks&rdquo; under the Configuration file submenu. Click Apply and then OK
+            at the bottom right to save your settings.</span></li>
+</ol>
+<p><span></span></p>
+<p><span
+        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 486.27px; height: 278.50px;"><img
+            alt="" src="images/image7.png"
+            style="width: 486.27px; height: 278.50px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+            title=""></span></p>
+<p><span></span></p>
+<ol start="7">
+    <li><span>Now you are ready to begin using Checkstyle. Create a new Intellij IDEA project
+            by clicking on the &ldquo;File&rdquo; dropdown menu, and going to &ldquo;New&rdquo; -&gt;
+            &ldquo;Project.&rdquo; Click &ldquo;Next&rdquo; to skip through the first two setup screens, and then
+            name your project &ldquo;CheckstyleTutorial.&rdquo; Click &ldquo;Next&rdquo; at all of the next screens
+            until your project is set up. You should be greeted by a blank project window:</span></li>
+</ol>
+<p><span></span></p>
+<p><span
+        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 486.22px; height: 273.50px;"><img
+            alt="" src="images/image3.png"
+            style="width: 486.22px; height: 273.50px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+            title=""></span></p>
+<p><span></span></p>
+<ol start="8">
+    <li><span>Click the arrow next to the CheckstyleTutorial folder on the left navigation bar
+            to expand it. Click on the src folder to highlight it, and then right-click to open up an options menu.
+            Hover over &ldquo;New&rdquo; and click on &ldquo;Java Class.&rdquo;</span></li>
+</ol>
+<p><span></span></p>
+<p><span
+        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 491.50px; height: 277.26px;"><img
+            alt="" src="images/image2.png"
+            style="width: 491.50px; height: 277.26px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+            title=""></span></p>
+<p><span></span></p>
+<ol start="9">
+    <li><span>Name your class &ldquo;CheckstyleExample&rdquo; and click OK. You will have an
+            empty class declaration to start in your file. Open the CheckstyleExample.java file that was given to
+            you, and copy and paste the code into the CheckstyleExample file that you just created.</span></li>
+</ol>
+<p><span></span></p>
+<ol start="10">
+    <li><span>On the bottom left-hand corner of your IDE, there should be a small icon that
+            says &ldquo;Checkstyle.&rdquo; Click it to bring up the Checkstyle checks menu.</span></li>
+</ol>
+<p><span></span></p>
+<p><span
+        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 486.50px; height: 77.96px;"><img
+            alt="" src="images/image6.png"
+            style="width: 486.50px; height: 77.96px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+            title=""></span></p>
+<p><span></span></p>
+<ol start="11">
+    <li><span>Click on the Rules dropdown that currently says &ldquo;&lt;active
+            configuration&gt;&rdquo; and select &ldquo;Sun Checks.&rdquo; Click on the green arrow to the left to
+            run the Sun Checks on the CheckstyleExample file. Notice there are 15 Checkstyle errors. Now switch the
+            Rules dropdown menu to &ldquo;Google Checks&rdquo; and rerun. Notice now there are 46 Checkstyle errors.
+            The number and types of errors will change depending on what kinds of checks you use. You can specify
+            which checks you want to use by creating a new XML file with the appropriate checks specified. You can
+            also create custom checks by defining a new check in a java class. This is beyond the scope of this
+            class. However, for your coursework, either the Sun Checks or the Google Checks should suffice, as long
+            as you are consistent in your project. You are now ready to use Checkstyle in your projects!</span></li>
+</ol>
+<h1><span>Mini Lab</span></h1>
+<ol start="1">
+    <li><span>Under the Rules drop-down menu, return the Checks to &ldquo;Sun Checks.&rdquo;
+            Rerun the checks.</span></li>
+</ol>
+<p><span></span></p>
+<ol start="2">
+    <li><span>Your task is to fix all of the Checkstyle errors in the program. You do not have
+            to fix the package-info.java error if you get it. </span></li>
+</ol>
+<p><span></span></p>
+<ol start="3">
+    <li><span>Read each error carefully before trying to fix it; there is a short description
+            next to each error that tells you exactly what&rsquo;s wrong.</span></li>
+</ol>
+<p><span></span></p>
+<ol start="4">
+    <li><span>There are a few stipulations for you to follow: </span></li>
+</ol>
+<ol start="1">
+    <li><span>You may not get rid of errors by deleting the lines of code in question, unless
+            deleting the line won&rsquo;t affect the functionality of the program (e.g., if the error was related to
+            a variable that was defined but never used, you may delete the line as it won&rsquo;t affect how the
+            program runs).</span></li>
+    <li><span>You may add lines or modify existing lines, and you can insert or delete white
+            space as needed.</span></li>
+</ol>
+<p><span></span></p>
+<ol start="5">
+    <li><span>Submit your corrected CheckstyleExample.java to LearningSuite by the end of the
+            lab period.</span></li>
+</ol>
+<p><span></span></p>
+<div>
+    <p><span></span></p>
+</div></div></html>

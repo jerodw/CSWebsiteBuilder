@@ -7,7 +7,7 @@ export class ClassPeriod extends Config {
     private _classNotes: NotesReference[];
     private _assignments: Assignment[];
 
-    constructor({ title, classNotes, assignments }:
+    constructor({ title, classNotes = [], assignments = []}:
         { title: string, classNotes: string[], assignments: string[] }) {
         super();
 

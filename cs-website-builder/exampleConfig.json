@@ -15,11 +15,6 @@
             "title": "TA Information",
             "templateRef": "taInfo-template",
             "filename": "taInfo.html"
-        },
-        {
-            "title": "Custom",
-            "templateRef": "template-test.html",
-            "filename": "test.html"
         }
     ],
     "professors": [{
@@ -56,22 +51,29 @@
     }],
     "classPeriods": [
         {
-            "title" : "UI Design Basics",
+            "title" : "What is Software Enginerring?",
             "classNotes" : [
                 {
-                    "title": "What is Software Enginerring",
+                    "title": "What is Software Enginerring.pptx",
                     "fileReference": "What is Software Engineering_.pptx",
                     "availableDate": "2019-03-22T01:45:22.674Z"
                 }
-            ],
+            ]
+        },
+        {
+            "title" : "Checkstyle",
             "assignments" : [
                 {
-                    "title": "Lab",
-                    "bodyReference": "template-test.html"
+                    "title": "Pre-Class Assignment",
+                    "bodyReference": "checkstyle_pre.html"
+                },
+                {
+                    "title": "Tutorial",
+                    "bodyReference": "checkstyle_lab.html"
                 }
             ]
         }
     ],
-    "baseTemplatePath": "./templates/",
+    "baseTemplatePath": "./CS202/",
     "outDir": "./out/"
 }
