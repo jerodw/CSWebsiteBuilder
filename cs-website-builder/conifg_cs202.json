@@ -56,10 +56,10 @@
     }],
     "classPeriods": [
         {
-            "title" : "What is Software Enginerring?",
+            "title" : "What is Software Engineering?",
             "classNotes" : [
                 {
-                    "title": "What is Software Enginerring.pptx",
+                    "title": "What is Software Engineering.pptx",
                     "fileReference": "What is Software Engineering_.pptx",
                     "availableDate": "2019-03-22T01:45:22.674Z"
                 }
@@ -106,7 +106,7 @@
             "assignments" : []
         },
         {
-            "title" : "Coding Style (Java), Intellij configuration",
+            "title" : "Coding Style (Java), Intellij Configuration",
             "classNotes" : [],
             "assignments" : []
         },
@@ -129,7 +129,7 @@
             ]
         },
         {
-            "title" : "Code review process",
+            "title" : "Code Review Process",
             "classNotes" : [],
             "assignments" : []
         },
