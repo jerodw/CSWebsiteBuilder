@@ -40,8 +40,18 @@ export class FileBuilder extends Config {
         }
     }
 
+    buildPath(filepath){
+        var path = require('path');
+        var dirname = path.dirname(filepath);
+
+        if (!fs.existsSync(dirname)) {
+            this.buildDir(dirname);
+        }
+    }
+
     buildClassNote(classNote) {
         const filePath = classNote.fileReference.filePath;
+        this.buildPath(`${this.config.outputDirectory}/${FileBuilder.assetPath}/${filePath}`);
 
         if (classNote.availableDate <= new Date()) {
             console.log(`FileBuilder: Copying resources for "${classNote.title}"`)
@@ -56,6 +66,7 @@ export class FileBuilder extends Config {
 
     buildAssignment(assignment) {
         const filePath = assignment.bodyReference.filePath;
+        this.buildPath(`${this.config.outputDirectory}${FileBuilder.assignmentPath}/${filePath}`);
 
         if (assignment.availableDate <= new Date()) {
             console.log(`FileBuilder: Building html for "${assignment.title}"`);
