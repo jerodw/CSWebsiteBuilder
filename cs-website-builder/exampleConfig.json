@@ -61,7 +61,57 @@
             ]
         },
         {
-            "title" : "Checkstyle",
+            "title" : "UI Design Basics",
+            "classNotes" : [],
+            "assignments" : []
+        },
+        {
+            "title" : "Creating Wireframe and Screenflow Diagrams with LucidChart",
+            "classNotes" : [],
+            "assignments" : []
+        },
+        {
+            "title" : "UML Overview. UML Class Diagrams.",
+            "classNotes" : [],
+            "assignments" : []
+        },
+        {
+            "title" : "UML Sequence Diagrams",
+            "classNotes" : [],
+            "assignments" : []
+        },
+        {
+            "title" : "Java Overview",
+            "classNotes" : [],
+            "assignments" : []
+        },
+        {
+            "title" : "Writing and Generating Javadoc",
+            "classNotes" : [],
+            "assignments" : []
+        },
+        {
+            "title" : "Intro to Git",
+            "classNotes" : [],
+            "assignments" : []
+        },
+        {
+            "title" : "Git Collaboration Features",
+            "classNotes" : [],
+            "assignments" : []
+        },
+        {
+            "title" : "Coding Style (Java), Intellij configuration",
+            "classNotes" : [],
+            "assignments" : []
+        },
+        {
+            "title" : "",
+            "classNotes" : [],
+            "assignments" : []
+        },
+        {
+            "title" : "Using Checkstyle",
             "assignments" : [
                 {
                     "title": "Pre-Class Assignment",
@@ -72,6 +122,21 @@
                     "bodyReference": "checkstyle_lab.html"
                 }
             ]
+        },
+        {
+            "title" : "Code review process",
+            "classNotes" : [],
+            "assignments" : []
+        },
+        {
+            "title" : "Debugging / Logging from the Command Line",
+            "classNotes" : [],
+            "assignments" : []
+        },
+        {
+            "title" : "Using an IDE Debugger",
+            "classNotes" : [],
+            "assignments" : []
         }
     ],
     "baseTemplatePath": "./CS202/",
