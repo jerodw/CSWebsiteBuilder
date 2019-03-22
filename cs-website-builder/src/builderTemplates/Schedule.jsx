@@ -59,8 +59,6 @@ export class Schedule extends Component {
             <html>
                 <Head />
                 <Header config={config} baseURL={''} />
-
-                <script src="./schedule.js"></script>
                 <div className="Schedule container content">
                     <h1>Schedule</h1>
                     <hr />

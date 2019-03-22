@@ -43,24 +43,35 @@ export class FileBuilder extends Config {
     buildClassNote(classNote) {
         const filePath = classNote.fileReference.filePath;
 
-        console.log(`FileBuilder: Copying resources for "${classNote.title}"`)
-        fs.copyFileSync(`${FileReference.basePath}/${filePath}`,
-            `${this.config.outputDirectory}/${FileBuilder.assetPath}/${filePath}`)
+        if (classNote.availableDate <= new Date()) {
+            console.log(`FileBuilder: Copying resources for "${classNote.title}"`)
+            fs.copyFileSync(`${FileReference.basePath}/${filePath}`,
+                `${this.config.outputDirectory}/${FileBuilder.assetPath}/${filePath}`)
+        } else {
+            console.log(`FileBuilder: Skipping "${classNote.title}" (Not Yet Avaliable)`)
+        }
+
+
     }
 
     buildAssignment(assignment) {
         const filePath = assignment.bodyReference.filePath;
 
-        console.log(`FileBuilder: Building html for "${assignment.title}"`);
+        if (assignment.availableDate <= new Date()) {
+            console.log(`FileBuilder: Building html for "${assignment.title}"`);
 
-        const template = fs.readFileSync(`${FileReference.basePath}${filePath}`, { 'encoding': 'utf8' });
-        const webpage = ReactDOMServer.renderToString(< App config={this.config} template={template} />);
-        fs.writeFile(`${this.config.outputDirectory}${FileBuilder.assignmentPath}/${filePath}`, webpage, (err) => {
-            if (err) {
-                console.error(err);
-                process.exit();
-            }
-        })
+            const template = fs.readFileSync(`${FileReference.basePath}${filePath}`, { 'encoding': 'utf8' });
+            const webpage = ReactDOMServer.renderToString(< App config={this.config} template={template} />);
+            fs.writeFile(`${this.config.outputDirectory}${FileBuilder.assignmentPath}/${filePath}`, webpage, (err) => {
+                if (err) {
+                    console.error(err);
+                    process.exit();
+                }
+            })
+
+        } else {
+            console.log(`FileBuilder: Skipping "${assignment.title}" (Not Yet Avaliable)`)
+        }
     }
 
 }
