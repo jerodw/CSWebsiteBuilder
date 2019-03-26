@@ -21,10 +21,8 @@
         "url-loader": "^1.1.2"
     },
     "scripts": {
-        "start": "react-scripts start",
-        "build": "cross-env NODE_ENV=development node src/bootstrap.js",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "clean": "cross-env NODE_ENV=development node src/clean-bootstrap.js",
+        "build": "cross-env NODE_ENV=development node src/bootstrap.js"
     },
     "eslintConfig": {
         "extends": "react-app"
