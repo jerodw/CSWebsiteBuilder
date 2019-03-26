@@ -1,1032 +1,227 @@
-<html data-reactroot=""><head><link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script><link type="text/css" rel="stylesheet" href="/styles.css"/></head><header class="navbar navbar-expand-lg navbar-dark background-primary"><a class="navbar-brand" href="http://localhost:8080/"><img src="https://cs.byu.edu/sites/all/themes/apolleux/img/logo.png" style="width:40px" alt="CS202"/> <!-- -->CS202</a><button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler collapsed" data-target="#navbarSupportedContent" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button><div class="navbar-collapse collapse" id="navbarSupportedContent"><ul class="navbar-nav mr-auto"><li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="/schedule.html">Schedule</a></li><li class="nav-item"><a class="nav-link" href="/taInfo.html">TA Information</a></li><li class="nav-item"><a class="nav-link" href="/policies.html">Policies</a></li></ul><a href="https://byu.edu"><img alt="BYU" class="float-right" src="https://cas.byu.edu/cas/images/BYUBar.png"/></a></div></header><div class="App container content"><style type="text/css">
-    ol.lst-kix_rrqb7teefiuk-3.start {
-        counter-reset: lst-ctn-kix_rrqb7teefiuk-3 0
-    }
-
-    .lst-kix_3kiymavy6gig-0>li {
-        counter-increment: lst-ctn-kix_3kiymavy6gig-0
-    }
-
-    .lst-kix_rrqb7teefiuk-6>li {
-        counter-increment: lst-ctn-kix_rrqb7teefiuk-6
-    }
-
-    ol.lst-kix_rrqb7teefiuk-0.start {
-        counter-reset: lst-ctn-kix_rrqb7teefiuk-0 0
-    }
-
-    ol.lst-kix_cpdb95lao2cd-0.start {
-        counter-reset: lst-ctn-kix_cpdb95lao2cd-0 0
-    }
-
-    ol.lst-kix_3kiymavy6gig-7.start {
-        counter-reset: lst-ctn-kix_3kiymavy6gig-7 0
-    }
-
-    .lst-kix_a82l35ix6owh-4>li:before {
-        content: "\0025cb  "
-    }
-
-    .lst-kix_rrqb7teefiuk-5>li {
-        counter-increment: lst-ctn-kix_rrqb7teefiuk-5
-    }
-
-    .lst-kix_a82l35ix6owh-5>li:before {
-        content: "\0025a0  "
-    }
-
-    .lst-kix_a82l35ix6owh-6>li:before {
-        content: "\0025cf  "
-    }
-
-    ol.lst-kix_rrqb7teefiuk-6.start {
-        counter-reset: lst-ctn-kix_rrqb7teefiuk-6 0
-    }
-
-    ol.lst-kix_cpdb95lao2cd-8.start {
-        counter-reset: lst-ctn-kix_cpdb95lao2cd-8 0
-    }
-
-    .lst-kix_a82l35ix6owh-7>li:before {
-        content: "\0025cb  "
-    }
-
-    .lst-kix_a82l35ix6owh-8>li:before {
-        content: "\0025a0  "
-    }
-
-    .lst-kix_rrqb7teefiuk-8>li {
-        counter-increment: lst-ctn-kix_rrqb7teefiuk-8
-    }
-
-    ol.lst-kix_3kiymavy6gig-2.start {
-        counter-reset: lst-ctn-kix_3kiymavy6gig-2 0
-    }
-
-    .lst-kix_3kiymavy6gig-1>li {
-        counter-increment: lst-ctn-kix_3kiymavy6gig-1
-    }
-
-    .lst-kix_3kiymavy6gig-8>li:before {
-        content: ""counter(lst-ctn-kix_3kiymavy6gig-8, lower-roman) ". "
-    }
-
-    ul.lst-kix_a82l35ix6owh-3 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_a82l35ix6owh-4 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_a82l35ix6owh-1 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_a82l35ix6owh-2 {
-        list-style-type: none
-    }
-
-    .lst-kix_3kiymavy6gig-6>li:before {
-        content: ""counter(lst-ctn-kix_3kiymavy6gig-6, decimal) ". "
-    }
-
-    ul.lst-kix_a82l35ix6owh-0 {
-        list-style-type: none
-    }
-
-    .lst-kix_3kiymavy6gig-7>li:before {
-        content: ""counter(lst-ctn-kix_3kiymavy6gig-7, lower-latin) ". "
-    }
-
-    ol.lst-kix_rrqb7teefiuk-5.start {
-        counter-reset: lst-ctn-kix_rrqb7teefiuk-5 0
-    }
-
-    ol.lst-kix_3kiymavy6gig-1.start {
-        counter-reset: lst-ctn-kix_3kiymavy6gig-1 0
-    }
-
-    ol.lst-kix_3kiymavy6gig-5.start {
-        counter-reset: lst-ctn-kix_3kiymavy6gig-5 0
-    }
-
-    .lst-kix_3kiymavy6gig-1>li:before {
-        content: ""counter(lst-ctn-kix_3kiymavy6gig-1, lower-latin) ". "
-    }
-
-    .lst-kix_3kiymavy6gig-0>li:before {
-        content: ""counter(lst-ctn-kix_3kiymavy6gig-0, decimal) ". "
-    }
-
-    ol.lst-kix_cpdb95lao2cd-0 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_cpdb95lao2cd-1 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_cpdb95lao2cd-2 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_cpdb95lao2cd-3 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_a82l35ix6owh-7 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_cpdb95lao2cd-4 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_a82l35ix6owh-8 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_cpdb95lao2cd-5 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_a82l35ix6owh-5 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_cpdb95lao2cd-2.start {
-        counter-reset: lst-ctn-kix_cpdb95lao2cd-2 0
-    }
-
-    ol.lst-kix_cpdb95lao2cd-6 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_a82l35ix6owh-6 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_cpdb95lao2cd-7 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_rrqb7teefiuk-4.start {
-        counter-reset: lst-ctn-kix_rrqb7teefiuk-4 0
-    }
-
-    ol.lst-kix_cpdb95lao2cd-8 {
-        list-style-type: none
-    }
-
-    .lst-kix_3kiymavy6gig-2>li {
-        counter-increment: lst-ctn-kix_3kiymavy6gig-2
-    }
-
-    ol.lst-kix_cpdb95lao2cd-3.start {
-        counter-reset: lst-ctn-kix_cpdb95lao2cd-3 0
-    }
-
-    .lst-kix_rrqb7teefiuk-1>li:before {
-        content: ""counter(lst-ctn-kix_rrqb7teefiuk-1, lower-latin) ". "
-    }
-
-    .lst-kix_a82l35ix6owh-3>li:before {
-        content: "\0025cf  "
-    }
-
-    .lst-kix_3kiymavy6gig-8>li {
-        counter-increment: lst-ctn-kix_3kiymavy6gig-8
-    }
-
-    .lst-kix_rrqb7teefiuk-0>li:before {
-        content: ""counter(lst-ctn-kix_rrqb7teefiuk-0, decimal) ". "
-    }
-
-    .lst-kix_3kiymavy6gig-5>li {
-        counter-increment: lst-ctn-kix_3kiymavy6gig-5
-    }
-
-    .lst-kix_a82l35ix6owh-1>li:before {
-        content: "\0025cb  "
-    }
-
-    .lst-kix_a82l35ix6owh-2>li:before {
-        content: "\0025a0  "
-    }
-
-    .lst-kix_a82l35ix6owh-0>li:before {
-        content: "\0025cf  "
-    }
-
-    .lst-kix_rrqb7teefiuk-7>li {
-        counter-increment: lst-ctn-kix_rrqb7teefiuk-7
-    }
-
-    .lst-kix_cpdb95lao2cd-6>li {
-        counter-increment: lst-ctn-kix_cpdb95lao2cd-6
-    }
-
-    .lst-kix_rrqb7teefiuk-4>li {
-        counter-increment: lst-ctn-kix_rrqb7teefiuk-4
-    }
-
-    .lst-kix_3kiymavy6gig-2>li:before {
-        content: ""counter(lst-ctn-kix_3kiymavy6gig-2, lower-roman) ". "
-    }
-
-    ol.lst-kix_3kiymavy6gig-0.start {
-        counter-reset: lst-ctn-kix_3kiymavy6gig-0 0
-    }
-
-    ol.lst-kix_3kiymavy6gig-6.start {
-        counter-reset: lst-ctn-kix_3kiymavy6gig-6 0
-    }
-
-    .lst-kix_cpdb95lao2cd-3>li {
-        counter-increment: lst-ctn-kix_cpdb95lao2cd-3
-    }
-
-    .lst-kix_3kiymavy6gig-3>li:before {
-        content: ""counter(lst-ctn-kix_3kiymavy6gig-3, decimal) ". "
-    }
-
-    .lst-kix_3kiymavy6gig-4>li:before {
-        content: ""counter(lst-ctn-kix_3kiymavy6gig-4, lower-latin) ". "
-    }
-
-    .lst-kix_cpdb95lao2cd-0>li {
-        counter-increment: lst-ctn-kix_cpdb95lao2cd-0
-    }
-
-    .lst-kix_3kiymavy6gig-5>li:before {
-        content: ""counter(lst-ctn-kix_3kiymavy6gig-5, lower-roman) ". "
-    }
-
-    .lst-kix_rrqb7teefiuk-8>li:before {
-        content: ""counter(lst-ctn-kix_rrqb7teefiuk-8, lower-roman) ". "
-    }
-
-    .lst-kix_rrqb7teefiuk-1>li {
-        counter-increment: lst-ctn-kix_rrqb7teefiuk-1
-    }
-
-    ol.lst-kix_cpdb95lao2cd-4.start {
-        counter-reset: lst-ctn-kix_cpdb95lao2cd-4 0
-    }
-
-    .lst-kix_cpdb95lao2cd-4>li {
-        counter-increment: lst-ctn-kix_cpdb95lao2cd-4
-    }
-
-    .lst-kix_rrqb7teefiuk-7>li:before {
-        content: ""counter(lst-ctn-kix_rrqb7teefiuk-7, lower-latin) ". "
-    }
-
-    .lst-kix_cpdb95lao2cd-5>li:before {
-        content: ""counter(lst-ctn-kix_cpdb95lao2cd-5, lower-roman) ". "
-    }
-
-    .lst-kix_rrqb7teefiuk-4>li:before {
-        content: ""counter(lst-ctn-kix_rrqb7teefiuk-4, lower-latin) ". "
-    }
-
-    .lst-kix_rrqb7teefiuk-6>li:before {
-        content: ""counter(lst-ctn-kix_rrqb7teefiuk-6, decimal) ". "
-    }
-
-    .lst-kix_cpdb95lao2cd-4>li:before {
-        content: ""counter(lst-ctn-kix_cpdb95lao2cd-4, lower-latin) ". "
-    }
-
-    .lst-kix_cpdb95lao2cd-8>li:before {
-        content: ""counter(lst-ctn-kix_cpdb95lao2cd-8, lower-roman) ". "
-    }
-
-    .lst-kix_rrqb7teefiuk-5>li:before {
-        content: ""counter(lst-ctn-kix_rrqb7teefiuk-5, lower-roman) ". "
-    }
-
-    .lst-kix_cpdb95lao2cd-5>li {
-        counter-increment: lst-ctn-kix_cpdb95lao2cd-5
-    }
-
-    .lst-kix_3kiymavy6gig-6>li {
-        counter-increment: lst-ctn-kix_3kiymavy6gig-6
-    }
-
-    ol.lst-kix_cpdb95lao2cd-7.start {
-        counter-reset: lst-ctn-kix_cpdb95lao2cd-7 0
-    }
-
-    .lst-kix_rrqb7teefiuk-2>li:before {
-        content: ""counter(lst-ctn-kix_rrqb7teefiuk-2, lower-roman) ". "
-    }
-
-    .lst-kix_cpdb95lao2cd-7>li:before {
-        content: ""counter(lst-ctn-kix_cpdb95lao2cd-7, lower-latin) ". "
-    }
-
-    .lst-kix_cpdb95lao2cd-6>li:before {
-        content: ""counter(lst-ctn-kix_cpdb95lao2cd-6, decimal) ". "
-    }
-
-    .lst-kix_rrqb7teefiuk-3>li:before {
-        content: ""counter(lst-ctn-kix_rrqb7teefiuk-3, decimal) ". "
-    }
-
-    .lst-kix_cpdb95lao2cd-0>li:before {
-        content: ""counter(lst-ctn-kix_cpdb95lao2cd-0, decimal) ". "
-    }
-
-    ol.lst-kix_cpdb95lao2cd-1.start {
-        counter-reset: lst-ctn-kix_cpdb95lao2cd-1 0
-    }
-
-    .lst-kix_cpdb95lao2cd-1>li:before {
-        content: ""counter(lst-ctn-kix_cpdb95lao2cd-1, lower-latin) ". "
-    }
-
-    .lst-kix_cpdb95lao2cd-3>li:before {
-        content: ""counter(lst-ctn-kix_cpdb95lao2cd-3, decimal) ". "
-    }
-
-    .lst-kix_cpdb95lao2cd-2>li:before {
-        content: ""counter(lst-ctn-kix_cpdb95lao2cd-2, lower-roman) ". "
-    }
-
-    .lst-kix_3kiymavy6gig-7>li {
-        counter-increment: lst-ctn-kix_3kiymavy6gig-7
-    }
-
-    .lst-kix_3kiymavy6gig-4>li {
-        counter-increment: lst-ctn-kix_3kiymavy6gig-4
-    }
-
-    .lst-kix_rrqb7teefiuk-0>li {
-        counter-increment: lst-ctn-kix_rrqb7teefiuk-0
-    }
-
-    ol.lst-kix_rrqb7teefiuk-2.start {
-        counter-reset: lst-ctn-kix_rrqb7teefiuk-2 0
-    }
-
-    .lst-kix_cpdb95lao2cd-1>li {
-        counter-increment: lst-ctn-kix_cpdb95lao2cd-1
-    }
-
-    ol.lst-kix_3kiymavy6gig-8.start {
-        counter-reset: lst-ctn-kix_3kiymavy6gig-8 0
-    }
-
-    .lst-kix_cpdb95lao2cd-7>li {
-        counter-increment: lst-ctn-kix_cpdb95lao2cd-7
-    }
-
-    .lst-kix_3kiymavy6gig-3>li {
-        counter-increment: lst-ctn-kix_3kiymavy6gig-3
-    }
-
-    .lst-kix_rrqb7teefiuk-3>li {
-        counter-increment: lst-ctn-kix_rrqb7teefiuk-3
-    }
-
-    ol.lst-kix_rrqb7teefiuk-8.start {
-        counter-reset: lst-ctn-kix_rrqb7teefiuk-8 0
-    }
-
-    ol.lst-kix_3kiymavy6gig-2 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_cpdb95lao2cd-5.start {
-        counter-reset: lst-ctn-kix_cpdb95lao2cd-5 0
-    }
-
-    ol.lst-kix_3kiymavy6gig-1 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_3kiymavy6gig-4 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_3kiymavy6gig-3 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_rrqb7teefiuk-1.start {
-        counter-reset: lst-ctn-kix_rrqb7teefiuk-1 0
-    }
-
-    ol.lst-kix_3kiymavy6gig-6 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_3kiymavy6gig-5 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_3kiymavy6gig-8 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_3kiymavy6gig-7 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_3kiymavy6gig-4.start {
-        counter-reset: lst-ctn-kix_3kiymavy6gig-4 0
-    }
-
-    .lst-kix_cpdb95lao2cd-2>li {
-        counter-increment: lst-ctn-kix_cpdb95lao2cd-2
-    }
-
-    .lst-kix_cpdb95lao2cd-8>li {
-        counter-increment: lst-ctn-kix_cpdb95lao2cd-8
-    }
-
-    ol.lst-kix_3kiymavy6gig-0 {
-        list-style-type: none
-    }
-
-    .lst-kix_rrqb7teefiuk-2>li {
-        counter-increment: lst-ctn-kix_rrqb7teefiuk-2
-    }
-
-    ol.lst-kix_rrqb7teefiuk-4 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_rrqb7teefiuk-7.start {
-        counter-reset: lst-ctn-kix_rrqb7teefiuk-7 0
-    }
-
-    ol.lst-kix_rrqb7teefiuk-5 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_rrqb7teefiuk-6 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_rrqb7teefiuk-7 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_rrqb7teefiuk-0 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_rrqb7teefiuk-1 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_rrqb7teefiuk-2 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_rrqb7teefiuk-3 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_cpdb95lao2cd-6.start {
-        counter-reset: lst-ctn-kix_cpdb95lao2cd-6 0
-    }
-
-    ol.lst-kix_rrqb7teefiuk-8 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_3kiymavy6gig-3.start {
-        counter-reset: lst-ctn-kix_3kiymavy6gig-3 0
-    }
-
-    ol {
-        margin: 0;
-        padding: 0
-    }
-
-    table td,
-    table th {
-        padding: 0
-    }
-
-    .c1 {
-        margin-left: 36pt;
-        padding-top: 0pt;
-        padding-left: 0pt;
-        padding-bottom: 0pt;
-        line-height: 1.15;
-        orphans: 2;
-        widows: 2;
-        text-align: left
-    }
-
-    .c12 {
-        color: #000000;
-        font-weight: 400;
-        text-decoration: none;
-        vertical-align: baseline;
-        font-size: 20pt;
-        font-family: "Arial";
-        font-style: normal
-    }
-
-    .c3 {
-        padding-top: 0pt;
-        padding-bottom: 0pt;
-        line-height: 1.15;
-        orphans: 2;
-        widows: 2;
-        text-align: left;
-        height: 11pt
-    }
-
-    .c16 {
-        color: #666666;
-        font-weight: 400;
-        text-decoration: none;
-        vertical-align: baseline;
-        font-size: 15pt;
-        font-family: "Arial";
-        font-style: normal
-    }
-
-    .c11 {
-        padding-top: 0pt;
-        padding-bottom: 16pt;
-        line-height: 1.15;
-        page-break-after: avoid;
-        orphans: 2;
-        widows: 2;
-        text-align: left
-    }
-
-    .c0 {
-        color: #000000;
-        font-weight: 400;
-        text-decoration: none;
-        vertical-align: baseline;
-        font-size: 11pt;
-        font-family: "Arial";
-        font-style: normal
-    }
-
-    .c13 {
-        padding-top: 20pt;
-        padding-bottom: 6pt;
-        line-height: 1.15;
-        page-break-after: avoid;
-        orphans: 2;
-        widows: 2;
-        text-align: left
-    }
-
-    .c7 {
-        padding-top: 0pt;
-        padding-bottom: 0pt;
-        line-height: 1.15;
-        orphans: 2;
-        widows: 2;
-        text-align: right;
-        height: 11pt
-    }
-
-    .c17 {
-        padding-top: 0pt;
-        padding-bottom: 3pt;
-        line-height: 1.15;
-        page-break-after: avoid;
-        orphans: 2;
-        widows: 2;
-        text-align: left
-    }
-
-    .c15 {
-        color: #000000;
-        font-weight: 400;
-        text-decoration: none;
-        vertical-align: baseline;
-        font-size: 26pt;
-        font-family: "Arial";
-        font-style: normal
-    }
-
-    .c18 {
-        padding-top: 20pt;
-        padding-bottom: 6pt;
-        line-height: 2.0;
-        page-break-after: avoid;
-        orphans: 2;
-        widows: 2;
-        text-align: left
-    }
-
-    .c5 {
-        padding-top: 0pt;
-        padding-bottom: 0pt;
-        line-height: 1.15;
-        orphans: 2;
-        widows: 2;
-        text-align: left
-    }
-
-    .c2 {
-        padding-top: 0pt;
-        padding-bottom: 0pt;
-        line-height: 2.0;
-        orphans: 2;
-        widows: 2;
-        text-align: left
-    }
-
-    .c8 {
-        text-decoration-skip-ink: none;
-        -webkit-text-decoration-skip: none;
-        text-decoration: underline
-    }
-
-    .c10 {
-        background-color: #ffffff;
-        max-width: 468pt;
-        padding: 72pt 72pt 72pt 72pt
-    }
-
-    .c4 {
-        padding: 0;
-        margin: 0
-    }
-
-    .c6 {
-        margin-left: 36pt
-    }
-
-    .c9 {
-        padding-left: 0pt
-    }
-
-    .c14 {
-        margin-left: 72pt
-    }
-
-    .title {
-        padding-top: 0pt;
-        color: #000000;
-        font-size: 26pt;
-        padding-bottom: 3pt;
-        font-family: "Arial";
-        line-height: 1.15;
-        page-break-after: avoid;
-        orphans: 2;
-        widows: 2;
-        text-align: left
-    }
-
-    .subtitle {
-        padding-top: 0pt;
-        color: #666666;
-        font-size: 15pt;
-        padding-bottom: 16pt;
-        font-family: "Arial";
-        line-height: 1.15;
-        page-break-after: avoid;
-        orphans: 2;
-        widows: 2;
-        text-align: left
-    }
-
-    li {
-        color: #000000;
-        font-size: 11pt;
-        font-family: "Arial"
-    }
-
-    p {
-        margin: 0;
-        color: #000000;
-        font-size: 11pt;
-        font-family: "Arial"
-    }
-
-    h1 {
-        padding-top: 20pt;
-        color: #000000;
-        font-size: 20pt;
-        padding-bottom: 6pt;
-        font-family: "Arial";
-        line-height: 1.15;
-        page-break-after: avoid;
-        orphans: 2;
-        widows: 2;
-        text-align: left
-    }
-
-    h2 {
-        padding-top: 18pt;
-        color: #000000;
-        font-size: 16pt;
-        padding-bottom: 6pt;
-        font-family: "Arial";
-        line-height: 1.15;
-        page-break-after: avoid;
-        orphans: 2;
-        widows: 2;
-        text-align: left
-    }
-
-    h3 {
-        padding-top: 16pt;
-        color: #434343;
-        font-size: 14pt;
-        padding-bottom: 4pt;
-        font-family: "Arial";
-        line-height: 1.15;
-        page-break-after: avoid;
-        orphans: 2;
-        widows: 2;
-        text-align: left
-    }
-
-    h4 {
-        padding-top: 14pt;
-        color: #666666;
-        font-size: 12pt;
-        padding-bottom: 4pt;
-        font-family: "Arial";
-        line-height: 1.15;
-        page-break-after: avoid;
-        orphans: 2;
-        widows: 2;
-        text-align: left
-    }
-
-    h5 {
-        padding-top: 12pt;
-        color: #666666;
-        font-size: 11pt;
-        padding-bottom: 4pt;
-        font-family: "Arial";
-        line-height: 1.15;
-        page-break-after: avoid;
-        orphans: 2;
-        widows: 2;
-        text-align: left
-    }
-
-    h6 {
-        padding-top: 12pt;
-        color: #666666;
-        font-size: 11pt;
-        padding-bottom: 4pt;
-        font-family: "Arial";
-        line-height: 1.15;
-        page-break-after: avoid;
-        font-style: italic;
-        orphans: 2;
-        widows: 2;
-        text-align: left
-    }
-</style>
-
-<p class="c17 title" id="h.d8xj2jsqorux"><span class="c15">Tutorial: IDE Debugging</span></p>
-<p class="c11 subtitle" id="h.fa87spihlaaw"><span class="c16">IDE Debugging Overview</span></p>
-<p class="c5"><span class="c0">In this tutorial you will debug a simple program using the Intellij IDE debugger.
-    </span></p>
-<p class="c3"><span class="c0"></span></p>
-<p class="c2"><span class="c0">You will learn</span></p>
-<ul class="c4 lst-kix_a82l35ix6owh-0 start">
-    <li class="c2 c6 c9"><span class="c0">How to use breakpoints strategically</span></li>
-    <li class="c2 c6 c9"><span class="c0">How to use conditions within breakpoints</span></li>
-    <li class="c2 c6 c9"><span class="c0">How much slower programs run with conditional breakpoints active</span>
+<html data-reactroot=""><head><link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script><link type="text/css" rel="stylesheet" href="/styles.css"/></head><header class="navbar navbar-expand-lg navbar-dark background-primary"><a class="navbar-brand" href="http://localhost:8080/"><img src="https://cs.byu.edu/sites/all/themes/apolleux/img/logo.png" style="width:40px" alt="CS202"/> <!-- -->CS202</a><button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler collapsed" data-target="#navbarSupportedContent" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button><div class="navbar-collapse collapse" id="navbarSupportedContent"><ul class="navbar-nav mr-auto"><li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="/schedule.html">Schedule</a></li><li class="nav-item"><a class="nav-link" href="/taInfo.html">TA Information</a></li><li class="nav-item"><a class="nav-link" href="/policies.html">Policies</a></li></ul><a href="https://byu.edu"><img alt="BYU" class="float-right" src="https://cas.byu.edu/cas/images/BYUBar.png"/></a></div></header><div class="App container content"><p class="display-4">Tutorial: IDE Debugging</p>
+<h5 class="text-muted">IDE Debugging Overview</h5>
+<p>In this tutorial you will debug a simple program using the Intellij IDE debugger.
+    </p>
+<p></p>
+<p>You will learn</p>
+<ul>
+    <li>How to use breakpoints strategically</li>
+    <li>How to use conditions within breakpoints</li>
+    <li>How much slower programs run with conditional breakpoints active
     </li>
-    <li class="c2 c6 c9"><span class="c0">How to set a watch with an expression to be evaluated</span></li>
+    <li>How to set a watch with an expression to be evaluated</li>
 </ul>
-<h1 class="c18" id="h.4nhfgyiqtyac"><span class="c12">Setup</span></h1>
-<p class="c5"><span>You will need to download the BuggyClass.java file from the </span><span>course
-        website</span><span class="c0">. Open it in IntelliJ. Do not change anything in it yet.</span></p>
-<h1 class="c13" id="h.79et398g293y"><span class="c12">Debugging</span></h1>
-<p class="c5"><span class="c0">First, let&rsquo;s just run the class and see what the output is. This way we can
-        know what effect our changes are having on the program.</span></p>
-<p class="c3"><span class="c0"></span></p>
-<ol class="c4 lst-kix_3kiymavy6gig-0 start" start="1">
-    <li class="c1"><span>Your output should look like this:</span><span
-            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 624.00px; height: 222.67px;"><img
+<h1>Setup</h1>
+<p>You will need to download the BuggyClass.java file from the course
+        website. Open it in IntelliJ. Do not change anything in it yet.</p>
+<h1>Debugging</h1>
+<p>First, let&rsquo;s just run the class and see what the output is. This way we can
+        know what effect our changes are having on the program.</p>
+<p></p>
+<ol start="1">
+    <li>Your output should look like this:<br /><br /><img
                 alt="" src="images/image5.png"
                 style="width: 624.00px; height: 222.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
-                title=""></span></li>
+                title=""></li>
 </ol>
-<p class="c3"><span class="c0"></span></p>
-<ol class="c4 lst-kix_3kiymavy6gig-0" start="2">
-    <li class="c1"><span>Now let&rsquo;s take a look at what the program is doing and compare that with what it
+<p></p>
+<ol start="2">
+    <li>Now let&rsquo;s take a look at what the program is doing and compare that with what it
             should be doing. Take a look at the documentation for the longLoop method. It should look like
-            this:</span><span
-            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 624.00px; height: 126.67px;"><img
+            this:<br /><br /><img
                 alt="" src="images/image11.png"
                 style="width: 624.00px; height: 126.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
-                title=""></span></li>
+                title=""></li>
 </ol>
-<p class="c3"><span class="c0"></span></p>
-<ol class="c4 lst-kix_3kiymavy6gig-0" start="3">
-    <li class="c1"><span>Note how it should return a positive long. If we look back to the outputted numbers, some
+<p></p>
+<ol start="3">
+    <li>Note how it should return a positive long. If we look back to the outputted numbers, some
             of them were negative. The implementation does not match the documentation, so this method is buggy and
             incorrect. However we need to know more about how it&rsquo;s being used to know what is causing
             incorrect output since some of the printed numbers were positive. Now let&rsquo;s look at
-            printListOfSums. Its documentation should look like this:</span><span
-            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 624.00px; height: 84.00px;"><img
+            printListOfSums. Its documentation should look like this:<br /><br /><img
                 alt="" src="images/image10.png"
                 style="width: 624.00px; height: 84.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
-                title=""></span></li>
+                title=""></li>
 </ol>
-<p class="c3"><span class="c0"></span></p>
-<ol class="c4 lst-kix_3kiymavy6gig-0" start="4">
-    <li class="c1"><span class="c0">It is probably behaving correctly, but let&rsquo;s double check to see if it can
-            help us fix longLoop. Put a breakpoint on line 41, and run the program in debug mode.</span></li>
+<p></p>
+<ol start="4">
+    <li>It is probably behaving correctly, but let&rsquo;s double check to see if it can
+            help us fix longLoop. Put a breakpoint on line 41, and run the program in debug mode.</li>
 </ol>
-<p class="c3"><span class="c0"></span></p>
-<ol class="c4 lst-kix_3kiymavy6gig-0" start="5">
-    <li class="c1"><span>Once the breakpoint is hit, take a look at the variables. You should see something like
+<p></p>
+<ol start="5">
+    <li>Once the breakpoint is hit, take a look at the variables. You should see something like
             this: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span
-            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 268.00px; height: 310.00px;"><img
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br /><br /><img
                 alt="" src="images/image4.png"
                 style="width: 268.00px; height: 310.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
-                title=""></span></li>
+                title=""></li>
 </ol>
-<p class="c3"><span class="c0"></span></p>
-<ol class="c4 lst-kix_3kiymavy6gig-0" start="6">
-    <li class="c1"><span>Now expand the list variable so we can see its elements by clicking on the arrow next to
+<p></p>
+<ol start="6">
+    <li>Now expand the list variable so we can see its elements by clicking on the arrow next to
             it. You should see this: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 270.00px; height: 280.00px;"><img
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /><br /><img
                 alt="" src="images/image2.png"
                 style="width: 270.00px; height: 280.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
-                title=""></span></li>
+                title=""></li>
 </ol>
-<p class="c3"><span class="c0"></span></p>
-<ol class="c4 lst-kix_3kiymavy6gig-0" start="7">
-    <li class="c1"><span>We can see that we get one negative number which is not good. Because we are summing
+<p></p>
+<ol start="7">
+    <li>We can see that we get one negative number which is not good. Because we are summing
             numbers inside the longer loop with larger numbers on each iteration, we should expect each element in
-            the list to be larger than the previous element. </span><span>Let&rsquo;s double check that each
-            variable is smaller than the next one to see if anything weird is going on.</span><span>&nbsp;To do
+            the list to be larger than the previous element. Let&rsquo;s double check that each
+            variable is smaller than the next one to see if anything weird is going on.&nbsp;To do
             this, we&rsquo;ll set what is called a watch. To do that, click on the green glasses with the plus sign
             above
-            them.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 92.26px; height: 77.50px;"><img
+            them.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /><br /><img
                 alt="" src="images/image1.png"
                 style="width: 92.26px; height: 77.50px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
-                title=""></span></li>
+                title=""></li>
 </ol>
-<p class="c3"><span class="c0"></span></p>
-<ol class="c4 lst-kix_3kiymavy6gig-0" start="8">
-    <li class="c1"><span class="c0">Type this expression: list.get(i) &lt; list.get(i+1)</span></li>
+<p></p>
+<ol start="8">
+    <li>Type this expression: list.get(i) &lt; list.get(i+1)</li>
 </ol>
-<p class="c3"><span class="c0"></span></p>
-<ol class="c4 lst-kix_3kiymavy6gig-0" start="9">
-    <li class="c1"><span>Hit Enter. This creates a watch that will tell you if the current list element is smaller
+<p></p>
+<ol start="9">
+    <li>Hit Enter. This creates a watch that will tell you if the current list element is smaller
             than the next list element. Now let&rsquo;s step through this loop and see what happens. After stepping
-            over each statement until the loop repeats, we see something troubling.</span><span
-            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 258.00px; height: 209.00px;"><img
+            over each statement until the loop repeats, we see something troubling.<br /><br /><img
                 alt="" src="images/image9.png"
                 style="width: 258.00px; height: 209.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
-                title=""></span></li>
+                title=""></li>
 </ol>
-<p class="c3"><span class="c0"></span></p>
-<ol class="c4 lst-kix_3kiymavy6gig-0" start="10">
-    <li class="c1"><span>The list element is bigger than the next one. </span><span>Each element should be smaller
-            than the next because we&rsquo;re summing inside of longLoop with bigger numbers each time.</span><span
-            class="c0">&nbsp;If we keep stepping through the loop, we find that there are a couple more times our
-            watch evaluates to false. </span></li>
+<p></p>
+<ol start="10">
+    <li>The list element is bigger than the next one. Each element should be smaller
+            than the next because we&rsquo;re summing inside of longLoop with bigger numbers each time.&nbsp;If we keep stepping through the loop, we find that there are a couple more times our
+            watch evaluates to false. </li>
 </ol>
-<ol class="c4 lst-kix_3kiymavy6gig-1 start" start="1">
-    <li class="c5 c9 c14"><span>Don&rsquo;t worry about the error you get when i == list.size(), we&rsquo;re just
+<ol start="1">
+    <li>Don&rsquo;t worry about the error you get when i == list.size(), we&rsquo;re just
             out of list items to compare with. It doesn&rsquo;t harm the execution of our program, but we want to
             leave it there so when we make a change we can see if we&rsquo;re getting what we expect in
-            printListOfSums. One thing to note with watches is you can </span><span class="c8">assign</span><span
-            class="c0">&nbsp;values to in scope variables, and this will change the execution of your
-            program.</span></li>
+            printListOfSums. One thing to note with watches is you can assign&nbsp;values to in scope variables, and this will change the execution of your
+            program.</li>
 </ol>
-<h1 class="c13" id="h.z6if1isath6x"><span class="c12">Conditional Breakpoints</span></h1>
-<p class="c5"><span class="c0">Now we know something is causing our longLoop calls to make numbers smaller than they
-        should be. Let&rsquo;s step through longLoop to see what happens as we go through. </span></p>
-<ol class="c4 lst-kix_rrqb7teefiuk-0 start" start="1">
-    <li class="c1"><span class="c0">Set a breakpoint on line 24 and run the program in debug mode.</span></li>
+<h1>Conditional Breakpoints</h1>
+<p>Now we know something is causing our longLoop calls to make numbers smaller than they
+        should be. Let&rsquo;s step through longLoop to see what happens as we go through. </p>
+<ol start="1">
+    <li>Set a breakpoint on line 24 and run the program in debug mode.</li>
 </ol>
-<p class="c3"><span class="c0"></span></p>
-<ol class="c4 lst-kix_rrqb7teefiuk-0" start="2">
-    <li class="c1"><span>&nbsp;If you look at the variables, we&rsquo;ve got an interesting
-            problem.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 423.82px; height: 294.50px;"><img
+<p></p>
+<ol start="2">
+    <li>&nbsp;If you look at the variables, we&rsquo;ve got an interesting
+            problem.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /><br /><img
                 alt="" src="images/image8.png"
                 style="width: 423.82px; height: 294.50px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
-                title=""></span></li>
+                title=""></li>
 </ol>
-<ol class="c4 lst-kix_rrqb7teefiuk-1 start" start="1">
-    <li class="c5 c9 c14"><span class="c0">The variable max is 100,000. Because we increment by 2, that leaves us
+<ol start="1">
+    <li>The variable max is 100,000. Because we increment by 2, that leaves us
             with about 50,000 loop iterations where something could go wrong. Since we don&rsquo;t want to step
-            through 50,000 loop iterations, we need to have a different approach to debug this method.</span></li>
+            through 50,000 loop iterations, we need to have a different approach to debug this method.</li>
 </ol>
-<p class="c3"><span class="c0"></span></p>
-<ol class="c4 lst-kix_rrqb7teefiuk-0" start="3">
-    <li class="c1"><span class="c0">Right click on the breakpoint you created on line 24.</span></li>
+<p></p>
+<ol start="3">
+    <li>Right click on the breakpoint you created on line 24.</li>
 </ol>
-<p class="c3"><span class="c0"></span></p>
-<ol class="c4 lst-kix_rrqb7teefiuk-0" start="4">
-    <li class="c1"><span class="c0">Check the box next to Condition.</span></li>
+<p></p>
+<ol start="4">
+    <li>Check the box next to Condition.</li>
 </ol>
-<p class="c3"><span class="c0"></span></p>
-<ol class="c4 lst-kix_rrqb7teefiuk-0" start="5">
-    <li class="c1"><span class="c0">Put the following expression in the text field: sum + i &lt;= 0</span></li>
+<p></p>
+<ol start="5">
+    <li>Put the following expression in the text field: sum + i &lt;= 0</li>
 </ol>
-<p class="c3"><span class="c0"></span></p>
-<ol class="c4 lst-kix_rrqb7teefiuk-0" start="6">
-    <li class="c1"><span>This lets us know if we&rsquo;re about to get a negative number when we add i to sum. You
-            should see a dialog window like this now: </span><span
-            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 421.00px; height: 208.00px;"><img
+<p></p>
+<ol start="6">
+    <li>This lets us know if we&rsquo;re about to get a negative number when we add i to sum. You
+            should see a dialog window like this now: <br /><br /><img
                 alt="" src="images/image7.png"
                 style="width: 421.00px; height: 208.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
-                title=""></span></li>
+                title=""></li>
 </ol>
-<p class="c3"><span class="c0"></span></p>
-<ol class="c4 lst-kix_rrqb7teefiuk-0" start="7">
-    <li class="c1"><span>&nbsp;You might be thinking &ldquo;This is crazy, we&rsquo;re adding a positive number to a
+<p></p>
+<ol start="7">
+    <li>&nbsp;You might be thinking &ldquo;This is crazy, we&rsquo;re adding a positive number to a
             positive number, how are we supposed to get a negative number?&rdquo; You&rsquo;re right, in math that
             is crazy, but in computer science we are crazy and this can happen. It&rsquo;s called overflow.
-            In</span><span>&nbsp;</span><span>programming languages, primitive data types (think ints, doubles, and
+            In&nbsp;programming languages, primitive data types (think ints, doubles, and
             other number types) have maximum and minimum values. Well, when you try to increase a primitive number
-            past it&rsquo;s maximum value it will wrap around to the minimum value </span><span>(or vice versa for
-            decreasing the number below the minimum value, this is called underflow)</span><span>. This happens
+            past it&rsquo;s maximum value it will wrap around to the minimum value (or vice versa for
+            decreasing the number below the minimum value, this is called underflow). This happens
             because of how the numbers are represented in binary and how the arithmetic happens in binary.
-            You&rsquo;ll learn more about this in </span><span>CS 224</span><span class="c0">. That is probably
+            You&rsquo;ll learn more about this in CS 224. That is probably
             happening in longLoop, but we should check for that. This breakpoint condition will check for
-            that.</span></li>
+            that.</li>
 </ol>
-<p class="c3"><span class="c0"></span></p>
-<ol class="c4 lst-kix_rrqb7teefiuk-0" start="8">
-    <li class="c1"><span class="c0">Now click the Done button, and continue executing your program by hitting the
+<p></p>
+<ol start="8">
+    <li>Now click the Done button, and continue executing your program by hitting the
             Resume Program button on the left or by hitting F9. Note how much more slowly your program executes now
             with the conditional breakpoint. This is because it is computationally expensive to insert this
-            condition at runtime.</span></li>
+            condition at runtime.</li>
 </ol>
-<p class="c3"><span class="c0"></span></p>
-<ol class="c4 lst-kix_rrqb7teefiuk-0" start="9">
-    <li class="c1"><span class="c0">After it runs for a while, possibly minutes, it should break when i = 92,681 and
-            sum = 2,147,396,601.</span></li>
+<p></p>
+<ol start="9">
+    <li>After it runs for a while, possibly minutes, it should break when i = 92,681 and
+            sum = 2,147,396,601.</li>
 </ol>
-<p class="c3"><span class="c0"></span></p>
-<ol class="c4 lst-kix_rrqb7teefiuk-0" start="10">
-    <li class="c1"><span class="c0">Just to double check that our condition is working the way we think it should,
-            create another watch with this expression: sum + i</span></li>
+<p></p>
+<ol start="10">
+    <li>Just to double check that our condition is working the way we think it should,
+            create another watch with this expression: sum + i</li>
 </ol>
-<p class="c3"><span class="c0"></span></p>
-<ol class="c4 lst-kix_rrqb7teefiuk-0" start="11">
-    <li class="c1"><span class="c0">We do get a large negative number. This means we are overflowing sum. To fix
+<p></p>
+<ol start="11">
+    <li>We do get a large negative number. This means we are overflowing sum. To fix
             this we just need to make sum a data type with a larger maximum value. If we look at the return type for
             longLoop, it is returning a long. However sum is an int, so we can change it to a long and see if that
-            fixes the problem. Make that change.</span></li>
+            fixes the problem. Make that change.</li>
 </ol>
-<h1 class="c13" id="h.pfsue7cl8026"><span class="c12">Bug Fixed</span></h1>
-<ol class="c4 lst-kix_cpdb95lao2cd-0 start" start="1">
-    <li class="c1"><span class="c0">Rerun the program, either by hitting Stop (ctrl + F2) and Rerun (ctrl + F5) or
-            just hitting Rerun.</span></li>
+<h1>Bug Fixed</h1>
+<ol start="1">
+    <li>Rerun the program, either by hitting Stop (ctrl + F2) and Rerun (ctrl + F5) or
+            just hitting Rerun.</li>
 </ol>
-<p class="c3"><span class="c0"></span></p>
-<ol class="c4 lst-kix_cpdb95lao2cd-0" start="2">
-    <li class="c1"><span class="c0">It&rsquo;ll run for awhile, but your conditional breakpoint shouldn&rsquo;t
+<p></p>
+<ol start="2">
+    <li>It&rsquo;ll run for awhile, but your conditional breakpoint shouldn&rsquo;t
             trigger this time. Once it hits your breakpoint on line 41, we can be confident that we aren&rsquo;t
-            overflowing anymore. </span></li>
+            overflowing anymore. </li>
 </ol>
-<p class="c3"><span class="c0"></span></p>
-<ol class="c4 lst-kix_cpdb95lao2cd-0" start="3">
-    <li class="c1"><span class="c0">To confirm this, let printListOfSums run all the way through and step through
+<p></p>
+<ol start="3">
+    <li>To confirm this, let printListOfSums run all the way through and step through
             its second loop like we did before. To speed things up, disable your conditional breakpoint by right
             clicking on it and clicking on the box next to Enabled. Hit done, and it should now look like
-            this:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            this:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </li>
 </ol>
-<p class="c5 c6"><span
-        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 42.81px; height: 33.50px;"><img
+<p><br /><br /><img
             alt="" src="images/image6.png"
             style="width: 42.81px; height: 33.50px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
-            title=""></span></p>
-<p class="c3"><span class="c0"></span></p>
-<ol class="c4 lst-kix_cpdb95lao2cd-0" start="4">
-    <li class="c1"><span class="c0">This means we can re enable it if we need to without recreating it. If we check
+            title=""></p>
+<p></p>
+<ol start="4">
+    <li>This means we can re enable it if we need to without recreating it. If we check
             our first watch while we step through the loop where the numbers get printed out, we see that each
-            number is smaller than the next. Now we can be confident that we fixed the bug. </span></li>
+            number is smaller than the next. Now we can be confident that we fixed the bug. </li>
 </ol>
-<p class="c3"><span class="c0"></span></p>
-<ol class="c4 lst-kix_cpdb95lao2cd-0" start="5">
-    <li class="c1"><span class="c0">Take a screenshot like the one below of the final output along with the rest of
-            your IntelliJ window to submit on Learning Suite to receive credit for this tutorial.</span></li>
+<p></p>
+<ol start="5">
+    <li>Take a screenshot like the one below of the final output along with the rest of
+            your IntelliJ window to submit on Learning Suite to receive credit for this tutorial.</li>
 </ol>
-<p class="c5"><span
-        style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 624.00px; height: 338.67px;"><img
+<p><br /><br /><img
             alt="" src="images/image3.png"
             style="width: 624.00px; height: 338.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
-            title=""></span></p>
+            title=""></p>
 <div>
-    <p class="c7"><span class="c0"></span></p>
+    <p></p>
 </div></div></html>
