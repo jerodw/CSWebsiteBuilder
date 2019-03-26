@@ -2,7 +2,7 @@ import { FileReference } from './FileReference';
 import { Config } from './Config';
 import { PersonInformation } from './PersonInformation';
 import { NavLink } from './NavLink';
-import fs from 'fs';
+import * as fs from 'fs';
 import { ClassPeriod } from './ClassPeriod';
 
 export class WebsiteConfig extends Config {

@@ -1,5 +1,5 @@
 import { Config } from './Config';
-import fs from 'fs';
+import * as fs from 'fs';
 
 export class FileReference extends Config {
     static basePath: string;

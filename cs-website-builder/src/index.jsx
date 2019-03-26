@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { App } from './App.jsx';
 import { Home } from './builderTemplates/Home.jsx'
-import fs from 'fs';
+import * as fs from 'fs';
 import { WebsiteConfig } from './config/WebsiteConfig.ts';
 import { Config } from './config/Config.ts';
 import { TAInfo } from './builderTemplates/TAInfo.jsx';
