@@ -14,7 +14,7 @@ export class FileBuilder extends Config {
     constructor(config) {
         super();
         if (config instanceof WebsiteConfig == false) {
-            throw ("config in invalid format!")
+            this.throwError("Error: Config in invalid format!");
         }
 
         this.config = config;
