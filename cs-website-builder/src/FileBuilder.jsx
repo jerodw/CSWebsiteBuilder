@@ -53,6 +53,7 @@ export class FileBuilder extends Config {
         const filePath = classNote.fileReference.filePath;
         this.buildPath(`${this.config.outputDirectory}/${FileBuilder.assetPath}/${filePath}`);
 
+        // only build the files if they are available
         if (classNote.availableDate <= new Date()) {
             console.log(`FileBuilder: Copying resources for "${classNote.title}"`)
             fs.copyFileSync(`${FileReference.basePath}/${filePath}`,

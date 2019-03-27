@@ -31,7 +31,7 @@ export class Schedule extends Component {
                 <td>
                     {
                         classNote.availableDate <= new Date() ?
-                            <a href={filePath} role="button" className="btn btn-byu float-right">Download</a> :
+                            <a target="_blank" href={filePath} role="button" className="btn btn-byu float-right">Download</a> :
                             <a href="#" role="button" className="btn btn-byu float-right disabled" disabled>Not Avalivable</a>
                     }
                 </td>
@@ -40,6 +40,11 @@ export class Schedule extends Component {
     }
 
     renderClass(classPeriod) {
+
+        if (classPeriod.classNotes.length == 0 && classPeriod.assignments.length == 0){
+            return (<span key={classPeriod}></span>);
+        }
+
         return (
             <div key={classPeriod}>
                 <h2>{classPeriod.title}</h2>
