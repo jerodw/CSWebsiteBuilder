@@ -7,7 +7,7 @@ export class Schedule extends Component {
 
     renderAssignment(assignment) {
         const config = this.props.config;
-        const filePath = `${config.baseURL}${FileBuilder.assignmentPath}/${assignment.bodyReference.filePath}`;
+        const filePath = `${config.baseURL}${assignment.bodyReference.filePath}`;
         return (
             <tr key={assignment}>
                 <td>{assignment.title}</td>
@@ -24,7 +24,7 @@ export class Schedule extends Component {
 
     renderClassNote(classNote) {
         const config = this.props.config;
-        const filePath = `${config.baseURL}${FileBuilder.assetPath}/${classNote.fileReference.filePath}`;
+        const filePath = `${config.baseURL}${classNote.fileReference.filePath}`;
         return (
             <tr key={classNote}>
                 <td>{classNote.title}</td>

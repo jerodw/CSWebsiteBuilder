@@ -73,110 +73,130 @@
         },
         {
             "title": "UI Design Basics",
-            "classNotes": [{
-                "title": "Pre-Class Assignment",
-                "fileReference": "assignments/ui_pre.pdf",
-                "availableDate": "2019-03-22T01:45:22.674Z"
-            },{
-                "title": "Lab",
-                "fileReference": "assignments/ui_lab.pdf",
-                "availableDate": "2019-03-22T01:45:22.674Z"
-            }],
+            "classNotes": [
+                {
+                    "title": "Pre-Class Assignment",
+                    "fileReference": "assignments/ui_pre.pdf",
+                    "availableDate": "2019-03-22T01:45:22.674Z"
+                },
+                {
+                    "title": "Lab",
+                    "fileReference": "assignments/ui_lab.pdf",
+                    "availableDate": "2019-03-22T01:45:22.674Z"
+                }
+            ],
             "assignments": []
         },
         {
             "title": "Creating Wireframe and Screenflow Diagrams with LucidChart",
-            "classNotes": [{
-                "title": "Pre-Class Assignment",
-                "fileReference": "assignments/lucidchart_pre.pdf",
-                "availableDate": "2019-03-22T01:45:22.674Z"
-            },{
-                "title": "Lab",
-                "fileReference": "assignments/lucidchart_lab.pdf",
-                "availableDate": "2019-03-22T01:45:22.674Z"
-            }],
+            "classNotes": [
+                {
+                    "title": "Pre-Class Assignment",
+                    "fileReference": "assignments/lucidchart_pre.pdf",
+                    "availableDate": "2019-03-22T01:45:22.674Z"
+                },
+                {
+                    "title": "Lab",
+                    "fileReference": "assignments/lucidchart_lab.pdf",
+                    "availableDate": "2019-03-22T01:45:22.674Z"
+                }
+            ],
             "assignments": []
         },
         {
             "title": "UML Overview. UML Class Diagrams.",
-            "classNotes": [{
-                "title": "Pre-Class Assignment",
-                "fileReference": "assignments/uml_class_pre.pdf",
-                "availableDate": "2019-03-22T01:45:22.674Z"
-            },{
-                "title": "Lab",
-                "fileReference": "assignments/uml_class_lab.pdf",
-                "availableDate": "2019-03-22T01:45:22.674Z"
-            }],
+            "classNotes": [
+                {
+                    "title": "Pre-Class Assignment",
+                    "fileReference": "assignments/uml_class_pre.pdf",
+                    "availableDate": "2019-03-22T01:45:22.674Z"
+                },
+                {
+                    "title": "Lab",
+                    "fileReference": "assignments/uml_class_lab.pdf",
+                    "availableDate": "2019-03-22T01:45:22.674Z"
+                }
+            ],
             "assignments": []
         },
         {
             "title": "UML Sequence Diagrams",
-            "classNotes": [{
-                "title": "Pre-Class Assignment",
-                "fileReference": "assignments/uml_sequence_pre.pdf",
-                "availableDate": "2019-03-22T01:45:22.674Z"
-            }],
+            "classNotes": [
+                {
+                    "title": "Pre-Class Assignment",
+                    "fileReference": "assignments/uml_sequence_pre.pdf",
+                    "availableDate": "2019-03-22T01:45:22.674Z"
+                }
+            ],
             "assignments": []
         },
         {
             "title": "Java Overview",
-            "classNotes": [{
-                "title": "Pre-Class Assignment",
-                "fileReference": "assignments/java_overview_pre.pdf",
-                "availableDate": "2019-03-22T01:45:22.674Z"
-            },
-            {
-                "title": "Tutorial",
-                "fileReference": "assignments/java_overview_tutorial.pdf",
-                "availableDate": "2019-03-22T01:45:22.674Z"
-            }],
+            "classNotes": [
+                {
+                    "title": "Pre-Class Assignment",
+                    "fileReference": "assignments/java_overview_pre.pdf",
+                    "availableDate": "2019-03-22T01:45:22.674Z"
+                },
+                {
+                    "title": "Tutorial",
+                    "fileReference": "assignments/java_overview_tutorial.pdf",
+                    "availableDate": "2019-03-22T01:45:22.674Z"
+                }
+            ],
             "assignments": []
         },
         {
             "title": "Writing and Generating Javadoc",
-            "classNotes": [{
-                "title": "Pre-Class Assignment",
-                "fileReference": "assignments/javadoc_pre.pdf",
-                "availableDate": "2019-03-22T01:45:22.674Z"
-            },
-            {
-                "title": "Tutorial",
-                "fileReference": "assignments/javadoc_tutorial.pdf",
-                "availableDate": "2019-03-22T01:45:22.674Z"
-            }, {
-                "title": "Student.java",
-                "fileReference": "assignments/Student.java",
-                "availableDate": "2019-03-22T01:45:22.674Z"
-            }],
+            "classNotes": [
+                {
+                    "title": "Pre-Class Assignment",
+                    "fileReference": "assignments/javadoc_pre.pdf",
+                    "availableDate": "2019-03-22T01:45:22.674Z"
+                },
+                {
+                    "title": "Tutorial",
+                    "fileReference": "assignments/javadoc_tutorial.pdf",
+                    "availableDate": "2019-03-22T01:45:22.674Z"
+                },
+                {
+                    "title": "Student.java",
+                    "fileReference": "assignments/Student.java",
+                    "availableDate": "2019-03-22T01:45:22.674Z"
+                }
+            ],
             "assignments": []
         },
         {
             "title": "Intro to Git",
-            "classNotes": [{
-                "title": "Pre-Class Assignment",
-                "fileReference": "assignments/git_intro_pre.pdf",
-                "availableDate": "2019-03-22T01:45:22.674Z"
-            },
-            {
-                "title": "Tutorial",
-                "fileReference": "assignments/git_intro_tutorial.pdf",
-                "availableDate": "2019-03-22T01:45:22.674Z"
-            }],
+            "classNotes": [
+                {
+                    "title": "Pre-Class Assignment",
+                    "fileReference": "assignments/git_intro_pre.pdf",
+                    "availableDate": "2019-03-22T01:45:22.674Z"
+                },
+                {
+                    "title": "Tutorial",
+                    "fileReference": "assignments/git_intro_tutorial.pdf",
+                    "availableDate": "2019-03-22T01:45:22.674Z"
+                }
+            ],
             "assignments": []
         },
         {
             "title": "Git Collaboration Features",
-            "classNotes": [ {
-                "title": "Pre-Class Assignment",
-                "fileReference": "assignments/git_collaboration_pre.pdf",
-                "availableDate": "2019-03-22T01:45:22.674Z"
-            },
-            {
-                "title": "Tutorial",
-                "fileReference": "assignments/git_collaboration_tutorial.pdf",
-                "availableDate": "2019-03-22T01:45:22.674Z"
-            }],
+            "classNotes": [
+                {
+                    "title": "Pre-Class Assignment",
+                    "fileReference": "assignments/git_collaboration_pre.pdf",
+                    "availableDate": "2019-03-22T01:45:22.674Z"
+                },
+                {
+                    "title": "Tutorial",
+                    "fileReference": "assignments/git_collaboration_tutorial.pdf",
+                    "availableDate": "2019-03-22T01:45:22.674Z"
+                }
+            ],
             "assignments": []
         },
         {
@@ -202,7 +222,17 @@
         },
         {
             "title": "Using Checkstyle",
-            "classNotes": []
+            "classNotes": [],
+            "assignments": [
+                {
+                    "title": "Pre-Class Assignment",
+                    "bodyReference": "classes/checkstyle/checkstyle_pre.html"
+                },
+                {
+                    "title": "Tutorial",
+                    "bodyReference": "classes/checkstyle/checkstyle_lab.html"
+                }
+            ]
         },
         {
             "title": "Code Review Process",
@@ -247,11 +277,11 @@
             "assignments": [
                 {
                     "title": "Pre-Class Assignment",
-                    "bodyReference": "ide_debugger/ide_debugger_pre.html"
+                    "bodyReference": "classes/ide_debugger/ide_debugger_pre.html"
                 },
                 {
                     "title": "Tutorial",
-                    "bodyReference": "ide_debugger/ide_debugger_tutorial.html"
+                    "bodyReference": "classes/ide_debugger/ide_debugger_tutorial.html"
                 }
             ]
         }

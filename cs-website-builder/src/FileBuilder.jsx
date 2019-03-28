@@ -1,15 +1,23 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import fs from 'fs';
 import { App } from './App.jsx';
 import { Config } from './config/Config';
 import { WebsiteConfig } from './config/WebsiteConfig.ts';
 import { FileReference } from './config/FileReference.ts';
+var fs = require('fs-extra');
+var path = require('path');
+
+function buildDirPath(filepath){
+    var dirname = path.dirname(filepath);
+    if (fs.existsSync(dirname)){
+        return true;
+    }
+    buildDirPath(dirname);
+    fs.mkdirSync(dirname);
+}
 
 export class FileBuilder extends Config {
     config;
-    static assetPath = `assets`;
-    static assignmentPath = `assignments`;
 
     constructor(config) {
         super();
@@ -22,42 +30,40 @@ export class FileBuilder extends Config {
 
     build() {
         // write the file to the build directory
-        console.log("FileBuilder: Building Directories....")
-        this.buildDir(this.config.outputDirectory);
-        this.buildDir(`${this.config.outputDirectory}${FileBuilder.assetPath}`);
-        this.buildDir(`${this.config.outputDirectory}${FileBuilder.assignmentPath}`);
+        // console.log("FileBuilder: Building External File Refernaces")
+        this.buildExternalFileStruct(`${FileReference.basePath}`,`${this.config.outputDirectory}`);
 
-        console.log("FileBuilder: Building Class Resources")
+        console.log("\n\nFileBuilder: Building Output Directory....")
+        buildDirPath(this.config.outputDirectory);
+
+        console.log("\n\nFileBuilder: Building Class Resources")
         this.config.classPeriods.forEach((classPeriod) => {
             classPeriod.classNotes.forEach((classNote) => this.buildClassNote(classNote))
             classPeriod.assignments.forEach((assignment) => this.buildAssignment(assignment))
         })
+    
     }
 
-    buildDir(dirName) {
-        if (!fs.existsSync(dirName)) {
-            fs.mkdirSync(dirName);
-        }
-    }
-
-    buildPath(filepath){
-        var path = require('path');
-        var dirname = path.dirname(filepath);
-
-        if (!fs.existsSync(dirname)) {
-            this.buildDir(dirname);
-        }
+    buildExternalFileStruct(templateDirectory, outputDirectory){
+        // copy all files that are not html files from the template directory
+        fs.copySync(templateDirectory, outputDirectory, {filter: (src, dest) => {
+            if (src.includes('.html')){
+                return false;
+            }
+            console.log(`FileBuilder: Copying non-html file: ${src} to ${dest}`);
+            return true;
+        }});
     }
 
     buildClassNote(classNote) {
         const filePath = classNote.fileReference.filePath;
-        this.buildPath(`${this.config.outputDirectory}/${FileBuilder.assetPath}/${filePath}`);
+        buildDirPath(`${this.config.outputDirectory}${filePath}`);
 
         // only build the files if they are available
         if (classNote.availableDate <= new Date()) {
             console.log(`FileBuilder: Copying resources for "${classNote.title}"`)
-            fs.copyFileSync(`${FileReference.basePath}/${filePath}`,
-                `${this.config.outputDirectory}/${FileBuilder.assetPath}/${filePath}`)
+            fs.copyFileSync(`${FileReference.basePath}${filePath}`,
+                `${this.config.outputDirectory}${filePath}`)
         } else {
             console.log(`FileBuilder: Skipping "${classNote.title}" (Not Yet Avaliable)`)
         }
@@ -67,14 +73,14 @@ export class FileBuilder extends Config {
 
     buildAssignment(assignment) {
         const filePath = assignment.bodyReference.filePath;
-        this.buildPath(`${this.config.outputDirectory}${FileBuilder.assignmentPath}/${filePath}`);
+        buildDirPath(`${this.config.outputDirectory}${filePath}`);
 
         if (assignment.availableDate <= new Date()) {
             console.log(`FileBuilder: Building html for "${assignment.title}"`);
 
             const template = fs.readFileSync(`${FileReference.basePath}${filePath}`, { 'encoding': 'utf8' });
             const webpage = ReactDOMServer.renderToString(< App config={this.config} template={template} />);
-            fs.writeFile(`${this.config.outputDirectory}${FileBuilder.assignmentPath}/${filePath}`, webpage, (err) => {
+            fs.writeFile(`${this.config.outputDirectory}${filePath}`, webpage, (err) => {
                 if (err) {
                     console.error(err);
                     process.exit();
