@@ -33,14 +33,15 @@ export class FileBuilder extends Config {
         // console.log("FileBuilder: Building External File Refernaces")
         this.buildExternalFileStruct(`${FileReference.basePath}`,`${this.config.outputDirectory}`);
 
-        console.log("\n\nFileBuilder: Building Output Directory....")
+        console.log("\nFileBuilder: Building output directory....")
         buildDirPath(this.config.outputDirectory);
 
-        console.log("\n\nFileBuilder: Building Class Resources")
+        console.log("\nFileBuilder: Building class resources")
         this.config.classPeriods.forEach((classPeriod) => {
             classPeriod.classNotes.forEach((classNote) => this.buildClassNote(classNote))
             classPeriod.assignments.forEach((assignment) => this.buildAssignment(assignment))
         })
+        console.log("\nFileBuilder: Finished building files\n")
     
     }
 
