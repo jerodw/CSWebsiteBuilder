@@ -63,35 +63,42 @@
     "classPeriods": [
         {
             "title": "What is Software Engineering?",
+            "date": "2019-03-29T18:49:18.469Z",
             "classNotes": []
         },
         {
             "title": "UI Design Basics",
+            "date": "2019-03-29T18:49:18.469Z",
             "classNotes": [],
             "assignments": []
         },
         {
             "title": "Creating Wireframe and Screenflow Diagrams with LucidChart",
+            "date": "2019-03-29T18:49:18.469Z",
             "classNotes": [],
             "assignments": []
         },
         {
             "title": "UML Overview. UML Class Diagrams.",
+            "date": "2019-03-29T18:49:18.469Z",
             "classNotes": [],
             "assignments": []
         },
         {
             "title": "UML Sequence Diagrams",
+            "date": "2019-03-29T18:49:18.469Z",
             "classNotes": [],
             "assignments": []
         },
         {
             "title": "Java Overview",
+            "date": "2019-03-29T18:49:18.469Z",
             "classNotes": [],
             "assignments": []
         },
         {
             "title": "Writing and Generating Javadoc",
+            "date": "2019-03-29T18:49:18.469Z",
             "classNotes": [
                 {
                     "title": "Student.java",
@@ -103,16 +110,19 @@
         },
         {
             "title": "Intro to Git",
+            "date": "2019-03-29T18:49:18.469Z",
             "classNotes": [],
             "assignments": []
         },
         {
             "title": "Git Collaboration Features",
+            "date": "2019-03-29T18:49:18.469Z",
             "classNotes": [],
             "assignments": []
         },
         {
             "title": "Coding Style (Java), Intellij Configuration",
+            "date": "2019-03-29T18:49:18.469Z",
             "classNotes": [
                 {
                     "title": "CheckstyleExample.java",
@@ -124,11 +134,13 @@
         },
         {
             "title": "Using Checkstyle",
+            "date": "2019-03-29T18:49:18.469Z",
             "classNotes": [],
             "assignments": []
         },
         {
             "title": "Code Review Process",
+            "date": "2019-03-29T18:49:18.469Z",
             "classNotes": [
                 {
                     "title": "Code Examples",
@@ -140,11 +152,23 @@
         },
         {
             "title": "Debugging / Logging from the Command Line",
+            "date": "2019-03-29T18:49:18.469Z",
             "classNotes": [],
-            "assignments": []
+            "assignments": [
+                {
+                    "title": "Pre-Class Assignment",
+                    "bodyReference": "classes/command_line/command_line_pre.html"
+                },
+                {
+                    "title": "Tutorial",
+                    "bodyReference": "classes/command_line/command_line_tutorial.html"
+                }
+
+            ]
         },
         {
             "title": "Using an IDE Debugger",
+            "date": "2019-03-29T18:49:18.469Z",
             "classNotes": [],
             "assignments": [
                 {

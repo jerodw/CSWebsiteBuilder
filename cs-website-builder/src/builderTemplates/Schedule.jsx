@@ -47,6 +47,7 @@ export class Schedule extends Component {
 
         return (
             <div key={classPeriod}>
+                <span className="float-right">{classPeriod.date.toDateString()}</span>
                 <h2>{classPeriod.title}</h2>
                 <table className="table table-hover">
                     {classPeriod.classNotes.map((classNote) => this.renderClassNote(classNote))}
