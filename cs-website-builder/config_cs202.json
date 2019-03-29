@@ -118,7 +118,16 @@
             "title": "Git Collaboration Features",
             "date": "2019-03-29T18:49:18.469Z",
             "classNotes": [],
-            "assignments": []
+            "assignments": [
+                {
+                    "title": "Pre-Class Assignment",
+                    "bodyReference": "classes/git_collaboration/git_collaboration_pre.html"
+                },
+                {
+                    "title": "Tutorial",
+                    "bodyReference": "classes/git_collaboration/git_collaboration_tutorial.html"
+                }
+            ]
         },
         {
             "title": "Coding Style (Java), Intellij Configuration",
@@ -130,13 +139,31 @@
                     "availableDate": "2019-03-22T01:45:22.674Z"
                 }
             ],
-            "assignments": []
+            "assignments": [
+                {
+                    "title": "Pre-Class Assignment",
+                    "bodyReference": "classes/coding_style/coding_style_pre.html"
+                },
+                {
+                    "title": "Tutorial",
+                    "bodyReference": "classes/coding_style/coding_style_tutorial.html"
+                }
+            ]
         },
         {
             "title": "Using Checkstyle",
             "date": "2019-03-29T18:49:18.469Z",
             "classNotes": [],
-            "assignments": []
+            "assignments": [
+                {
+                    "title": "Pre-Class Assignment",
+                    "bodyReference": "classes/checkstyle/checkstyle_pre.html"
+                },
+                {
+                    "title": "Lab",
+                    "bodyReference": "classes/checkstyle/checkstyle_lab.html"
+                }
+            ]
         },
         {
             "title": "Code Review Process",
