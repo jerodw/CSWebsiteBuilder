@@ -1,8 +1,7 @@
 {
     "baseURL": "http://localhost:8080/",
     "courseName": "CS202",
-    "navLinks": [
-        {
+    "navLinks": [{
             "title": "Home",
             "templateRef": "home-template",
             "filename": "index.html"
@@ -23,45 +22,39 @@
             "filename": "policies.html"
         }
     ],
-    "professors": [
-        {
-            "pictureReference": "https://cs.byu.edu/sites/default/files/styles/faculty_listing/public/pictures/picture-27467-1534965535.jpg?itok=kZC3pHdB",
-            "contactInformation": {
-                "email": "jwilkerson@cs.byu.edu",
-                "phoneNumber": "801-867-5309",
-                "officeLocation": "2218 TMCB",
-                "name": "Jerod Wilkerson"
+    "professors": [{
+        "pictureReference": "https://cs.byu.edu/sites/default/files/styles/faculty_listing/public/pictures/picture-27467-1534965535.jpg?itok=kZC3pHdB",
+        "contactInformation": {
+            "email": "jwilkerson@cs.byu.edu",
+            "phoneNumber": "801-867-5309",
+            "officeLocation": "2218 TMCB",
+            "name": "Jerod Wilkerson"
+        },
+        "officeHours": [],
+        "byAppointment": true
+    }],
+    "tas": [{
+        "pictureReference": "https://cs.byu.edu/sites/default/files/styles/faculty_listing/public/pictures/picture-27467-1534965535.jpg?itok=kZC3pHdB",
+        "contactInformation": {
+            "email": "jwilkerson@cs.byu.edu",
+            "phoneNumber": "801-867-5309",
+            "officeLocation": "2218 TMCB",
+            "name": "Jerod"
+        },
+        "officeHours": [{
+                "dayOfWeek": "Monday",
+                "startHour": 8,
+                "stopHour": 12
             },
-            "officeHours": [],
-            "byAppointment": true
-        }
-    ],
-    "tas": [
-        {
-            "pictureReference": "https://cs.byu.edu/sites/default/files/styles/faculty_listing/public/pictures/picture-27467-1534965535.jpg?itok=kZC3pHdB",
-            "contactInformation": {
-                "email": "jwilkerson@cs.byu.edu",
-                "phoneNumber": "801-867-5309",
-                "officeLocation": "2218 TMCB",
-                "name": "Jerod"
-            },
-            "officeHours": [
-                {
-                    "dayOfWeek": "Monday",
-                    "startHour": 8,
-                    "stopHour": 12
-                },
-                {
-                    "dayOfWeek": "Tuesday",
-                    "startHour": 10,
-                    "stopHour": 14
-                }
-            ],
-            "byAppointment": true
-        }
-    ],
-    "classPeriods": [
-        {
+            {
+                "dayOfWeek": "Tuesday",
+                "startHour": 10,
+                "stopHour": 14
+            }
+        ],
+        "byAppointment": true
+    }],
+    "classPeriods": [{
             "title": "What is Software Engineering?",
             "date": "2019-03-29T18:49:18.469Z",
             "classNotes": []
@@ -99,13 +92,11 @@
         {
             "title": "Writing and Generating Javadoc",
             "date": "2019-03-29T18:49:18.469Z",
-            "classNotes": [
-                {
-                    "title": "Student.java",
-                    "fileReference": "assignments/Student.java",
-                    "availableDate": "2019-03-22T01:45:22.674Z"
-                }
-            ],
+            "classNotes": [{
+                "title": "Student.java",
+                "fileReference": "assignments/Student.java",
+                "availableDate": "2019-03-30T17:57:22.674Z"
+            }],
             "assignments": []
         },
         {
@@ -123,13 +114,11 @@
         {
             "title": "Coding Style (Java), Intellij Configuration",
             "date": "2019-03-29T18:49:18.469Z",
-            "classNotes": [
-                {
-                    "title": "CheckstyleExample.java",
-                    "fileReference": "assignments/CheckstyleExample.java",
-                    "availableDate": "2019-03-22T01:45:22.674Z"
-                }
-            ],
+            "classNotes": [{
+                "title": "CheckstyleExample.java",
+                "fileReference": "assignments/CheckstyleExample.java",
+                "availableDate": "2019-03-22T01:45:22.674Z"
+            }],
             "assignments": []
         },
         {
@@ -141,21 +130,18 @@
         {
             "title": "Code Review Process",
             "date": "2019-03-29T18:49:18.469Z",
-            "classNotes": [
-                {
-                    "title": "Code Examples",
-                    "fileReference": "assignments/code.zip",
-                    "availableDate": "2019-03-22T01:45:22.674Z"
-                }
-            ],
+            "classNotes": [{
+                "title": "Code Examples",
+                "fileReference": "assignments/code.zip",
+                "availableDate": "2019-03-22T01:45:22.674Z"
+            }],
             "assignments": []
         },
         {
             "title": "Debugging / Logging from the Command Line",
             "date": "2019-03-29T18:49:18.469Z",
             "classNotes": [],
-            "assignments": [
-                {
+            "assignments": [{
                     "title": "Pre-Class Assignment",
                     "bodyReference": "classes/command_line/command_line_pre.html"
                 },
@@ -170,8 +156,7 @@
             "title": "Using an IDE Debugger",
             "date": "2019-03-29T18:49:18.469Z",
             "classNotes": [],
-            "assignments": [
-                {
+            "assignments": [{
                     "title": "Pre-Class Assignment",
                     "bodyReference": "classes/ide_debugger/ide_debugger_pre.html"
                 },
