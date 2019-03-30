@@ -5,18 +5,32 @@ import { FileBuilder } from '../FileBuilder.jsx';
 
 export class Schedule extends Component {
 
+    // This makes sure that each id is unique in the event of assignments or class notes with the same title
+    static numFiles = 0;
+
     renderAssignment(assignment) {
         const config = this.props.config;
         const filePath = `${config.baseURL}${assignment.bodyReference.filePath}`;
+        const idSafeTitle = assignment.title.replace(/\s/gms, '') + Schedule.numFiles;
+        Schedule.numFiles++;
         return (
             <tr key={assignment}>
                 <td>{assignment.title}</td>
                 <td>
-                    {
-                        assignment.availableDate <= new Date() ?
-                            <a href={filePath} role="button" className="btn btn-byu float-right">View</a> :
-                            <a href="#" role="button" className="btn btn-byu float-right disabled" disabled>Not Avalivable</a>
-                    }
+                    
+                    <a id={idSafeTitle} href="#" role="button" className="btn btn-byu float-right disabled" disabled>Not Available</a>
+                    <script dangerouslySetInnerHTML={ {__html: `
+                        var availableDate = new Date("${assignment.availableDate}") ? new Date("${assignment.availableDate}") : new Date() - 100;
+                        if (availableDate <= new Date()) {
+                            var button = document.getElementById("${idSafeTitle}");
+                            button.disabled = false;
+                            button.href = "${filePath}";
+                            button.classList.remove("disabled");
+                            button.innerText = "Download";
+                            button.target = "_blank";
+                        }
+                        `}}>
+                    </script>
                 </td>
             </tr>
         )
@@ -25,15 +39,25 @@ export class Schedule extends Component {
     renderClassNote(classNote) {
         const config = this.props.config;
         const filePath = `${config.baseURL}${classNote.fileReference.filePath}`;
+        const idSafeTitle = classNote.title.replace(/\s/gms, '') + Schedule.numFiles;
+        Schedule.numFiles++;
         return (
             <tr key={classNote}>
                 <td>{classNote.title}</td>
                 <td>
-                    {
-                        classNote.availableDate <= new Date() ?
-                            <a target="_blank" href={filePath} role="button" className="btn btn-byu float-right">Download</a> :
-                            <a href="#" role="button" className="btn btn-byu float-right disabled" disabled>Not Avalivable</a>
-                    }
+                    <a id={idSafeTitle} href="#" role="button" className="btn btn-byu float-right disabled" disabled>Not Available</a>
+                    <script dangerouslySetInnerHTML={ {__html: `
+                        var availableDate = new Date("${classNote.availableDate}") ? new Date("${classNote.availableDate}") : new Date();
+                        if (availableDate <= new Date()) {
+                            var button = document.getElementById("${idSafeTitle}");
+                            button.disabled = false;
+                            button.href = "${filePath}";
+                            button.classList.remove("disabled");
+                            button.innerText = "Download";
+                            button.target = "_blank";
+                        }
+                        `}}>
+                    </script>
                 </td>
             </tr>
         )
