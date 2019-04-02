@@ -63,7 +63,7 @@
     "classPeriods": [
         {
             "title": "What is Software Engineering?",
-            "date": "2019-03-29T18:49:18.469Z",
+            "date": "2019-04-02",
             "classNotes": [
                 {
                     "title": "What is Software Engineering.pptx",
@@ -74,7 +74,7 @@
         },
         {
             "title": "UI Design Basics",
-            "date": "2019-03-29T18:49:18.469Z",
+            "date": "2019-04-02",
             "classNotes": [],
             "assignments": [
                 {
@@ -89,7 +89,7 @@
         },
         {
             "title": "Creating Wireframe and Screenflow Diagrams with LucidChart",
-            "date": "2019-03-29T18:49:18.469Z",
+            "date": "2019-04-02",
             "classNotes": [],
             "assignments": [
                 {
@@ -104,7 +104,7 @@
         },
         {
             "title": "UML Overview. UML Class Diagrams.",
-            "date": "2019-03-29T18:49:18.469Z",
+            "date": "2019-04-02",
             "classNotes": [],
             "assignments": [
                 {
@@ -119,7 +119,7 @@
         },
         {
             "title": "UML Sequence Diagrams",
-            "date": "2019-03-29T18:49:18.469Z",
+            "date": "2019-04-02",
             "classNotes": [
                 {
                     "title": "Example Sequence Diagram.pdf",
@@ -140,7 +140,7 @@
         },
         {
             "title": "Java Overview",
-            "date": "2019-03-29T18:49:18.469Z",
+            "date": "2019-04-02",
             "classNotes": [],
             "assignments": [
                 {
@@ -155,7 +155,7 @@
         },
         {
             "title": "Writing and Generating Javadoc",
-            "date": "2019-03-29T18:49:18.469Z",
+            "date": "2019-04-02",
             "classNotes": [
                 {
                     "title": "Student.java",
@@ -176,7 +176,7 @@
         },
         {
             "title": "Intro to Git",
-            "date": "2019-03-29T18:49:18.469Z",
+            "date": "2019-04-02",
             "classNotes": [],
             "assignments": [
                 {
@@ -191,7 +191,7 @@
         },
         {
             "title": "Git Collaboration Features",
-            "date": "2019-03-29T18:49:18.469Z",
+            "date": "2019-04-02",
             "classNotes": [],
             "assignments": [
                 {
@@ -206,7 +206,7 @@
         },
         {
             "title": "Coding Style (Java), Intellij Configuration",
-            "date": "2019-03-29T18:49:18.469Z",
+            "date": "2019-04-02",
             "classNotes": [
                 {
                     "title": "CheckstyleExample.java",
@@ -227,7 +227,7 @@
         },
         {
             "title": "Using Checkstyle",
-            "date": "2019-03-29T18:49:18.469Z",
+            "date": "2019-04-02",
             "classNotes": [],
             "assignments": [
                 {
@@ -242,7 +242,7 @@
         },
         {
             "title": "Code Review Process",
-            "date": "2019-03-29T18:49:18.469Z",
+            "date": "2019-04-02",
             "classNotes": [
                 {
                     "title": "Code Examples",
@@ -263,7 +263,7 @@
         },
         {
             "title": "Debugging / Logging from the Command Line",
-            "date": "2019-03-29T18:49:18.469Z",
+            "date": "2019-04-02",
             "classNotes": [],
             "assignments": [
                 {
@@ -278,7 +278,7 @@
         },
         {
             "title": "Using an IDE Debugger",
-            "date": "2019-03-29T18:49:18.469Z",
+            "date": "2019-04-02",
             "classNotes": [],
             "assignments": [
                 {

@@ -93,7 +93,6 @@ export class Schedule extends Component {
                 <div className="Schedule container content">
                     <h1>Schedule</h1>
                     <hr />
-                    <p>On this page you can find links to the class notes and assignments for this semester.</p>
                     <br />
                     {
                         config.classPeriods.map((classPeriod) => this.renderClass(classPeriod))
