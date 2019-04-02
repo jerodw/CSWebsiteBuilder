@@ -80,8 +80,19 @@
         {
             "title": "UML Sequence Diagrams",
             "date": "2019-03-29T18:49:18.469Z",
-            "classNotes": [],
-            "assignments": []
+            "classNotes": [{
+                "title": "Example Sequence Diagram.pdf",
+                "fileReference": "/classes/uml_sequence/Example Sequence Diagram.pdf",
+                "availableDate": "2019-03-30T17:57:22.674Z"
+            }],
+            "assignments": [{
+                "title": "Pre-Class Assignment",
+                "bodyReference": "classes/uml_sequence/uml_sequence_pre.html"
+            },
+            {
+                "title": "Lab",
+                "bodyReference": "classes/uml_sequence/uml_sequence_lab.html"
+            }]
         },
         {
             "title": "Java Overview",

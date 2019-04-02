@@ -28,7 +28,6 @@ export class Schedule extends Component {
                             button.href = "${filePath}";
                             button.classList.remove("disabled");
                             button.innerText = "View";
-                            button.target = "_blank";
                         }
                         `}}>
                     </script>
