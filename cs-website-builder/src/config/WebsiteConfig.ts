@@ -16,8 +16,8 @@ export class WebsiteConfig extends Config {
     private _outputDirectory: string;
 
 
-    constructor({ baseURL, courseName, courseInfo, navLinks, professors, tas, classPeriods, baseTemplatePath = './templates', outDir = './build' }:
-        { baseURL: string, courseName: string, courseInfo: string, navLinks: string[], professors: string[], tas: string[], classPeriods: string[], baseTemplatePath: string, outDir: string }) {
+    constructor({ baseURL, courseName, courseInfo, navLinks, professors, tas, classPeriods, inDir = './templates', outDir = './build' }:
+        { baseURL: string, courseName: string, courseInfo: string, navLinks: string[], professors: string[], tas: string[], classPeriods: string[], inDir: string, outDir: string }) {
         super();
         if (!courseName || courseName === '') {
             this.throwError('Error: Missing required parameter courseName');
@@ -43,10 +43,10 @@ export class WebsiteConfig extends Config {
             this.throwWarning("Warning: No class periods found in config file");
             classPeriods = [];
         }
-        if (fs.existsSync(baseTemplatePath)) {
-            FileReference.basePath = baseTemplatePath;
+        if (fs.existsSync(inDir)) {
+            FileReference.basePath = inDir;
         } else {
-            this.throwError(`Error: template path ${baseTemplatePath} does not exist`);
+            this.throwError(`Error: inDir path ${inDir} does not exist`);
         }
 
     

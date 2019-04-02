@@ -1,10 +1,14 @@
 {
-    "baseURL": "http://localhost:8080/",
-    "courseName": "CS202",
-    "navLinks": [{
+    "baseURL": "http://localhost:80/",
+    "courseName": "CS-Example",
+    "inDir": "./example-in/",
+    "outDir": "./example-out/",
+    "courseInfo": "info.html",
+    "navLinks": [
+        {
             "title": "Home",
             "templateRef": "home-template",
-            "filename": "home.html"
+            "filename": "index.html"
         },
         {
             "title": "Schedule",
@@ -15,65 +19,77 @@
             "title": "TA Information",
             "templateRef": "taInfo-template",
             "filename": "taInfo.html"
+        },
+        {
+            "title": "Policies",
+            "templateRef": "policies.html",
+            "filename": "policies.html"
         }
     ],
-    "professors": [{
-        "pictureReference": "https://cs.byu.edu/sites/default/files/styles/faculty_listing/public/pictures/picture-27467-1534965535.jpg?itok=kZC3pHdB",
-        "contactInformation": {
-            "email": "jwilkerson@cs.byu.edu",
-            "phoneNumber": "801-867-5309",
-            "officeLocation": "2218 TMCB",
-            "name": "Jerod Wilkerson"
-        },
-        "officeHours": [],
-        "byAppointment": true
-    }],
-    "tas": [{
-        "pictureReference": "https://cs.byu.edu/sites/default/files/styles/faculty_listing/public/pictures/picture-27467-1534965535.jpg?itok=kZC3pHdB",
-        "contactInformation": {
-            "email": "jwilkerson@cs.byu.edu",
-            "phoneNumber": "801-867-5309",
-            "officeLocation": "2218 TMCB",
-            "name": "Jerod"
-        },
-        "officeHours": [{
-                "dayOfWeek": "Monday",
-                "startHour": 8,
-                "stopHour": 12
+    "professors": [
+        {
+            "pictureReference": "./photos/teacher.jpg",
+            "contactInformation": {
+                "email": "teacher@cs.byu.edu",
+                "phoneNumber": "000-000-0000",
+                "officeLocation": "0000 TMCB",
+                "name": "Teacher Name"
             },
-            {
-                "dayOfWeek": "Tuesday",
-                "startHour": 10,
-                "stopHour": 14
-            }
-        ],
-        "byAppointment": true
-    }],
-    "classPeriods": [
-        {
-            "title" : "What is Software Enginerring?",
-            "classNotes" : [
+            "officeHours": [
                 {
-                    "title": "What is Software Enginerring.pptx",
-                    "fileReference": "What is Software Engineering_.pptx",
-                    "availableDate": "2019-03-22T01:45:22.674Z"
+                    "dayOfWeek": "Monday",
+                    "startHour": 8,
+                    "stopHour": 12
                 }
-            ]
-        },
+            ],
+            "byAppointment": true
+        }
+    ],
+    "tas": [
         {
-            "title" : "Checkstyle",
-            "assignments" : [
+            "pictureReference": "./photos/teacher.jpg",
+            "contactInformation": {
+                "email": "ta_email@cs.byu.edu",
+                "phoneNumber": "",
+                "officeLocation": "000 TMCB",
+                "name": "TA Name"
+            },
+            "officeHours": [
                 {
-                    "title": "Pre-Class Assignment",
-                    "bodyReference": "checkstyle_pre.html"
+                    "dayOfWeek": "Tuesday",
+                    "startHour": 12,
+                    "stopHour": 17
                 },
                 {
-                    "title": "Tutorial",
-                    "bodyReference": "checkstyle_lab.html"
+                    "dayOfWeek": "Thursday",
+                    "startHour": 12,
+                    "stopHour": 17
+                }
+            ],
+            "byAppointment": false
+        }
+    ],
+    "classPeriods": [
+        {
+            "title": "What is Software Engineering?",
+            "date": "2019-04-01T00:00:00.000",
+            "classNotes": [
+                {
+                    "title": "What is Software Engineering.pptx",
+                    "fileReference": "classes/software_engineering/What is Software Engineering_.pptx",
+                    "availableDate": "2019-04-02T16:53:00.000"
+                }
+            ]
+        },
+        {
+            "title": "Checkstyle",
+            "date": "2019-04-01T00:00:00.000",
+            "assignments": [
+                {
+                    "title": "Pre-Class Assignment",
+                    "bodyReference": "classes/checkstyle/checkstyle_pre.html"
                 }
             ]
         }
-    ],
-    "baseTemplatePath": "./CS202/",
-    "outDir": "./out/"
+    ]
 }

@@ -72,7 +72,7 @@ export class Schedule extends Component {
 
         return (
             <div key={classPeriod}>
-                <span className="float-right">{classPeriod.date.toDateString()}</span>
+                <span className="float-right">{classPeriod.date.toLocaleDateString()}</span>
                 <h2>{classPeriod.title}</h2>
                 <table className="table table-hover">
                     {classPeriod.assignments.map((assignment) => this.renderAssignment(assignment))}
