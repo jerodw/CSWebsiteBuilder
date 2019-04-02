@@ -17,16 +17,17 @@ export class Schedule extends Component {
             <tr key={assignment}>
                 <td>{assignment.title}</td>
                 <td>
-                    
+
                     <a id={idSafeTitle} href="#" role="button" className="btn btn-byu float-right disabled" disabled>Not Available</a>
-                    <script dangerouslySetInnerHTML={ {__html: `
+                    <script dangerouslySetInnerHTML={{
+                        __html: `
                         var availableDate = new Date("${assignment.availableDate}") ? new Date("${assignment.availableDate}") : new Date() - 100;
                         if (availableDate <= new Date()) {
                             var button = document.getElementById("${idSafeTitle}");
                             button.disabled = false;
                             button.href = "${filePath}";
                             button.classList.remove("disabled");
-                            button.innerText = "Download";
+                            button.innerText = "View";
                             button.target = "_blank";
                         }
                         `}}>
@@ -46,7 +47,8 @@ export class Schedule extends Component {
                 <td>{classNote.title}</td>
                 <td>
                     <a id={idSafeTitle} href="#" role="button" className="btn btn-byu float-right disabled" disabled>Not Available</a>
-                    <script dangerouslySetInnerHTML={ {__html: `
+                    <script dangerouslySetInnerHTML={{
+                        __html: `
                         var availableDate = new Date("${classNote.availableDate}") ? new Date("${classNote.availableDate}") : new Date();
                         if (availableDate <= new Date()) {
                             var button = document.getElementById("${idSafeTitle}");
@@ -65,7 +67,7 @@ export class Schedule extends Component {
 
     renderClass(classPeriod) {
 
-        if (classPeriod.classNotes.length == 0 && classPeriod.assignments.length == 0){
+        if (classPeriod.classNotes.length == 0 && classPeriod.assignments.length == 0) {
             return (<span key={classPeriod}></span>);
         }
 
@@ -74,8 +76,8 @@ export class Schedule extends Component {
                 <span className="float-right">{classPeriod.date.toDateString()}</span>
                 <h2>{classPeriod.title}</h2>
                 <table className="table table-hover">
-                    {classPeriod.classNotes.map((classNote) => this.renderClassNote(classNote))}
                     {classPeriod.assignments.map((assignment) => this.renderAssignment(assignment))}
+                    {classPeriod.classNotes.map((classNote) => this.renderClassNote(classNote))}
                 </table>
                 <br />
             </div>
