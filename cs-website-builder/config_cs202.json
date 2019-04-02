@@ -75,7 +75,14 @@
             "title": "UML Overview. UML Class Diagrams.",
             "date": "2019-03-29T18:49:18.469Z",
             "classNotes": [],
-            "assignments": []
+            "assignments": [{
+                "title": "Pre-Class Assignment",
+                "bodyReference": "classes/uml_class_diagram/uml_class_diagram_pre.html"
+            },
+            {
+                "title": "Lab",
+                "bodyReference": "classes/uml_class_diagram/uml_class_diagram_lab.html"
+            }]
         },
         {
             "title": "UML Sequence Diagrams",
