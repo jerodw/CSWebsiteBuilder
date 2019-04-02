@@ -87,7 +87,14 @@
             "title": "Java Overview",
             "date": "2019-03-29T18:49:18.469Z",
             "classNotes": [],
-            "assignments": []
+            "assignments": [{
+                "title": "Pre-Class Assignment",
+                "bodyReference": "classes/javadoc/javadoc_pre.html"
+            },
+            {
+                "title": "Tutorial",
+                "bodyReference": "classes/javadoc/javadoc_tutorial.html"
+            }]
         },
         {
             "title": "Writing and Generating Javadoc",
@@ -97,7 +104,14 @@
                 "fileReference": "assignments/Student.java",
                 "availableDate": "2019-03-30T17:57:22.674Z"
             }],
-            "assignments": []
+            "assignments": [{
+                "title": "Pre-Class Assignment",
+                "bodyReference": "classes/git_intro/git_intro_pre.html"
+            },
+            {
+                "title": "Tutorial",
+                "bodyReference": "classes/git_intro/git_intro_tutorial.html"
+            }]
         },
         {
             "title": "Intro to Git",
