@@ -7,6 +7,7 @@ import { ClassPeriod } from './ClassPeriod';
 
 export class WebsiteConfig extends Config {
     private _courseName: string;
+    private _courseInfo: FileReference;
     private _professors: PersonInformation[];
     private _tas: PersonInformation[];
     private _classPeriods: ClassPeriod[];
@@ -15,11 +16,14 @@ export class WebsiteConfig extends Config {
     private _outputDirectory: string;
 
 
-    constructor({ baseURL, courseName, navLinks, professors, tas, classPeriods, baseTemplatePath = './templates', outDir = './build' }:
-        { baseURL: string, courseName: string, navLinks: string[], professors: string[], tas: string[], classPeriods: string[], baseTemplatePath: string, outDir: string }) {
+    constructor({ baseURL, courseName, courseInfo, navLinks, professors, tas, classPeriods, baseTemplatePath = './templates', outDir = './build' }:
+        { baseURL: string, courseName: string, courseInfo: string, navLinks: string[], professors: string[], tas: string[], classPeriods: string[], baseTemplatePath: string, outDir: string }) {
         super();
         if (!courseName || courseName === '') {
             this.throwError('Error: Missing required parameter courseName');
+        }
+        if (!courseInfo || courseInfo === ''){
+            this.throwError('Error: Missing required parameter courseInfo');
         }
         if (!baseURL || baseURL === '') {
             baseURL = `https://students.cs.byu.edu/~cs${courseName}ta/`;
@@ -48,14 +52,25 @@ export class WebsiteConfig extends Config {
     
         this.baseURL = baseURL;
         this.courseName = courseName;
+    
+        this.courseInfo = new FileReference(courseInfo);
         this.classPeriods = classPeriods.map((classPeriod: any) => new ClassPeriod(classPeriod));
         this.tas = tas.map((ta: any) => new PersonInformation(ta));
         this.professors = professors.map((professor: any) => new PersonInformation(professor));
         this.navLinks = navLinks.map((navLink: any) => new NavLink(navLink));
         this.outputDirectory = outDir;
+        
 
         // var fileBuilder = new FileBuilder(this);
         // fileBuilder.build();
+    }
+
+    public get courseInfo(): FileReference {
+        return this._courseInfo;
+    }
+
+    public set courseInfo(value: FileReference) {
+        this._courseInfo = value;
     }
 
     public get navLinks(): NavLink[] {
