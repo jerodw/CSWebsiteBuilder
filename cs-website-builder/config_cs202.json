@@ -57,19 +57,37 @@
     "classPeriods": [{
             "title": "What is Software Engineering?",
             "date": "2019-03-29T18:49:18.469Z",
-            "classNotes": []
+            "classNotes": [{
+                "title": "What is Software Engineering.pptx",
+                "fileReference": "classes/software_engineering/What is Software Engineering.pptx",
+                "availableDate": "2019-03-30T17:57:22.674Z"
+            }]
         },
         {
             "title": "UI Design Basics",
             "date": "2019-03-29T18:49:18.469Z",
             "classNotes": [],
-            "assignments": []
+            "assignments": [{
+                "title": "Pre-Class Assignment",
+                "bodyReference": "classes/ui_design/ui_design_pre.html"
+            },
+            {
+                "title": "Lab",
+                "bodyReference": "classes/ui_design/ui_design_lab.html"
+            }]
         },
         {
             "title": "Creating Wireframe and Screenflow Diagrams with LucidChart",
             "date": "2019-03-29T18:49:18.469Z",
             "classNotes": [],
-            "assignments": []
+            "assignments": [{
+                "title": "Pre-Class Assignment",
+                "bodyReference": "classes/lucidchart/lucidchart_pre.html"
+            },
+            {
+                "title": "Lab",
+                "bodyReference": "classes/lucidchart/lucidchart_lab.html"
+            }]
         },
         {
             "title": "UML Overview. UML Class Diagrams.",
