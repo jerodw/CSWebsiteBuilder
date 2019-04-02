@@ -103,7 +103,14 @@
             "title": "Intro to Git",
             "date": "2019-03-29T18:49:18.469Z",
             "classNotes": [],
-            "assignments": []
+            "assignments": [{
+                "title": "Pre-Class Assignment",
+                "bodyReference": "classes/git_intro/git_intro_pre.html"
+            },
+            {
+                "title": "Tutorial",
+                "bodyReference": "classes/git_intro/git_intro_tutorial.html"
+            }]
         },
         {
             "title": "Git Collaboration Features",
