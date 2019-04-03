@@ -9,34 +9,55 @@ This is a website builder for CS courses at BYU. The main idea of this website b
 
 ## Setup the Website Builder:
 1. Clone this github repo
-2. Navigate to the cs-website-builder in terminal
-2. Run the command "npm install"
+2. Navigate to the project directory in a terminal
+2. Run "npm install" to download the necessary dependencies
 2. Delete the "example-out" folder and then run "npm run build exampleConfig.json"
-2. Wait for the website to build
-2. Check to see if there is now an "example-out" folder
-2. If there is a folder, everything has been set up correctly
-2. Optional: Host the website to check the files by navigating to the "example-out" folder and typing in the command "python -m http.server 80"
+2. If there is an "example-out" folder, everything has been set up correctly
+2. Optional: Host the website to check the site by navigating to the "example-out" folder and typing in the command "python -m http.server 80" (or your preferred way of serving the files)
 
 ## Create a Class Config File:
-1. Open the "exampleConfig.json" file
+1. Open "exampleConfig.json"
 2. Fill out the config file with the information needed for your class (look at the two sections below for clarification on what to put in the fields)
-2. Navigate to the cs-website-builder in terminal
+    a. Dates and times must be in a format recognizable by [moment.js](https://momentjs.com/docs/#/parsing/string/)
 2. Run "npm run build /path/to/config.json" where config.json is the path to the config file you've created\
-    a. The script fails early and fast, with specific error messages.
-2. Your website will be build to the directory supplied in the "outDir" field of the config file
+    a. The script fails early and fast, with specific error messages. This is done to prevent a broken website from being fully generated.
+2. Your website will be build to the directory supplied in the "outDir" directory
 
-### Config Fields
-* fieldName : description: use
-* baseUrl : the base url to the website you are creating : to set up links throughout the site
-* courseName : a string to represent the name of your course : adds text to the nav bar and home page
-* inDir : the filepath of your input folder : for custom content
-* outDir : the filepath of where the website should be built : to set a location for the website to be built
-* courseInfo : filepath relative to inDir to an html file containing the desired text for the home page : displays html file on home page
-* navLinks : a list of NavLink objects : to build the navbar at the top of the site
-* professors : a list of PersonInformation objects : to build the professor information on the home page
-* tas : a list of PersonInformation objects : to build the ta information on the ta-infromation page
-* classPeriods : a list of ClassPeriod objects : to build the shedule-page
-
+## Config Fields
+```JSON
+{
+    "baseUrl": "http://students.cs.byu.edu/~CSCourseNumberTA/", // the base url of the website
+    "courseName": "CS 202", // the name of your course
+    "inDir": "/path/to/resource/files", // the filepath of your input folder
+    "outDir":  "/path/to/where/site/lives", // the filepath of where the website will be built
+    "courseInfo": "inDir/homePageContent.html", // filepath relative to inDir to an html file containing the desired text for the home page
+    "navLinks": [/* See NavLink interface below */], // a list of NavLink objects for the navbar at the top of the site
+    "professors": [/* See PersonInformation interface below */], // a list of PersonInformation objects for the professor(s) information on the home page
+    "tas": [/* See PersonInformation interface below */], // a list of PersonInformation objects for the ta information on the ta-infromation page
+    "classPeriods": [/* See the ClassPeriod interface below*/] // a list of ClassPeriod objects for the shedule-page
+}
+```
 ### Objects
-
-
+#### NavLink
+```JSON
+{
+    "title": "Page Title", // name of the page, this is what appears as the link text
+    "templateRef": "home-template", // reference to either
+    "filename": "index.html" // Name
+}
+```
+### PersonInformation
+```JSON
+{
+        "pictureReference": "http://url.to/picture", // URL or path to image of professor
+  // Or "pictureReference": "/path/to/picture.jpg",
+        "contactInformation": {
+            "email": "jwilkersonexample@cs.byu.edu",
+            "phoneNumber": "801-867-5309",
+            "officeLocation": "4210 TMCB",
+            "name": "Jerod Wilkerson"
+        },
+        "officeHours": [/* See OfficHour interface below*/], // List of days and times for office hours
+        "byAppointment": true // Boolean representing whether appointments can be scheduled
+}
+```
