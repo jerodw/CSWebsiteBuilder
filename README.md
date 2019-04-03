@@ -22,7 +22,7 @@ This is a website builder for CS courses at BYU. The main idea of this website b
 2. Fill out the config file with the information needed for your class (look at the two sections below for clarification on what to put in the fields)
 2. Navigate to the cs-website-builder in terminal
 2. Run "npm run build /path/to/config.json" where config.json is the path to the config file you've created\
-    a. The script fails early and fast, with specific error messages. Nothing will be built if an error is thrown. Warnings may also be thrown.
+    a. The script fails early and fast, with specific error messages.
 2. Your website will be build to the directory supplied in the "outDir" field of the config file
 
 ### Config Fields
