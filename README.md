@@ -24,7 +24,7 @@ This is a website builder for CS courses at BYU. The main idea of this website b
 2. Your website will be build to the directory supplied in the "outDir" directory
 
 ## Config Fields
-```JSON
+```javascript
 {
     "baseUrl": "http://students.cs.byu.edu/~CSCourseNumberTA/", // The base url of the website
     "courseName": "CS 202", // The name of your course
@@ -42,7 +42,7 @@ This is a website builder for CS courses at BYU. The main idea of this website b
 All dates **must** be compatible with [moment.js](https://momentjs.com/docs/#/parsing/string/), otherwise undefined behavior may occur.
 
 #### NavLink
-```JSON
+```javascript
 {
     "title": "Page Title", // Name of the page, this is what appears as the link text
     "templateRef": "home-template", // Reference to either one of our templates or a custom template you have defined
@@ -50,7 +50,7 @@ All dates **must** be compatible with [moment.js](https://momentjs.com/docs/#/pa
 }
 ```
 #### PersonInformation
-```JSON
+```javascript
 {
         "pictureReference": "http://url.to/picture", // URL or path to image of person
   // Or "pictureReference": "/path/to/picture.jpg", // Relative to inDir
@@ -69,7 +69,7 @@ All dates **must** be compatible with [moment.js](https://momentjs.com/docs/#/pa
 }
 ```
 #### ClassPeriod
-```JSON
+```javascript
 {
     "title": "Class Period Title",
     "date": "2019-04-01",
