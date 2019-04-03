@@ -2,8 +2,7 @@
     "baseURL": "http://localhost:8080/",
     "courseName": "CS202",
     "courseInfo": "info.html",
-    "navLinks": [
-        {
+    "navLinks": [{
             "title": "Home",
             "templateRef": "home-template",
             "filename": "index.html"
@@ -24,60 +23,51 @@
             "filename": "policies.html"
         }
     ],
-    "professors": [
-        {
-            "pictureReference": "https://cs.byu.edu/sites/default/files/styles/faculty_listing/public/pictures/picture-27467-1534965535.jpg?itok=kZC3pHdB",
-            "contactInformation": {
-                "email": "jwilkerson@cs.byu.edu",
-                "phoneNumber": "801-867-5309",
-                "officeLocation": "2218 TMCB",
-                "name": "Jerod Wilkerson"
+    "professors": [{
+        "pictureReference": "https://cs.byu.edu/sites/default/files/styles/faculty_listing/public/pictures/picture-27467-1534965535.jpg?itok=kZC3pHdB",
+        "contactInformation": {
+            "email": "jwilkerson@cs.byu.edu",
+            "phoneNumber": "801-867-5309",
+            "officeLocation": "2218 TMCB",
+            "name": "Jerod Wilkerson"
+        },
+        "officeHours": [],
+        "byAppointment": true
+    }],
+    "tas": [{
+        "pictureReference": "https://cs.byu.edu/sites/default/files/styles/faculty_listing/public/pictures/picture-27467-1534965535.jpg?itok=kZC3pHdB",
+        "contactInformation": {
+            "email": "jwilkerson@cs.byu.edu",
+            "officeLocation": "2218 TMCB",
+            "name": "Jerod"
+        },
+        "officeHours": [{
+                "dayOfWeek": "Monday",
+                "startHour": 8,
+                "stopHour": 12
             },
-            "officeHours": [],
-            "byAppointment": true
-        }
-    ],
-    "tas": [
-        {
-            "pictureReference": "https://cs.byu.edu/sites/default/files/styles/faculty_listing/public/pictures/picture-27467-1534965535.jpg?itok=kZC3pHdB",
-            "contactInformation": {
-                "email": "jwilkerson@cs.byu.edu",
-                "officeLocation": "2218 TMCB",
-                "name": "Jerod"
-            },
-            "officeHours": [
-                {
-                    "dayOfWeek": "Monday",
-                    "startHour": 8,
-                    "stopHour": 12
-                },
-                {
-                    "dayOfWeek": "Tuesday",
-                    "startHour": 10,
-                    "stopHour": 14
-                }
-            ],
-            "byAppointment": true
-        }
-    ],
-    "classPeriods": [
-        {
+            {
+                "dayOfWeek": "Tuesday",
+                "startHour": 10,
+                "stopHour": 14
+            }
+        ],
+        "byAppointment": true
+    }],
+    "classPeriods": [{
             "title": "What is Software Engineering?",
             "date": "2019-04-01T00:00:00.000",
-            "classNotes": [
-                {
-                    "title": "What is Software Engineering.pptx",
-                    "fileReference": "classes/software_engineering/What is Software Engineering.pptx",
-                    "availableDate": "2019-03-30T17:57:22.674Z"
-                }
-            ]
+            "classNotes": [{
+                "title": "What is Software Engineering.pptx",
+                "fileReference": "classes/software_engineering/What is Software Engineering.pptx",
+                "availableDate": "2019-03-30T17:57:22.674Z"
+            }]
         },
         {
             "title": "UI Design Basics",
             "date": "2019-04-01T00:00:00.000",
             "classNotes": [],
-            "assignments": [
-                {
+            "assignments": [{
                     "title": "Pre-Class Assignment",
                     "bodyReference": "classes/ui_design/ui_design_pre.html"
                 },
@@ -91,14 +81,15 @@
             "title": "Creating Wireframe and Screenflow Diagrams with LucidChart",
             "date": "2019-04-01T00:00:00.000",
             "classNotes": [],
-            "assignments": [
-                {
+            "assignments": [{
                     "title": "Pre-Class Assignment",
-                    "bodyReference": "classes/lucidchart/lucidchart_pre.html"
+                    "bodyReference": "classes/lucidchart/lucidchart_pre.html",
+                    "availableDate": "Apr 3, 2019 12:07:00"
                 },
                 {
                     "title": "Lab",
-                    "bodyReference": "classes/lucidchart/lucidchart_lab.html"
+                    "bodyReference": "classes/lucidchart/lucidchart_lab.html",
+                    "availableDate": "Apr 3, 2019 11:20:00"
                 }
             ]
         },
@@ -106,8 +97,7 @@
             "title": "UML Overview. UML Class Diagrams.",
             "date": "2019-04-01T00:00:00.000",
             "classNotes": [],
-            "assignments": [
-                {
+            "assignments": [{
                     "title": "Pre-Class Assignment",
                     "bodyReference": "classes/uml_class_diagram/uml_class_diagram_pre.html"
                 },
@@ -120,15 +110,12 @@
         {
             "title": "UML Sequence Diagrams",
             "date": "2019-04-01T00:00:00.000",
-            "classNotes": [
-                {
-                    "title": "Example Sequence Diagram.pdf",
-                    "fileReference": "/classes/uml_sequence/Example Sequence Diagram.pdf",
-                    "availableDate": "2019-03-30T17:57:22.674Z"
-                }
-            ],
-            "assignments": [
-                {
+            "classNotes": [{
+                "title": "Example Sequence Diagram.pdf",
+                "fileReference": "/classes/uml_sequence/Example Sequence Diagram.pdf",
+                "availableDate": "2019-03-30T17:57:22.674Z"
+            }],
+            "assignments": [{
                     "title": "Pre-Class Assignment",
                     "bodyReference": "classes/uml_sequence/uml_sequence_pre.html"
                 },
@@ -142,8 +129,7 @@
             "title": "Java Overview",
             "date": "2019-04-01T00:00:00.000",
             "classNotes": [],
-            "assignments": [
-                {
+            "assignments": [{
                     "title": "Pre-Class Assignment",
                     "bodyReference": "classes/javadoc/javadoc_pre.html"
                 },
@@ -156,15 +142,12 @@
         {
             "title": "Writing and Generating Javadoc",
             "date": "2019-04-01T00:00:00.000",
-            "classNotes": [
-                {
-                    "title": "Student.java",
-                    "fileReference": "assignments/Student.java",
-                    "availableDate": "2019-03-30T17:57:22.674Z"
-                }
-            ],
-            "assignments": [
-                {
+            "classNotes": [{
+                "title": "Student.java",
+                "fileReference": "assignments/Student.java",
+                "availableDate": "2019-03-30T17:57:22.674Z"
+            }],
+            "assignments": [{
                     "title": "Pre-Class Assignment",
                     "bodyReference": "classes/git_intro/git_intro_pre.html"
                 },
@@ -178,8 +161,7 @@
             "title": "Intro to Git",
             "date": "2019-04-01T00:00:00.000",
             "classNotes": [],
-            "assignments": [
-                {
+            "assignments": [{
                     "title": "Pre-Class Assignment",
                     "bodyReference": "classes/git_intro/git_intro_pre.html"
                 },
@@ -193,8 +175,7 @@
             "title": "Git Collaboration Features",
             "date": "2019-04-01T00:00:00.000",
             "classNotes": [],
-            "assignments": [
-                {
+            "assignments": [{
                     "title": "Pre-Class Assignment",
                     "bodyReference": "classes/git_collaboration/git_collaboration_pre.html"
                 },
@@ -207,15 +188,12 @@
         {
             "title": "Coding Style (Java), Intellij Configuration",
             "date": "2019-04-01T00:00:00.000",
-            "classNotes": [
-                {
-                    "title": "CheckstyleExample.java",
-                    "fileReference": "assignments/CheckstyleExample.java",
-                    "availableDate": "2019-03-22T01:45:22.674Z"
-                }
-            ],
-            "assignments": [
-                {
+            "classNotes": [{
+                "title": "CheckstyleExample.java",
+                "fileReference": "assignments/CheckstyleExample.java",
+                "availableDate": "2019-03-22T01:45:22.674Z"
+            }],
+            "assignments": [{
                     "title": "Pre-Class Assignment",
                     "bodyReference": "classes/coding_style/coding_style_pre.html"
                 },
@@ -229,8 +207,7 @@
             "title": "Using Checkstyle",
             "date": "2019-04-01T00:00:00.000",
             "classNotes": [],
-            "assignments": [
-                {
+            "assignments": [{
                     "title": "Pre-Class Assignment",
                     "bodyReference": "classes/checkstyle/checkstyle_pre.html"
                 },
@@ -243,15 +220,12 @@
         {
             "title": "Code Review Process",
             "date": "2019-04-01T00:00:00.000",
-            "classNotes": [
-                {
-                    "title": "Code Examples",
-                    "fileReference": "assignments/code.zip",
-                    "availableDate": "2019-03-22T01:45:22.674Z"
-                }
-            ],
-            "assignments": [
-                {
+            "classNotes": [{
+                "title": "Code Examples",
+                "fileReference": "assignments/code.zip",
+                "availableDate": "2019-03-22T01:45:22.674Z"
+            }],
+            "assignments": [{
                     "title": "Pre-Class Assignment",
                     "bodyReference": "classes/code_review/code_review_pre.html"
                 },
@@ -265,8 +239,7 @@
             "title": "Debugging / Logging from the Command Line",
             "date": "2019-04-01T00:00:00.000",
             "classNotes": [],
-            "assignments": [
-                {
+            "assignments": [{
                     "title": "Pre-Class Assignment",
                     "bodyReference": "classes/command_line/command_line_pre.html"
                 },
@@ -280,8 +253,7 @@
             "title": "Using an IDE Debugger",
             "date": "2019-04-01T00:00:00.000",
             "classNotes": [],
-            "assignments": [
-                {
+            "assignments": [{
                     "title": "Pre-Class Assignment",
                     "bodyReference": "classes/ide_debugger/ide_debugger_pre.html"
                 },
