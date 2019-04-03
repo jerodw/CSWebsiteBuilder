@@ -1,0 +1,195 @@
+<html>
+
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+</head>
+
+<body>
+    <p class="display-4">Intellij IDEA Style Checking Tutorial</p>
+    <h1>Overview</h1>
+    <p>Now that you&rsquo;ve learned a bit about coding style, we&rsquo;re going to introduce you to some tools you can
+        use to look for style errors in your own code. First we&rsquo;ll show you how to use a basic IDE style checker.
+        Then we&rsquo;ll show you how to use a dedicated style checking program called EditorConfig.</p>
+    <p></p>
+    <p>Most IDEs come with some basic style checking built in. The kind and complexity of style checking varies from IDE
+        to IDE, as does how the checks ar displayed. They are usually not as sophisticated as dedicated style checking
+        tools are, but they are generally easy to use and require less setup. To get you started, we will show you how
+        to configure the Intellij IDEA to do basic style checking.</p>
+    <h1>Using the Built-In Style Checker</h1>
+    <ol start="1">
+        <li>Create a new Project by going to File -&gt; New -&gt; Project&hellip; Click next to skip past the first two
+            windows. Name your project CodingStyle. Click next to skip through the remaining windows and create your
+            project. Create a java file by right-clicking on the src folder and going to New -&gt; Java Class. Name your
+            file CodingStyle. Copy the code from the CheckstyleExample.java&nbsp;file that you were given as a resource.
+        </li>
+    </ol>
+    <p></p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img alt="" src="images/image10.png"
+            style="width: 515.50px; height: 290.14px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+            title=""></p>
+    <p></p>
+    <ol start="2">
+        <li>Navigate to your Settings Menu. On Windows, go to File -&gt; Settings. On Mac, go to Intellij IDEA -&gt;
+            Preferences. Select Editor -&gt;Code Style -&gt; Java.</li>
+    </ol>
+    <p></p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img alt="" src="images/image5.png"
+            style="width: 516.08px; height: 294.50px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+            title=""></p>
+    <p></p>
+    <ol start="3">
+        <li>As you can see in the menu above, you can specify a number of different style preferences from this menu,
+            which your IDE will attempt to enforce. Under the &ldquo;Tabs and Indents&rdquo; tab, change the number in
+            the Indent field to 2. Notice how the example code on the right has changed to accept the new indent. This
+            code is there to help you see how changes to the settings will affect how your code looks. The flashing
+            cursors will help you see the portions of your code that the changes affect.</li>
+    </ol>
+    <p></p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img alt="" src="images/image4.png"
+            style="width: 512.50px; height: 291.64px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+            title=""></p>
+    <p></p>
+    <ol start="4">
+        <li>Click on the Spaces tab. Under the &ldquo;Around Operators&rdquo; dropdown menu, uncheck the
+            &ldquo;Assignment Operators&rdquo; box. Notice how the assignment operators in the code on the right no
+            longer have spaces around them.</li>
+    </ol>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <p><img alt="" src="images/image11.png"
+            style="width: 495.53px; height: 283.50px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+            title=""></p>
+    <p></p>
+    <ol start="5">
+        <li>Look briefly through the other tabs to see what kinds of formats you can specify. Click &ldquo;Apply&rdquo;
+            to save your changes. Click on the settings gear and then click Copy to Project to save your settings to
+            this project. Then click &ldquo;OK&rdquo; to exit the settings window. </li>
+    </ol>
+    <p></p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img alt="" src="images/image8.png"
+            style="width: 496.50px; height: 129.73px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+            title=""></p>
+    <p></p>
+    <ol start="6">
+        <li>Notice that the code you copied into the IDE is not adhering to the style changes you just made. The indents
+            on this file are too large and there are spaces around all of the assignment operators. Because you&rsquo;ve
+            specified these changes in your code style preferences, you can easily reformat your code to fit these
+            styles. Click on the &ldquo;Code&rdquo; menu, and then select &ldquo;Reformat Code&rdquo;. Your code will
+            immediately change to fit the standards you set. You may have to select the file in the project pane on the
+            right before selecting Code -&gt; Reformat Code.</li>
+    </ol>
+    <p></p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img alt="" src="images/image1.png"
+            style="width: 491.97px; height: 274.50px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+            title=""></p>
+    <p></p>
+    <ol start="7">
+        <li>Notice that there are no longer spaces around the assignment operators and the indentation has been
+            adjusted. What if you only want to reformat a portion of your code? Intellij IDEA provides for this
+            situation as well. Undo the reformatting, and then highlight a portion of your code. Click on Code -&gt;
+            Reformat Code again. Now only the portion of the code you highlighted has been formatted to your code style
+            preferences.</li>
+    </ol>
+    <p></p>
+    <p><img alt="" src="images/image7.png"
+            style="width: 491.50px; height: 68.53px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+            title=""></p>
+    <p></p>
+    <p><img alt="" src="images/image2.png"
+            style="width: 492.50px; height: 71.82px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+            title=""></p>
+    <h1>EditorConfig</h1>
+    <p></p>
+    <p>Intellij IDEA comes with built-in support for a style checking language called EditorConfig. EditorConfig is a
+        powerful style checking language that works with a wide variety of languages and IDEs. The main reason to learn
+        EditorConfig is because of its portability. Users working on very different IDEs can all load in the same
+        EditorConfig file and expect it to work well. It is also possible to configure EditorConfig files to check style
+        on multiple file types, allowing you to put all of your style guides into one convenient file. If you plan on
+        using EditorConfig in your projects, we encourage you to visit the <a
+            href="https://www.google.com/url?q=https://editorconfig.org/&amp;sa=D&amp;ust=1553895826469000">EditorConfig
+            website</a>&nbsp;to learn the format in more depth.</p>
+    <p></p>
+    <ol start="1">
+        <li>Navigate to the settings menu as you did in the previous tutorial. Instead of clicking on Java under the
+            Code Style drop down menu, click on EditorConfig. The pane on the right shows a small example of what
+            EditorConfig code looks like. Click OK to leave the settings menu.</li>
+    </ol>
+    <p></p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img alt="" src="images/image3.png"
+            style="width: 494.50px; height: 234.34px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+            title=""></p>
+    <p></p>
+    <ol start="2">
+        <li>To use EditorConfig in your project, you will need to create a .editorconfig file. Right click on the src
+            folder and go to New -&gt; File. Name this file .editorconfig. At the top of the file, type root without a
+            space at the end. Notice the suggestion pane underneath what you just typed: root = true. Because you called
+            your file .editorconfig and it is in the src directory, Intellij knows this is an EditorConfig file and will
+            give valid suggestions for an EditorConfig file. This is very helpful when you know what you want to format
+            but you aren&rsquo;t sure what the formatting options are. Go ahead and type in root = true. This is a
+            required statement at the top of every EditorConfig file that tells the plugin to use this file for style
+            checking.</li>
+    </ol>
+    <p></p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img alt="" src="images/image6.png"
+            style="width: 494.50px; height: 106.62px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+            title=""></p>
+    <p></p>
+    <ol start="3">
+        <li>The basic syntax of an EditorConfig file is as follows:</li>
+    </ol>
+    <p>[type of file]</p>
+    <p>property = setting</p>
+    <p>as in the following example file:</p>
+    <p><img alt="" src="images/image13.png"
+            style="width: 488.50px; height: 198.06px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+            title=""></p>
+    <p></p>
+    <ol start="4">
+        <li>Since we only have one file in our project and this is a simple example, we will be building a much simpler
+            EditorConfig file. Build your file to look like the following:</li>
+    </ol>
+    <p></p>
+    <p><img alt="" src="images/image12.png"
+            style="width: 532.02px; height: 147.50px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+            title=""></p>
+    <p></p>
+    <ol start="5">
+        <li>As soon as you save the file, Intellij will load your settings. The settings in this file will override the
+            code style settings you set in the Settings menu. Reformat your code the same way you did in the previous
+            Tutorial: Code -&gt; Reformat Code.</li>
+    </ol>
+    <p></p>
+    <p><img alt="" src="images/image9.png"
+            style="width: 531.50px; height: 299.57px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+            title=""></p>
+    <p></p>
+    <ol start="6">
+        <li>You can see that the indentation specified in the .editorconfig file overrode the indentation you specified
+            in the Settings, and the file now has a smaller indentation than it did with your defined style settings.
+            Because you did not specify any spacing settings in the .editorconfig file, the Code Style settings were
+            retained and spaces around the assignment operator were removed. IDEA will keep your settings unless you
+            override them using EditorConfig.</li>
+    </ol>
+    <p></p>
+    <ol start="7">
+        <li>Turn in your .editorconfig file on LearningSuite to show that you have completed the tutorial.</li>
+    </ol>
+    <p></p>
+    <h1>Additional Resources</h1>
+    <p>Here are some more lengthy style guides you might want to consult to gain additional insight on how to write
+        quality code.</p>
+    <h2>Oracle Java Style Guide</h2>
+    <p><a
+            href="https://www.google.com/url?q=https://www.oracle.com/technetwork/java/codeconventions-150003.pdf&amp;sa=D&amp;ust=1553895826473000">https://www.oracle.com/technetwork/java/codeconventions-150003.pdf</a>
+    </p>
+    <h2>EditorConfig Information</h2>
+    <p><a
+            href="https://www.google.com/url?q=https://editorconfig.org&amp;sa=D&amp;ust=1553895826474000">https://editorconfig.org</a>
+    </p>
+    <p></p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <div>
+        <p></p>
+    </div>
+</body>
+
+</html>
