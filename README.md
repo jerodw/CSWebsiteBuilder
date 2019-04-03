@@ -26,38 +26,62 @@ This is a website builder for CS courses at BYU. The main idea of this website b
 ## Config Fields
 ```JSON
 {
-    "baseUrl": "http://students.cs.byu.edu/~CSCourseNumberTA/", // the base url of the website
-    "courseName": "CS 202", // the name of your course
-    "inDir": "/path/to/resource/files", // the filepath of your input folder
-    "outDir":  "/path/to/where/site/lives", // the filepath of where the website will be built
-    "courseInfo": "inDir/homePageContent.html", // filepath relative to inDir to an html file containing the desired text for the home page
-    "navLinks": [/* See NavLink interface below */], // a list of NavLink objects for the navbar at the top of the site
-    "professors": [/* See PersonInformation interface below */], // a list of PersonInformation objects for the professor(s) information on the home page
-    "tas": [/* See PersonInformation interface below */], // a list of PersonInformation objects for the ta information on the ta-infromation page
-    "classPeriods": [/* See the ClassPeriod interface below*/] // a list of ClassPeriod objects for the shedule-page
+    "baseUrl": "http://students.cs.byu.edu/~CSCourseNumberTA/", // The base url of the website
+    "courseName": "CS 202", // The name of your course
+    "inDir": "/path/to/resource/files", // The filepath of your input folder
+    "outDir":  "/path/to/where/site/lives", // The filepath of where the website will be built
+    "courseInfo": "path/to/homePageContent.html", // Filepath, relative to inDir, to an html file containing the desired text for the home page
+    "navLinks": [/* See NavLink interface below */], // A list of NavLink objects for the navbar at the top of the site
+    "professors": [/* See PersonInformation interface below */], // A list of PersonInformation objects for the professor(s) information on the home page
+    "tas": [/* See PersonInformation interface below */], // A list of PersonInformation objects for the ta information on the ta-infromation page
+    "classPeriods": [/* See the ClassPeriod interface below*/] // A list of ClassPeriod objects for the shedule-page
 }
 ```
-### Objects
+### Object Interfaces
+
+All dates **must** be compatible with [moment.js](https://momentjs.com/docs/#/parsing/string/), otherwise undefined behavior may occur.
+
 #### NavLink
 ```JSON
 {
-    "title": "Page Title", // name of the page, this is what appears as the link text
-    "templateRef": "home-template", // reference to either
-    "filename": "index.html" // Name
+    "title": "Page Title", // Name of the page, this is what appears as the link text
+    "templateRef": "home-template", // Reference to either one of our templates or a custom template you have defined
+    "filename": "index.html" // Name of the output file
 }
 ```
-### PersonInformation
+#### PersonInformation
 ```JSON
 {
-        "pictureReference": "http://url.to/picture", // URL or path to image of professor
-  // Or "pictureReference": "/path/to/picture.jpg",
+        "pictureReference": "http://url.to/picture", // URL or path to image of person
+  // Or "pictureReference": "/path/to/picture.jpg", // Relative to inDir
         "contactInformation": {
             "email": "jwilkersonexample@cs.byu.edu",
             "phoneNumber": "801-867-5309",
             "officeLocation": "4210 TMCB",
             "name": "Jerod Wilkerson"
         },
-        "officeHours": [/* See OfficHour interface below*/], // List of days and times for office hours
+        "officeHours": [{ // List of days and times for office hours
+            "dayOfWeek": "Monday",
+            "startHour": 8, // Both of these times are military hours (0-23)
+            "stopHour": 12
+        }], 
         "byAppointment": true // Boolean representing whether appointments can be scheduled
+}
+```
+#### ClassPeriod
+```JSON
+{
+    "title": "Class Period Title",
+    "date": "2019-04-01",
+    "classNotes": [{
+        "title": "Class Note Title",
+        "fileReference": "/path/to/file", // Relative to inDir
+        "availableDate": "2019-03-30T17:57:22.674Z" // Optional, date specifying when the assignment will become available. If no date is specified then it is always available. This date is not visible to anyone.
+    }],
+    "assignments": [{
+        "title": "Assignment Title",
+        "bodyReference": "path/to/body", // Relative to inDir, file ending doesn't matter, but contents must be html
+        "availableDate": " " // Optional, date specifying when the assignment will become available. If no date is specified then it is always available. This date is not visible to anyone.
+    }]
 }
 ```
