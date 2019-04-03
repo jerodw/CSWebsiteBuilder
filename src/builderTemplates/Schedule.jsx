@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Head } from '../helperComponents/Head.jsx';
 import { Header } from '../helperComponents/Header.jsx';
 import { FileBuilder } from '../FileBuilder.jsx';
+import moment from 'moment';
 
 export class Schedule extends Component {
 
@@ -12,6 +13,7 @@ export class Schedule extends Component {
         const config = this.props.config;
         const filePath = `${config.baseURL}${assignment.bodyReference.filePath}`;
         const idSafeTitle = assignment.title.replace(/\s/gms, '') + Schedule.numFiles;
+        const date = moment(assignment.availableDate).utc().toDate();
         Schedule.numFiles++;
         return (
             <tr key={assignment}>
@@ -21,8 +23,8 @@ export class Schedule extends Component {
                     <a id={idSafeTitle} href="#" role="button" className="btn btn-byu float-right disabled" disabled>Not Available</a>
                     <script dangerouslySetInnerHTML={{
                         __html: `
-                        var availableDate = new Date("${assignment.availableDate}") ? new Date("${assignment.availableDate}") : new Date() - 100;
-                        if (availableDate <= new Date()) {
+                        var availableDate = new Date(${date.getFullYear()}, ${date.getMonth()}, ${date.getDate()}, ${date.getHours()}, ${date.getMinutes()}, ${date.getSeconds()}, ${date.getMilliseconds()});
+                        if (availableDate <= Date.now()) {
                             var button = document.getElementById("${idSafeTitle}");
                             button.disabled = false;
                             button.href = "${filePath}";
@@ -40,6 +42,7 @@ export class Schedule extends Component {
         const config = this.props.config;
         const filePath = `${config.baseURL}${classNote.fileReference.filePath}`;
         const idSafeTitle = classNote.title.replace(/\s/gms, '') + Schedule.numFiles;
+        const date = moment(classNote.availableDate).utc().toDate();
         Schedule.numFiles++;
         return (
             <tr key={classNote}>
@@ -48,8 +51,8 @@ export class Schedule extends Component {
                     <a id={idSafeTitle} href="#" role="button" className="btn btn-byu float-right disabled" disabled>Not Available</a>
                     <script dangerouslySetInnerHTML={{
                         __html: `
-                        var availableDate = new Date("${classNote.availableDate}") ? new Date("${classNote.availableDate}") : new Date();
-                        if (availableDate <= new Date()) {
+                        var availableDate = new Date(${date.getFullYear()}, ${date.getMonth()}, ${date.getDate()}, ${date.getHours()}, ${date.getMinutes()}, ${date.getSeconds()}, ${date.getMilliseconds()});
+                        if (availableDate <= Date.now()) {
                             var button = document.getElementById("${idSafeTitle}");
                             button.disabled = false;
                             button.href = "${filePath}";
