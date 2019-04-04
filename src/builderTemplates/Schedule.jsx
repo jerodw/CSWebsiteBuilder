@@ -91,8 +91,8 @@ export class Schedule extends Component {
 
         return (
             <html>
-                <Head />
-                <Header config={config} baseURL={''} />
+                <Head baseURL={config.baseURL} />
+                <Header config={config} />
                 <div className="Schedule container content">
                     <h1>Schedule</h1>
                     <hr />

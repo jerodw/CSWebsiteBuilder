@@ -20,8 +20,8 @@ export class Home extends Component {
 
     return (
       <html>
-        <Head />
-        <Header config={config} baseURL={''} />
+        <Head baseURL={config.baseURL}/>
+        <Header config={config} />
         <div className="Home container content">
           <h1>{config.courseName}</h1>
           <hr />
