@@ -9,7 +9,7 @@ export class Header extends Component {
                     this.props.config.navLinks.map((navLink, index) => {
                         return (
                             <li key={navLink.title} className="nav-item">
-                                <a className="nav-link" href={"/" + navLink.filename}>{navLink.title}</a>
+                                <a className="nav-link" href={`${this.props.config.baseURL}${navLink.filename}`}>{navLink.title}</a>
                             </li>
                         )
                     })
