@@ -6,8 +6,8 @@ export class App extends Component {
   render() {
     return (
       <html>
-        <Head /> 
-        <Header config={this.props.config} baseURL={''} />
+        <Head baseURL={this.props.config.baseURL} /> 
+        <Header config={this.props.config} baseURL={this.props.config.baseURL} />
         <div className="App container content" dangerouslySetInnerHTML={ {__html: this.props.template } }>
         </div>
       </html>
