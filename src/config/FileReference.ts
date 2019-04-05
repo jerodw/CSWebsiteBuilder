@@ -10,7 +10,7 @@ export class FileReference extends Config {
          // If the path is a URL, don't check if it's a valid filepath in the file system
         if (filePath.includes("http") == false) {
             if (fs.existsSync(`${FileReference.basePath}/${filePath}`) == false) {
-                this.throwError(`Error: File ${filePath} does not exist`);
+                this.throwError(`Error: File ${FileReference.basePath}/${filePath} does not exist`);
             }  
         }
         
