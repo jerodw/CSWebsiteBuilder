@@ -1,1 +1,142 @@
-<html><head><meta content="text/html; charset=UTF-8" http-equiv="content-type"></head><body><p class="display-4">Tutorial: Version Control</p><p class="text-muted">Source control, intro to Git, simple git commands</p><h1>Introduction</h1><p>For this tutorial, you will explore the version control features of Git. You will first add a file to the repository, then you will add information to the file while commiting changes along the way. Last, you will reset the file to a previous commit. Follow the tutorial and submit the last output from git log&nbsp;to learning suite by the end of class.</p><h2>Definitions</h2><p>Directory - means a folder on your computer</p><p>Terminal - the black box on mac or linux, on Windows it is called the command prompt</p><h2>Commands You Will Learn</h2><ul><li>git add</li><li>git commit</li><li>git init</li><li>git log</li><li>git reset</li></ul><h1>Tutorial</h1><h2>Part 1: Adding a File to a New Repository</h2><p>We will start by creating a new repository and adding a file to it. Ask the instructor, a TAs or a classmate if you get stuck.</p><ol start="1"><li>Create a new directory on your computer named &ldquo;CS202&rdquo;</li><li>Navigate to the directory using terminal, terminal should now look something like this:<img alt="" src="images/image1.png" style="width: 624.00px; height: 82.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></li><li>Type git init to create a new repository at that directory</li></ol><p>This is the first step in creating any project that you want to use git with. Git commands only work on git repositories. If you forget to initialize the repository, git will respond with this message: &ldquo;fatal: not a git repository (or any of the parent directories): .git&rdquo;</p><ol start="4"><li>Create and save a text document called &ldquo;Text.txt&rdquo; to your folder</li></ol><ol start="1"><li>In Windows, you can create the file by right clicking inside your folder and clicking &ldquo;New Text Document&rdquo;. From Mac or Linux, you can create the file by typing &ldquo;touch Text.txt&rdquo; from within the terminal.</li></ol><ol start="5"><li>Add the file to your next commit by typing in git add &lt;filename&gt; (&ldquo;Text.txt&rdquo; is our filename)</li></ol><p>This command marks that you have added or changed a file and want it to be part of the next commit. Typing git status tells you any of the files that you have changed and might want to add.</p><ol start="6"><li>Commit the file(s) you add to your repository with the command </li></ol><p>git commit -m &ldquo;&lt;message&gt;&rdquo; (with &ldquo;Added Text.txt&rdquo; as your message)</p><p>Git commit makes a new version of your project. We want our commit messages to be as clear as possible so if something goes wrong and we have to roll back to a previous version, we will be able to tell what version we want.</p><p>You should see something like this after commiting your file.<img alt="" src="images/image2.png" style="width: 554.00px; height: 99.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></p><h2>Part 2: Using Version Control to Save and Revert Changes</h2><p>Next, we will add some text to a file, commit it, then make some unwanted changes to the file, and finally reset the file back to a previous state.</p><ol start="1"><li>Modify Text.txt by adding the text &ldquo;Text I want.&rdquo; to the file.</li><li>Save Text.txt.</li><li>Add&nbsp;the file to your commit like you did in the previous example.</li><li>Commit&nbsp;the changes to your repository with the message &ldquo;Added some text.&rdquo;</li><li>Check to make sure your file has the text &ldquo;Text I want&rdquo; in it.</li><li>Modify your file by adding the following text &ldquo;Text I don&rsquo;t want.&rdquo;</li><li>Save your file.</li><li>Add the file to your repository.</li><li>Commit the file with the message &ldquo;Bad text.&rdquo;</li><li>Check to make sure your file has the text &ldquo;Text I don&rsquo;t want&rdquo; in it.</li><li>Type git log&nbsp;to view all the commits you have made to your repository.</li><li>You should see three commits, each with these respective messages.</li></ol><ol start="1"><li>&ldquo;Bad text&rdquo;</li><li>&ldquo;Added some text&rdquo;</li><li>&ldquo;Added Text.txt&rdquo;</li></ol><ol start="13"><li>Now we will get rid of the unwanted text in our file by resetting our repository to the commit before we added the bad text.</li><li>Find the hashcode (long string of numbers/letters) for the commit that you want to reset to. In our case, it is the commit with the message &ldquo;Added some text.&rdquo; <img alt="" src="images/image3.png" style="width: 458.00px; height: 115.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></li><li>Hard reset your repository to a previous version by typing git reset --hard &lt;hashcode&gt; using the hashcode from the previous step. (you can just type the first 6 characters of the hashcode)</li></ol><p>Note that there are different ways of getting rid of a bad commit.</p><ul><li>git reset --hard &lt;hashcode&gt;&nbsp;will delete all file changes and commits after the chosen commit.</li><li>git reset --soft &lt;hashcode&gt; will delete all commits, but keep all file changes after the chosen commit.</li><li>git revert &lt;hashcode&gt; will delete a chosen commit and its file changes, but will keep the commits before and after the deleted commit. (This is slightly more complicated, but worth learning)</li></ul><ol start="16"><li>Confirm that your reset worked by checking the file and verifying that &ldquo;Bad text&rdquo; is no longer in your text file.</li><li>Type git log&nbsp;to see that your bad commit is no longer in the git log.</li></ol><h2>Before You&rsquo;re Done</h2><p>Before you&rsquo;re done, we want you to see how git is valuable in software engineering. Read the text below, and then copy the output from the last git log&nbsp;command and submit it to learning suite. You may submit a screenshot of your git log output if you prefer.</p><h1>Git in Software Engineering</h1><p>When developers create big projects, they will often use a version control system (like git) to create &ldquo;checkpoints&rdquo; of their progress. </p><p>For example, these are some of the commits you might see in a project.</p><ul><li>Added main.cpp</li><li>Created user menu</li><li>Created Item class</li><li>Implemented the &ldquo;add item&rdquo; option on the user menu</li><li>etc.</li></ul><p>Sometimes changes that a developer makes will break the existing code. In the worse cases, the developers might not even remember how to get the project back to a working state. Fortunately with git, developers have the option of resetting their project back to a working state if they need to. This also allows developers to experiment with different potential changes and revert back to a state from before the changes were made.</p><p>Git has many more features that were not covered in this tutorial, including features that support group collaboration on file changes. These features are essential for development teams working on the same code base, where multiple developers may edit the same files. These group collaboration features will be explored in the next tutorial.</p><div><p></p></div></body></html>
+<html>
+
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+</head>
+
+<body>
+    <p class="display-4">Tutorial: Version Control</p>
+    <p class="text-muted">Source control, intro to Git, simple git commands</p>
+    <h1>Introduction</h1>
+    <p>For this tutorial, you will explore the version control features of Git. You will first add a file to the
+        repository, then you will add information to the file while commiting changes along the way. Last, you will
+        reset the file to a previous commit. Follow the tutorial and submit the last output from git log&nbsp;to
+        learning suite by the end of class.</p>
+    <h2>Definitions</h2>
+    <p>Directory - means a folder on your computer</p>
+    <p>Terminal - the black box on mac or linux, on Windows it is called the command prompt</p>
+    <h2>Commands You Will Learn</h2>
+    <ul>
+        <li>git add</li>
+        <li>git commit</li>
+        <li>git init</li>
+        <li>git log</li>
+        <li>git reset</li>
+    </ul>
+    <h1>Tutorial</h1>
+    <h2>Part 1: Adding a File to a New Repository</h2>
+    <p>We will start by creating a new repository and adding a file to it. Ask the instructor, a TAs or a classmate if
+        you get stuck.</p>
+    <ol start="1">
+        <li>Create a new directory on your computer named &ldquo;CS202&rdquo;</li>
+        <li>Navigate to the directory using terminal, terminal should now look something like this:<img alt=""
+                src="images/image1.png"
+                style="width: 624.00px; height: 82.67px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                title=""></li>
+        <li>Type git init to create a new repository at that directory</li>
+    </ol>
+    <p>This is the first step in creating any project that you want to use git with. Git commands only work on git
+        repositories. If you forget to initialize the repository, git will respond with this message: &ldquo;fatal: not
+        a git repository (or any of the parent directories): .git&rdquo;</p>
+    <ol start="4">
+        <li>Create and save a text document called &ldquo;Text.txt&rdquo; to your folder</li>
+        <ul>
+            <li>In Windows, you can create the file by right clicking inside your folder and clicking &ldquo;New Text
+                Document&rdquo;. From Mac or Linux, you can create the file by typing &ldquo;touch Text.txt&rdquo; from
+                within the terminal.</li>
+        </ul>
+    </ol>
+    <ol start="5">
+        <li>Add the file to your next commit by typing in git add &lt;filename&gt; (&ldquo;Text.txt&rdquo; is our
+            filename)</li>
+    </ol>
+    <p>This command marks that you have added or changed a file and want it to be part of the next commit. Typing git
+        status tells you any of the files that you have changed and might want to add.</p>
+    <ol start="6">
+        <li>Commit the file(s) you add to your repository with the command </li>
+    </ol>
+    <p>git commit -m &ldquo;&lt;message&gt;&rdquo; (with &ldquo;Added Text.txt&rdquo; as your message)</p>
+    <p>Git commit makes a new version of your project. We want our commit messages to be as clear as possible so if
+        something goes wrong and we have to roll back to a previous version, we will be able to tell what version we
+        want.</p>
+    <p>You should see something like this after commiting your file.<p><img alt="" src="images/image2.png"
+                style="width: 554.00px; height: 99.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                title=""></p>
+    </p>
+    <h2>Part 2: Using Version Control to Save and Revert Changes</h2>
+    <p>Next, we will add some text to a file, commit it, then make some unwanted changes to the file, and finally reset
+        the file back to a previous state.</p>
+    <ol start="1">
+        <li>Modify Text.txt by adding the text &ldquo;Text I want.&rdquo; to the file.</li>
+        <li>Save Text.txt.</li>
+        <li>Add&nbsp;the file to your commit like you did in the previous example.</li>
+        <li>Commit&nbsp;the changes to your repository with the message &ldquo;Added some text.&rdquo;</li>
+        <li>Check to make sure your file has the text &ldquo;Text I want&rdquo; in it.</li>
+        <li>Modify your file by adding the following text &ldquo;Text I don&rsquo;t want.&rdquo;</li>
+        <li>Save your file.</li>
+        <li>Add the file to your repository.</li>
+        <li>Commit the file with the message &ldquo;Bad text.&rdquo;</li>
+        <li>Check to make sure your file has the text &ldquo;Text I don&rsquo;t want&rdquo; in it.</li>
+        <li>Type git log&nbsp;to view all the commits you have made to your repository.</li>
+        <li>You should see three commits, each with these respective messages.</li>
+        <ul>
+            <li>&ldquo;Bad text&rdquo;</li>
+            <li>&ldquo;Added some text&rdquo;</li>
+            <li>&ldquo;Added Text.txt&rdquo;</li>
+        </ul>
+    </ol>
+
+    <ol start="13">
+        <li>Now we will get rid of the unwanted text in our file by resetting our repository to the commit before we
+            added the bad text.</li>
+        <li>Find the hashcode (long string of numbers/letters) for the commit that you want to reset to. In our case, it
+            is the commit with the message &ldquo;Added some text.&rdquo; <p><img alt="" src="images/image3.png"
+                    style="width: 458.00px; height: 115.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                    title=""></p>
+        </li>
+        <li>Hard reset your repository to a previous version by typing git reset --hard &lt;hashcode&gt; using the
+            hashcode from the previous step. (you can just type the first 6 characters of the hashcode)</li>
+    </ol>
+    <p>Note that there are different ways of getting rid of a bad commit.</p>
+    <ul>
+        <li>git reset --hard &lt;hashcode&gt;&nbsp;will delete all file changes and commits after the chosen commit.
+        </li>
+        <li>git reset --soft &lt;hashcode&gt; will delete all commits, but keep all file changes after the chosen
+            commit.</li>
+        <li>git revert &lt;hashcode&gt; will delete a chosen commit and its file changes, but will keep the commits
+            before and after the deleted commit. (This is slightly more complicated, but worth learning)</li>
+    </ul>
+    <ol start="16">
+        <li>Confirm that your reset worked by checking the file and verifying that &ldquo;Bad text&rdquo; is no longer
+            in your text file.</li>
+        <li>Type git log&nbsp;to see that your bad commit is no longer in the git log.</li>
+    </ol>
+    <h2>Before You&rsquo;re Done</h2>
+    <p>Before you&rsquo;re done, we want you to see how git is valuable in software engineering. Read the text below,
+        and then copy the output from the last git log&nbsp;command and submit it to learning suite. You may submit a
+        screenshot of your git log output if you prefer.</p>
+    <h1>Git in Software Engineering</h1>
+    <p>When developers create big projects, they will often use a version control system (like git) to create
+        &ldquo;checkpoints&rdquo; of their progress. </p>
+    <p>For example, these are some of the commits you might see in a project.</p>
+    <ul>
+        <li>Added main.cpp</li>
+        <li>Created user menu</li>
+        <li>Created Item class</li>
+        <li>Implemented the &ldquo;add item&rdquo; option on the user menu</li>
+        <li>etc.</li>
+    </ul>
+    <p>Sometimes changes that a developer makes will break the existing code. In the worse cases, the developers might
+        not even remember how to get the project back to a working state. Fortunately with git, developers have the
+        option of resetting their project back to a working state if they need to. This also allows developers to
+        experiment with different potential changes and revert back to a state from before the changes were made.</p>
+    <p>Git has many more features that were not covered in this tutorial, including features that support group
+        collaboration on file changes. These features are essential for development teams working on the same code base,
+        where multiple developers may edit the same files. These group collaboration features will be explored in the
+        next tutorial.</p>
+    <div>
+        <p></p>
+    </div>
+</body>
+
+</html>
