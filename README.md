@@ -1,6 +1,15 @@
 # CSWebsiteBuilder
 This is a website builder for CS courses at BYU. The main idea of this website builder is you supply it with a config file and a directory of resoures for your class and the website builder will build a standardized website for your class. Follow the instructions below to get started.
 
+# Rebuilding a Website
+This section assumes that you already have a config file and a directory of resourses, if you don't have both of those items then read the "Creating a New Website" section
+1. Clone this repository
+2. Open the config file for your class and make sure the "inDir" and "outDir" fields are the correct filepaths (see sections 'Config Fields' and 'Object Interfaces' if you have any confusions)
+2. Navigate to the CSWebsiteBuilder repository in terminal
+2. Run "npm run build /path/to/config.json" where "/path/to/config.json" is the path to the config file you've created
+     * The script fails early and fast, with specific error messages. This is done to prevent a broken website from being fully generated
+2. Wait for builder to finish
+
 # Creating a New Website
 ## Setup Student Resources
 1. Create a directory for all the resources that a student will need for your class
@@ -9,18 +18,18 @@ This is a website builder for CS courses at BYU. The main idea of this website b
 
 ## Setup the Website Builder:
 1. Clone this github repo
-2. Navigate to the project directory in a terminal
+2. Navigate into the cloned directory in a terminal
 2. Run "npm install" to download the necessary dependencies
 2. Delete the "example-out" folder and then run "npm run build exampleConfig.json"
 2. If there is an "example-out" folder, everything has been set up correctly
-2. Optional: Host the website to check the site by navigating to the "example-out" folder and typing in the command "python -m http.server 80" (or your preferred way of serving the files)
+2. Optional: Host the website to check the site by navigating to the "example-out" folder and typing in the command "python -m http.server 8080" (or your preferred way of serving the files)
 
 ## Create a Class Config File:
 1. Open "exampleConfig.json"
 2. Fill out the config file with the information needed for your class (look at the two sections below for clarification on what to put in the fields)
-    a. Dates and times must be in a format recognizable by [moment.js](https://momentjs.com/docs/#/parsing/string/)
-2. Run "npm run build /path/to/config.json" where config.json is the path to the config file you've created\
-    a. The script fails early and fast, with specific error messages. This is done to prevent a broken website from being fully generated.
+    * Dates and times must be in a format recognizable by [moment.js](https://momentjs.com/docs/#/parsing/string/)
+2. Run "npm run build /path/to/config.json" where "/path/to/config.json" is the path to the config file you've created
+    * The script fails early and fast, with specific error messages. This is done to prevent a broken website from being fully generated.
 2. Your website will be build to the directory supplied in the "outDir" directory
 
 ## Config Fields
