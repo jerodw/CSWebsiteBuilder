@@ -56,16 +56,15 @@
     }],
     "classPeriods": [{
             "title": "What is Software Engineering?",
-            "date": "2019-04-01T00:00:00.000",
+            "date": "2019-09-04T00:00:00.000",
             "classNotes": [{
                 "title": "What is Software Engineering.pptx",
-                "fileReference": "classes/software_engineering/What is Software Engineering.pptx",
-                "availableDate": "2019-03-30T17:57:22.674Z"
+                "fileReference": "classes/software_engineering/What is Software Engineering.pptx"
             }]
         },
         {
             "title": "UI Design Basics",
-            "date": "2019-04-01T00:00:00.000",
+            "date": "2019-09-11T00:00:00.000",
             "classNotes": [],
             "assignments": [{
                     "title": "Pre-Class Assignment",
@@ -79,7 +78,7 @@
         },
         {
             "title": "Creating Wireframe and Screenflow Diagrams with LucidChart",
-            "date": "2019-04-01T00:00:00.000",
+            "date": "2019-09-18T00:00:00.000",
             "classNotes": [],
             "assignments": [{
                     "title": "Pre-Class Assignment",
@@ -95,7 +94,7 @@
         },
         {
             "title": "UML Overview. UML Class Diagrams.",
-            "date": "2019-04-01T00:00:00.000",
+            "date": "2019-09-25T00:00:00.000",
             "classNotes": [],
             "assignments": [{
                     "title": "Pre-Class Assignment",
@@ -109,7 +108,7 @@
         },
         {
             "title": "UML Sequence Diagrams",
-            "date": "2019-04-01T00:00:00.000",
+            "date": "2019-10-02T00:00:00.000",
             "classNotes": [{
                 "title": "Example Sequence Diagram.pdf",
                 "fileReference": "/classes/uml_sequence/Example Sequence Diagram.pdf",
@@ -127,7 +126,7 @@
         },
         {
             "title": "Java Overview",
-            "date": "2019-04-01T00:00:00.000",
+            "date": "2019-10-09T00:00:00.000",
             "classNotes": [],
             "assignments": [{
                     "title": "Pre-Class Assignment",
@@ -141,7 +140,7 @@
         },
         {
             "title": "Writing and Generating Javadoc",
-            "date": "2019-04-01T00:00:00.000",
+            "date": "2019-10-16T00:00:00.000",
             "classNotes": [{
                 "title": "Student.java",
                 "fileReference": "assignments/Student.java",
@@ -159,7 +158,7 @@
         },
         {
             "title": "Intro to Git",
-            "date": "2019-04-01T00:00:00.000",
+            "date": "2019-10-23T00:00:00.000",
             "classNotes": [],
             "assignments": [{
                     "title": "Pre-Class Assignment",
@@ -173,7 +172,7 @@
         },
         {
             "title": "Git Collaboration Features",
-            "date": "2019-04-01T00:00:00.000",
+            "date": "2019-10-30T00:00:00.000",
             "classNotes": [],
             "assignments": [{
                     "title": "Pre-Class Assignment",
@@ -187,7 +186,7 @@
         },
         {
             "title": "Coding Style (Java), Intellij Configuration",
-            "date": "2019-04-01T00:00:00.000",
+            "date": "2019-11-06T00:00:00.000",
             "classNotes": [{
                 "title": "CheckstyleExample.java",
                 "fileReference": "assignments/CheckstyleExample.java",
@@ -205,7 +204,7 @@
         },
         {
             "title": "Using Checkstyle",
-            "date": "2019-04-01T00:00:00.000",
+            "date": "2019-11-13T00:00:00.000",
             "classNotes": [],
             "assignments": [{
                     "title": "Pre-Class Assignment",
@@ -219,7 +218,7 @@
         },
         {
             "title": "Code Review Process",
-            "date": "2019-04-01T00:00:00.000",
+            "date": "2019-11-20T00:00:00.000",
             "classNotes": [{
                 "title": "Code Examples",
                 "fileReference": "assignments/code.zip",
@@ -237,7 +236,7 @@
         },
         {
             "title": "Debugging / Logging from the Command Line",
-            "date": "2019-04-01T00:00:00.000",
+            "date": "2019-12-04T00:00:00.000",
             "classNotes": [],
             "assignments": [{
                     "title": "Pre-Class Assignment",
@@ -251,7 +250,7 @@
         },
         {
             "title": "Using an IDE Debugger",
-            "date": "2019-04-01T00:00:00.000",
+            "date": "2019-12-11T00:00:00.000",
             "classNotes": [],
             "assignments": [{
                     "title": "Pre-Class Assignment",
