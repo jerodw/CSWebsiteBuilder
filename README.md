@@ -9,6 +9,7 @@ This section assumes that you already have a config file and a directory of reso
 2. Run "npm run build /path/to/config.json" where "/path/to/config.json" is the path to the config file you've created
      * The script fails early and fast, with specific error messages. This is done to prevent a broken website from being fully generated
 2. Wait for builder to finish
+2. Optional: Host the website to check the site by navigating to the "outDir" folder and typing in the command "python -m http.server 8080" (or your preferred way of serving the files)
 
 # Creating a New Website
 ## Setup Student Resources
