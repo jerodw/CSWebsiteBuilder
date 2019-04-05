@@ -4,8 +4,8 @@ This is a website builder for CS courses at BYU. The main idea of this website b
 # Rebuilding a Website
 This section assumes that you already have a config file and a directory of resourses, if you don't have both of those items then read the "Creating a New Website" section
 1. Clone this repository
+2. Navigate into the CSWebsiteBuilder directory in terminal
 2. Open the config file for your class and make sure the "inDir" and "outDir" fields are the correct filepaths (see sections 'Config Fields' and 'Object Interfaces' if you have any confusions)
-2. Navigate to the CSWebsiteBuilder repository in terminal
 2. Run "npm run build /path/to/config.json" where "/path/to/config.json" is the path to the config file you've created
      * The script fails early and fast, with specific error messages. This is done to prevent a broken website from being fully generated
 2. Wait for builder to finish
