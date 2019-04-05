@@ -1,5 +1,5 @@
 # CSWebsiteBuilder
-This is a website builder for CS courses at BYU. The main idea of this website builder is you supply it with a config file and a directory of resoures for your class and the website builder will build a standardized website for your class. Follow the instructions below to get started.
+This is a website builder for CS courses at BYU. The main idea of this website builder is you supply it with a config file and a directory of resources for your class and the website builder will build a standardized website for your class. Follow the instructions below to get started.
 
 # Rebuilding a Website
 This section assumes that you already have a config file and a directory of resourses, if you don't have both of those items then read the "Creating a New Website" section
