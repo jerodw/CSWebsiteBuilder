@@ -3,7 +3,7 @@ This is a website builder for CS courses at BYU. The main idea of this website b
 
 # Rebuilding a Website
 This section assumes that you already have a config file and a directory of resourses, if you don't have both of those items then read the "Creating a New Website" section
-1. Clone this repository (it is recommended to clone this repo near your config file and resouce directory)
+1. Clone this repository (it is recommended to clone this repo near to your config file and resouce directory)
 2. Navigate into the CSWebsiteBuilder directory in terminal
 2. Open the class config file and make the following changes
     *"inDir" - should be updated to the filepath to your resource directory (if using relative filepaths make sure it is relative to the "CSWebsiteBuilder" directory)
