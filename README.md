@@ -6,8 +6,8 @@ This section assumes that you already have a config file and a directory of reso
 1. Clone this repository (it is recommended to clone this repo near to your config file and resouce directory)
 2. Navigate into the CSWebsiteBuilder directory in terminal
 2. Open the class config file and make the following changes
-    *"inDir" - should be updated to the filepath to your resource directory (if using relative filepaths make sure it is relative to the "CSWebsiteBuilder" directory)
-    *"outDir" - should be update to the filepath to the directory you want the site built to (relative to the "CSWebsiteBuilder" directory)
+    * "inDir" - should be updated to the filepath to your resource directory (if you are using relative filepaths make sure it is relative to the "CSWebsiteBuilder" directory)
+    * "outDir" - should be updated to the filepath to the directory you want the site built to (relative to the "CSWebsiteBuilder" directory)
 2. Run "npm install" inside the CSWebsiteBuilder directory
 2. Run "npm run build /path/to/config.json" ("/path/to/config.json" is the path to the config file you've created)
 2. Wait for builder to finish
