@@ -1,5 +1,7 @@
 {
     "baseURL": "http://localhost:8080/",
+    "inDir": "./CS202/",
+    "outDir": "./out/",
     "courseName": "CS202",
     "courseInfo": "info.html",
     "navLinks": [{
@@ -262,7 +264,5 @@
                 }
             ]
         }
-    ],
-    "inDir": "./CS202/",
-    "outDir": "./out/"
+    ]
 }

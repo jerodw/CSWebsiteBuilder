@@ -64,8 +64,8 @@ export class FileBuilder extends Config {
         // only build the files if they are available
         if (classNote.availableDate <= new Date()) {
             console.log(`FileBuilder: Copying resources for "${classNote.title}"`)
-            fs.copyFileSync(`${FileReference.basePath}${filePath}`,
-                `${this.config.outputDirectory}${filePath}`)
+            fs.copyFileSync(`${FileReference.basePath}/${filePath}`,
+                `${this.config.outputDirectory}/${filePath}`)
         } else {
             console.log(`FileBuilder: Skipping "${classNote.title}" (Not Yet Avaliable)`)
         }
@@ -75,14 +75,14 @@ export class FileBuilder extends Config {
 
     buildAssignment(assignment) {
         const filePath = assignment.bodyReference.filePath;
-        buildDirPath(`${this.config.outputDirectory}${filePath}`);
+        buildDirPath(`${this.config.outputDirectory}/${filePath}`);
 
         if (assignment.availableDate <= new Date()) {
             console.log(`FileBuilder: Building html for "${assignment.title}"`);
 
             const template = fs.readFileSync(`${FileReference.basePath}${filePath}`, { 'encoding': 'utf8' });
             const webpage = ReactDOMServer.renderToString(< App config={this.config} template={template} />);
-            fs.writeFile(`${this.config.outputDirectory}${filePath}`, webpage, (err) => {
+            fs.writeFile(`${this.config.outputDirectory}/${filePath}`, webpage, (err) => {
                 if (err) {
                     console.error(err);
                     process.exit();
