@@ -4,14 +4,15 @@ This is a website builder for CS courses at BYU. The main idea of this website b
 # Building a Website
 This section assumes that you already have a config file and a directory of resourses, if you don't have both of those items then read the "Creating a New Website" section
 1. Clone this repository (it is recommended to clone this repo near to your config file and resouce directory)
-2. Navigate into the CSWebsiteBuilder directory in terminal
-2. Open the class config file and make the following changes
-    * "inDir" - should be updated to the filepath to your resource directory (if you are using relative filepaths make sure it is relative to the "CSWebsiteBuilder" directory)
-    * "outDir" - should be updated to the filepath to the directory you want the site built to (relative to the "CSWebsiteBuilder" directory)
+2. Use a terminal of your choice to navigate into the folder that you just cloned
 2. Run "npm install" inside the CSWebsiteBuilder directory
-2. Run "npm run build /path/to/config.json" ("/path/to/config.json" is the path to the config file you've created)
+2. While npm install is running, open the class config file and make the following changes
+    * "inDir" - should be updated to be the filepath to your resource directory (if you are using relative filepaths make sure it is relative to the "CSWebsiteBuilder" directory)
+    * "outDir" - should be updated to the be the filepath to the directory you want the site built to (also relative to the "CSWebsiteBuilder" directory)
+2. Run "npm run build /path/to/config.json" ("/path/to/config.json" is the path to the config file that you have)
 2. Wait for builder to finish
-2. Optional: Host the website to check the site by navigating to the "outDir" folder and typing in the command "python -m http.server 8080" (or your preferred way of serving the files)
+2. Check to see that the website was built to the directory specified in the "outDir" field of your config file
+2. Optional: Check to see if the website is working by navigating into the "outDir" folder and typing in the command "python -m http.server 8080" (or your preferred way of serving the files)
 
 # Creating a New Website
 ## Setup Student Resources
