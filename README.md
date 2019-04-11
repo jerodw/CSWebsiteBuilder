@@ -36,6 +36,9 @@ This section assumes that you already have a config file and a directory of reso
     * The script fails early and fast, with specific error messages. This is done to prevent a broken website from being fully generated.
 2. Your website will be build to the directory supplied in the "outDir" directory
 
+## Cleaning Google Doc HTML Pages
+Google Docs can export documents as HTML pages. They do come with a bunch of formatting garbage that you don't need and that make it difficult to edit the file. To clean the file up run "npm run clean /path/to/file" and the script will clean up the majority of the file for you. It is not perfect however, and there may occassionally be issues that the script does not account for. Relatively common issues include pictures being poorly aligned and numbered or lettered sub-lists not using the correct letter or number. With a bit of knowledge about HTML and CSS these can be fixed rather quickly. To destructively clean a file, replacing the original, run "npm run clean /path/to/file destructive" Only do this if you are confident that it will work or you are willing to redownload the original page if something goes wrong.
+
 ## Config Fields
 ```javascript
 {
