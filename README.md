@@ -26,7 +26,7 @@ This section assumes that you already have a config file and a directory of reso
 2. Run "npm install" to download the necessary dependencies
 2. Delete the "example-out" folder and then run "npm run build exampleConfig.json"
 2. If there is an "example-out" folder, everything has been set up correctly
-2. Optional: Host the website to check the site by navigating to the "example-out" folder and typing in the command "python -m http.server 8080" (or your preferred way of serving the files)
+2. Host the website to check the site by navigating to the "example-out" folder and typing in the command "python -m http.server 8080" (or your preferred way of serving the files)
 
 ## Create a Class Config File:
 1. Open "exampleConfig.json"
@@ -38,6 +38,9 @@ This section assumes that you already have a config file and a directory of reso
 
 ## Cleaning Google Doc HTML Pages
 Google Docs can export documents as HTML pages. They do come with a bunch of formatting garbage that you don't need and that make it difficult to edit the file. To clean the file up run "npm run clean /path/to/file" and the script will clean up the majority of the file for you. It is not perfect however, and there may occassionally be issues that the script does not account for. Relatively common issues include pictures being poorly aligned and numbered or lettered sub-lists not using the correct letter or number. With a bit of knowledge about HTML and CSS these can be fixed rather quickly. To destructively clean a file, replacing the original, run "npm run clean /path/to/file destructive" Only do this if you are confident that it will work or you are willing to redownload the original page if something goes wrong.
+
+## Provided Templates
+The templates provided are for the home page, the TA schedule, and the class schedule. The home page templateRef is "home-template". The TA schedule templateRef is "taInfo-template". The class schedule templateRef is "schedule-template".
 
 ## Config Fields
 ```javascript
@@ -61,7 +64,7 @@ All dates **must** be compatible with [moment.js](https://momentjs.com/docs/#/pa
 ```javascript
 {
     "title": "Page Title", // Name of the page, this is what appears as the link text
-    "templateRef": "home-template", // Reference to either one of our templates or a custom template you have defined
+    "templateRef": "home-template", // Reference to either one of our templates or a custom template you have defined. The list of provided templateRefs is above
     "filename": "index.html" // Name of the output file
 }
 ```
