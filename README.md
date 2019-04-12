@@ -10,6 +10,7 @@ This section assumes that you already have a config file and a directory of reso
 2. Use a terminal of your choice to navigate into the folder that you just cloned
 2. Run "npm install" inside the CSWebsiteBuilder directory
 2. While npm install is running, open the class config file and make the following changes
+    * "baseUrl" - should be the base url of the website (example: "http://students.cs.byu.edu/~CSCourseNumberTA/")
     * "inDir" - should be updated to be the filepath to your resource directory (if you are using relative filepaths make sure it is relative to the "CSWebsiteBuilder" directory)
     * "outDir" - should be updated to the be the filepath to the directory you want the site built to (also relative to the "CSWebsiteBuilder" directory)
 2. Run "npm run build /path/to/config.json" ("/path/to/config.json" is the path to the config file that you have)
