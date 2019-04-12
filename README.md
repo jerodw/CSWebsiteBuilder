@@ -1,5 +1,8 @@
 # CSWebsiteBuilder
-This is a website builder for CS courses at BYU. The main idea of this website builder is you supply it with a config file and a directory of resources for your class and the website builder will build a standardized website for your class. Follow the instructions below to get started.
+This is a website builder for CS courses at BYU. The main idea of this website builder is you supply it with a config file and a directory of resources for your class and the website builder will build a standardized website for your class. Follow the instructions below to get started. The recommended version is 10.15.3 LTS. Lower versions of Node.js may not work with the website builder.
+
+# Dependency
+This project requires Node.js. You can download it [here](https://nodejs.org/en/download/) or find instructions for your package manager [here](https://nodejs.org/en/download/package-manager/). The current LTS should be fine. Avoid any versions below 8 as their may be incompatibilities.   
 
 # Building a Website
 This section assumes that you already have a config file and a directory of resourses, if you don't have both of those items then read the "Creating a New Website" section
