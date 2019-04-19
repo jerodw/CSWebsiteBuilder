@@ -2,8 +2,11 @@ import { FileReference } from './FileReference';
 import { Config } from './Config';
 import { PersonInformation } from './PersonInformation';
 import { NavLink } from './NavLink';
-import * as fs from 'fs';
 import { ClassPeriod } from './ClassPeriod';
+import * as fs from 'fs';
+import * as path from 'path';
+
+const pathSeparator = path.sep;
 
 export class WebsiteConfig extends Config {
     private _courseName: string;
@@ -44,9 +47,16 @@ export class WebsiteConfig extends Config {
             classPeriods = [];
         }
         if (fs.existsSync(inDir)) {
+            if (!(inDir.substring(inDir.length - 1, inDir.length) === pathSeparator)) {
+                inDir += pathSeparator;
+            }
+            inDir = inDir.replace(/\/|\\/gs, pathSeparator);
             FileReference.basePath = inDir;
         } else {
             this.throwError(`Error: inDir path ${inDir} does not exist`);
+        }
+        if (!(outDir.substring(outDir.length - 1, outDir.length) === pathSeparator)) {
+            outDir += pathSeparator;
         }
 
     
@@ -58,7 +68,7 @@ export class WebsiteConfig extends Config {
         this.tas = tas.map((ta: any) => new PersonInformation(ta));
         this.professors = professors.map((professor: any) => new PersonInformation(professor));
         this.navLinks = navLinks.map((navLink: any) => new NavLink(navLink));
-        this.outputDirectory = outDir;
+        this.outputDirectory = outDir.replace(/\/|\\/gs, pathSeparator);
         
 
         // var fileBuilder = new FileBuilder(this);
