@@ -1,5 +1,5 @@
 # CSWebsiteBuilder
-This is a website builder for CS courses at BYU. The main idea of this website builder is you supply it with a config file and a directory of resources for your class and the website builder will build a standardized website for your class. Follow the instructions below to get started. The recommended version is 10.15.3 LTS. Lower versions of Node.js may not work with the website builder.
+This is a website builder for CS courses at BYU. The main idea of this website builder is you supply it with a config file and a directory of resources for your class and the website builder will build a standardized website for your class. Follow the instructions below to get started. The recommended version is 10.15.3 LTS. Lower versions of Node.js may not work with the website builder. It does appear to work on schizo and the lab machines.
 
 # Dependency
 This project requires Node.js. You can download it [here](https://nodejs.org/en/download/) or find instructions for your package manager [here](https://nodejs.org/en/download/package-manager/). The current LTS should be fine. Avoid any versions below 8 as their may be incompatibilities.   
@@ -10,7 +10,8 @@ This section assumes that you already have a config file and a directory of reso
 2. Use a terminal of your choice to navigate into the folder that you just cloned
 2. Run "npm install" inside the CSWebsiteBuilder directory
 2. While npm install is running, open the class config file and make the following changes
-    * "baseUrl" - should be the base url of the website (example: "http://students.cs.byu.edu/~CSCourseNumberTA/")
+    * "baseUrl" - should be the base url of the website (example: "https://students.cs.byu.edu/~CSCourseNumberTA/").
+        * The baseUrl needs to be set properly. All websites served through the department (with a ```students.cs.byu.edu``` domain) are served through https. This __must__ be reflected in the baseUrl or resources (e.g. styles.css) will not be loaded properly.
     * "inDir" - should be updated to be the filepath to your resource directory (if you are using relative filepaths make sure it is relative to the "CSWebsiteBuilder" directory)
     * "outDir" - should be updated to the be the filepath to the directory you want the site built to (also relative to the "CSWebsiteBuilder" directory)
 2. Run "npm run build /path/to/config.json" ("/path/to/config.json" is the path to the config file that you have)
@@ -35,7 +36,7 @@ This section assumes that you already have a config file and a directory of reso
 ## Create a Class Config File:
 1. Open "exampleConfig.json"
 2. Fill out the config file with the information needed for your class (look at the two sections below for clarification on what to put in the fields)
-    * Dates and times must be in a format recognizable by [moment.js](https://momentjs.com/docs/#/parsing/string/)
+    * Dates and times __must__ be in a format recognizable by [moment.js](https://momentjs.com/docs/#/parsing/string/)
 2. Run "npm run build /path/to/config.json" where "/path/to/config.json" is the path to the config file you've created
     * The script fails early and fast, with specific error messages. This is done to prevent a broken website from being fully generated.
 2. Your website will be build to the directory supplied in the "outDir" directory
@@ -49,7 +50,7 @@ The templates provided are for the home page, the TA schedule, and the class sch
 ## Config Fields
 ```javascript
 {
-    "baseUrl": "http://students.cs.byu.edu/~CSCourseNumberTA/", // The base url of the website
+    "baseUrl": "https://students.cs.byu.edu/~CSCourseNumberTA/", // The base url of the website.
     "courseName": "CS 202", // The name of your course
     "inDir": "/path/to/resource/files", // The filepath of your input folder
     "outDir":  "/path/to/where/site/lives", // The filepath of where the website will be built
