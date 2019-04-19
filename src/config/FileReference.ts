@@ -1,5 +1,6 @@
 import { Config } from './Config';
 import * as fs from 'fs';
+import * as path from 'path';
 
 export class FileReference extends Config {
     static basePath: string;
@@ -14,6 +15,6 @@ export class FileReference extends Config {
             }  
         }
         
-        this.filePath = filePath;
+        this.filePath = filePath.replace(/\/|\\/gs, path.sep);
     }
 }

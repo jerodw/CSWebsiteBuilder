@@ -2,13 +2,16 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { App } from './App.jsx';
 import { Home } from './builderTemplates/Home.jsx'
-import * as fs from 'fs';
 import { WebsiteConfig } from './config/WebsiteConfig.ts';
 import { Config } from './config/Config.ts';
 import { TAInfo } from './builderTemplates/TAInfo.jsx';
 import { FileReference } from './config/FileReference';
 import { Schedule } from './builderTemplates/Schedule.jsx';
 import { FileBuilder } from './FileBuilder.jsx';
+import * as fs from 'fs';
+import * as path from 'path';
+
+const pathSeparator = path.sep;
 
 Config.NO_ERRORS = false;
 
@@ -41,7 +44,7 @@ builderTemplates["schedule-template"] = <Schedule config={configObj} />
 const navLinks = configObj.navLinks;
 
 console.log('Copying stylesheet to build directory...');
-fs.copyFileSync('styles.css', `${buildDirectory}/styles.css`);
+fs.copyFileSync('styles.css', `${buildDirectory}${pathSeparator}styles.css`);
 
 for (var i = 0; i < navLinks.length; i++) {
     var navLink = navLinks[i];
