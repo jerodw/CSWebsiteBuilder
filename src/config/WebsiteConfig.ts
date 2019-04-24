@@ -46,6 +46,8 @@ export class WebsiteConfig extends Config {
             this.throwWarning("Warning: No class periods found in config file");
             classPeriods = [];
         }
+
+        // Make sure the input and output directories end in the appropriate path separator
         if (fs.existsSync(inDir)) {
             if (!(inDir.substring(inDir.length - 1, inDir.length) === pathSeparator)) {
                 inDir += pathSeparator;
@@ -58,7 +60,11 @@ export class WebsiteConfig extends Config {
         if (!(outDir.substring(outDir.length - 1, outDir.length) === pathSeparator)) {
             outDir += pathSeparator;
         }
-
+        
+        // Make sure URL ends in a slash
+        if (!(baseURL.substring(baseURL.length - 1, baseURL.length) !== '/')) {
+            baseURL += '/';
+        }
     
         this.baseURL = baseURL;
         this.courseName = courseName;
