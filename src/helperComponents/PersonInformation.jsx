@@ -16,11 +16,16 @@ export class PersonInformation extends Component {
         return this.renderOfficeHour(officeHour)
       })
     } else {
-      return (
-        <span>TBD</span>
-      )
-    }
-    
+		if(this.props.person.byAppointment == true) {
+	        return (
+	          <span>By Appointment</span>
+	        )
+		} else {
+	        return (
+	          <span>TBD</span>
+	        )
+		}
+    }    
   }
 
   render() {
