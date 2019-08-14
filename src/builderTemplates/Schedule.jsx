@@ -11,7 +11,7 @@ export class Schedule extends Component {
 
     renderAssignment(assignment) {
         const config = this.props.config;
-        const filePath = `${config.baseURL}${assignment.bodyReference.filePath}`;
+        const filePath = `${config.baseURL}/${assignment.bodyReference.filePath}`;
         const idSafeTitle = assignment.title.replace(/\s/gms, '') + Schedule.numFiles;
         const date = moment(assignment.availableDate).utc().toDate();
         Schedule.numFiles++;
@@ -40,7 +40,7 @@ export class Schedule extends Component {
 
     renderClassNote(classNote) {
         const config = this.props.config;
-        const filePath = `${config.baseURL}${classNote.fileReference.filePath}`;
+        const filePath = `${config.baseURL}/${classNote.fileReference.filePath}`;
         const idSafeTitle = classNote.title.replace(/\s/gms, '') + Schedule.numFiles;
         const date = moment(classNote.availableDate).utc().toDate();
         Schedule.numFiles++;
@@ -67,6 +67,40 @@ export class Schedule extends Component {
         )
     }
 
+    renderOtherLink(otherLink) {
+        const config = this.props.config;
+        const idSafeTitle = otherLink.title.replace(/\s/gms, '') + Schedule.numFiles;
+        const date = moment(otherLink.availableDate).utc().toDate();
+        Schedule.numFiles++;
+
+        var url = otherLink.url;
+        if(url.startsWith('/')) {
+          url = baseURL + otherLink.url;
+        }
+
+        return (
+            <tr key={otherLink}>
+                <td>{otherLink.title}</td>
+                <td>
+                    <a id={idSafeTitle} href="#" role="button" className="btn btn-byu float-right disabled" disabled>Not Available</a>
+                    <script dangerouslySetInnerHTML={{
+                        __html: `
+                        var availableDate = new Date(${date.getFullYear()}, ${date.getMonth()}, ${date.getDate()}, ${date.getHours()}, ${date.getMinutes()}, ${date.getSeconds()}, ${date.getMilliseconds()});
+                        if (availableDate <= Date.now()) {
+                            var button = document.getElementById("${idSafeTitle}");
+                            button.disabled = false;
+                            button.href = "${url}";
+                            button.classList.remove("disabled");
+                            button.innerText = "View";
+                            button.target = "_blank";
+                        }
+                        `}}>
+                    </script>
+                </td>
+            </tr>
+        )
+    }
+
     renderClass(classPeriod) {
 
         if (classPeriod.classNotes.length == 0 && classPeriod.assignments.length == 0) {
@@ -78,8 +112,9 @@ export class Schedule extends Component {
                 <span className="float-right">{classPeriod.date.toLocaleDateString("en-US", { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' })}</span>
                 <h2>{classPeriod.title}</h2>
                 <table className="table table-hover">
-                    {classPeriod.assignments.map((assignment) => this.renderAssignment(assignment))}
-                    {classPeriod.classNotes.map((classNote) => this.renderClassNote(classNote))}
+                  {classPeriod.assignments.map((assignment) => this.renderAssignment(assignment))}
+                  {classPeriod.classNotes.map((classNote) => this.renderClassNote(classNote))}
+                  {classPeriod.otherLinks.map((otherLink) => this.renderOtherLink(otherLink))}
                 </table>
                 <br />
             </div>

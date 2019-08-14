@@ -46,6 +46,9 @@ const navLinks = configObj.navLinks;
 console.log('Copying stylesheet to build directory...');
 fs.copyFileSync('styles.css', `${buildDirectory}${pathSeparator}styles.css`);
 
+console.log('Copying images to build directory...');
+fileBuilder.copyDirectory('images', `${buildDirectory}${pathSeparator}images`);
+
 for (var i = 0; i < navLinks.length; i++) {
     var navLink = navLinks[i];
 

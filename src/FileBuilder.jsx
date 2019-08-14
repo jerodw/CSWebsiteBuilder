@@ -38,12 +38,12 @@ export class FileBuilder extends Config {
             classPeriod.classNotes.forEach((classNote) => this.buildClassNote(classNote))
             classPeriod.assignments.forEach((assignment) => this.buildAssignment(assignment))
         });
-        
+
         console.log("FileBuilder: Building External File References");
         this.buildExternalFileStruct(`${FileReference.basePath}`,`${this.config.outputDirectory}`);
 
         console.log("\nFileBuilder: Finished building files\n")
-    
+
     }
 
     buildExternalFileStruct(templateDirectory, outputDirectory){
@@ -55,6 +55,17 @@ export class FileBuilder extends Config {
             console.log(`FileBuilder: Copying non-html file: ${src} to ${dest}`);
             return true;
         }});
+    }
+
+    copyDirectory(imageDirectory, outputDirectory) {
+      if ( !fs.existsSync( outputDirectory ) ) {
+          fs.mkdirSync( outputDirectory );
+      }
+
+      fs.copySync(imageDirectory, outputDirectory, {filter: (src, dest) => {
+          console.log(`FileBuilder: Copying file: ${src} to ${dest}`);
+          return true;
+      }});
     }
 
     buildClassNote(classNote) {
@@ -93,5 +104,4 @@ export class FileBuilder extends Config {
             console.log(`FileBuilder: Skipping "${assignment.title}" (Not Yet Avaliable)`)
         }
     }
-
 }
