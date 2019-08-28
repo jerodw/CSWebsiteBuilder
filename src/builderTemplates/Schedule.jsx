@@ -11,7 +11,7 @@ export class Schedule extends Component {
 
     renderAssignment(assignment) {
         const config = this.props.config;
-        const filePath = `${config.baseURL}/${assignment.bodyReference.filePath}`;
+        const filePath = this.isFullyQualifiedURL(assignment.bodyReference.filePath) ? `${assignment.bodyReference.filePath}` : `${config.baseURL}/${assignment.bodyReference.filePath}`;
         const idSafeTitle = assignment.title.replace(/\s/gms, '') + Schedule.numFiles;
         const date = moment(assignment.availableDate).utc().toDate();
         Schedule.numFiles++;
@@ -38,9 +38,14 @@ export class Schedule extends Component {
         )
     }
 
+    isFullyQualifiedURL(url) {
+       const completeURLsearchPattern = RegExp("https?:\/\/.*");
+       return completeURLsearchPattern.test(url);
+    }
+
     renderClassNote(classNote) {
         const config = this.props.config;
-        const filePath = `${config.baseURL}/${classNote.fileReference.filePath}`;
+        const filePath = this.isFullyQualifiedURL(classNote.fileReference.filePath) ? `${classNote.fileReference.filePath}` : `${config.baseURL}/${classNote.fileReference.filePath}`;
         const idSafeTitle = classNote.title.replace(/\s/gms, '') + Schedule.numFiles;
         const date = moment(classNote.availableDate).utc().toDate();
         Schedule.numFiles++;

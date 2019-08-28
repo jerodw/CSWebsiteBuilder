@@ -4,8 +4,11 @@ import { App } from './App.jsx';
 import { Config } from './config/Config';
 import { WebsiteConfig } from './config/WebsiteConfig.ts';
 import { FileReference } from './config/FileReference.ts';
+
 var fs = require('fs-extra');
 var path = require('path');
+
+const completeURLsearchPattern = RegExp("https?:\/\/.*");
 
 function buildDirPath(filepath){
     var dirname = path.dirname(filepath);
@@ -72,8 +75,11 @@ export class FileBuilder extends Config {
         const filePath = classNote.fileReference.filePath;
         buildDirPath(`${this.config.outputDirectory}${filePath}`);
 
-        // only build the files if they are available
-        if (classNote.availableDate <= new Date()) {
+        if(completeURLsearchPattern.test(classNote.fileReference.filePath)) {
+          // This is a complete URL (we only need to build relative ones)
+          console.log(`FileBuilder: Skipping "${classNote.title}" (Complete URL: "${filePath}")`)
+        } else if (classNote.availableDate <= new Date()) {
+          // only build the files if they are available
             console.log(`FileBuilder: Copying resources for "${classNote.title}"`)
             fs.copyFileSync(`${FileReference.basePath}/${filePath}`,
                 `${this.config.outputDirectory}/${filePath}`)
@@ -88,7 +94,9 @@ export class FileBuilder extends Config {
         const filePath = assignment.bodyReference.filePath;
         buildDirPath(`${this.config.outputDirectory}/${filePath}`);
 
-        if (assignment.availableDate <= new Date()) {
+        if(completeURLsearchPattern.test(assignment.bodyReference.filePath)) {
+          console.log(`FileBuilder: Skipping "${assignment.title}" (Complete URL: "${filePath}")`)
+        } else if (assignment.availableDate <= new Date()) {
             console.log(`FileBuilder: Building html for "${assignment.title}"`);
 
             const template = fs.readFileSync(`${FileReference.basePath}${filePath}`, { 'encoding': 'utf8' });
@@ -99,7 +107,6 @@ export class FileBuilder extends Config {
                     process.exit();
                 }
             })
-
         } else {
             console.log(`FileBuilder: Skipping "${assignment.title}" (Not Yet Avaliable)`)
         }
