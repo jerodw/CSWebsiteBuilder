@@ -18,10 +18,10 @@ export class PersonInformation extends Config {
             this.byAppointment = byAppointment;
         }
 
-    public isWorking(weekday: DayOfWeek, hour: number){
+    public isWorking(weekday: DayOfWeek, time: string){
         for (let i = 0; i < this.officeHours.length; i++){
             var officeHour = this.officeHours[i]
-            if (officeHour.isInOffice(weekday, hour)){
+            if (officeHour.isInOffice(weekday, time)){
                 return true;
             }
         }

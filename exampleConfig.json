@@ -38,8 +38,8 @@
             "officeHours": [
                 {
                     "dayOfWeek": "Monday",
-                    "startHour": 8,
-                    "stopHour": 12
+                    "startTime": "8:00am",
+                    "stopTime": "12:00pm"
                 }
             ],
             "byAppointment": true
@@ -57,13 +57,13 @@
             "officeHours": [
                 {
                     "dayOfWeek": "Tuesday",
-                    "startHour": 12,
-                    "stopHour": 17
+                    "startTime": "12:00pm",
+                    "stopTime": "5:30pm"
                 },
                 {
                     "dayOfWeek": "Thursday",
-                    "startHour": 12,
-                    "stopHour": 17
+                    "startTime": "12:00pm",
+                    "stopTime": "5:30pm"
                 }
             ],
             "byAppointment": false

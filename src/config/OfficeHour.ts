@@ -2,13 +2,18 @@ import { Config } from './Config';
 
 export class OfficeHour extends Config {
     private _dayOfWeek: DayOfWeek;
-    private _startHour: number;
-    private _stopHour: number;
-    
+    private _startTime: string;
+    private _stopTime: string;
 
-    constructor({dayOfWeek, startHour, stopHour}: {dayOfWeek: string, startHour: number, stopHour: number}) {
+
+    constructor({ dayOfWeek, startTime, stopTime }: { dayOfWeek: string, startTime: string, stopTime: string }) {
         super();
-        switch(dayOfWeek) {
+
+        if (!dayOfWeek || !startTime || !stopTime) {
+            this.throwError("Office hours are incorrectly formatted and need a dayOfWeek, startTime, and stopTime")
+        }
+
+        switch (dayOfWeek) {
             case DayOfWeek.Monday:
                 this.dayOfWeek = DayOfWeek.Monday;
                 break;
@@ -31,60 +36,73 @@ export class OfficeHour extends Config {
                 this.dayOfWeek = DayOfWeek.Sunday;
                 break;
             default:
-                this.throwError(`Error: Invalid day ${dayOfWeek} with hours startHour ${startHour} and stopHour ${stopHour}`);
+                this.throwError(`Error: Invalid day ${dayOfWeek}`);
         }
 
-        if (startHour > stopHour) {
-            this.throwWarning(`Warning: startHour (${startHour}) is greater than stopHour (${stopHour}) on day ${dayOfWeek}, switching them`);
-            this.startHour = stopHour;
-            this.stopHour = startHour;
-        } else if (startHour === stopHour) {
-            this.throwError(`Error: startHour and stopHour are the same for day ${dayOfWeek} and hour ${startHour}`);
-        } else {
-            this.startHour = startHour;
-            this.stopHour = stopHour;
+        if (!RegExp('^([0-9][0-9]?):[0-9][0-9](.*)$').test(startTime)) {
+            this.throwError('Warning: "' + startTime + '" is not in correct format it must be hh:MM (am/pm)')
         }
+        this.startTime = startTime;
+
+        if (!RegExp('^([0-9][0-9]?):[0-9][0-9](.*)$').test(stopTime)) {
+            this.throwError('Warning: ' + stopTime + ' is not in correct format it must be hh:MM (am/pm)')
+        }
+        this.stopTime = stopTime;
     }
 
-    public isInOffice(dayOfWeek:DayOfWeek, hour: number){
-        if (dayOfWeek != this._dayOfWeek){
+    public isInOffice(dayOfWeek: DayOfWeek, time: string) {
+        if (dayOfWeek != this._dayOfWeek) {
             return false;
         }
-        return (this.startHour <= hour && hour < this.stopHour)
+
+        const startHour = this.hourFromString(this.startTime)
+        const stopHour = this.hourFromString(this.stopTime)
+        const timeHour = this.hourFromString(time)
+
+        return (startHour <= timeHour && timeHour < stopHour)
     }
 
-    static toTimeString = (hour) => {
-        if (hour < 12){
-          return (hour) + ":00am"
-        } else if (hour > 12) {
-          return (hour - 12) + ":00pm"
-        } else {
-          return "12:00pm"
+    private hourFromString(time: string): number{
+        let hour = Number.parseInt(time.substr(0, time.indexOf(':')))
+        let minute = Number.parseInt(time.substr(time.indexOf(':') + 1, 2))
+
+        if (hour != 12 && time.toLowerCase().includes('pm')){
+            hour += 12;
         }
-      }
+
+        if (minute >= 30){
+            hour += 1;
+        }
+
+        return hour;
+    }
+
+    static toTimeString = (officeHour) => {
+        return officeHour
+    }
 
     public get dayOfWeek(): DayOfWeek {
         return this._dayOfWeek;
     }
-    
+
     public set dayOfWeek(value: DayOfWeek) {
         this._dayOfWeek = value;
     }
 
-    public get startHour(): number {
-        return this._startHour;
+    public get startTime(): string {
+        return this._startTime;
     }
 
-    public set startHour(value: number) {
-        this._startHour = value;
+    public set startTime(value: string) {
+        this._startTime = value;
     }
 
-    public get stopHour(): number {
-        return this._stopHour;
+    public get stopTime(): string {
+        return this._stopTime;
     }
 
-    public set stopHour(value: number) {
-        this._stopHour = value;
+    public set stopTime(value: string) {
+        this._stopTime = value;
     }
 }
 

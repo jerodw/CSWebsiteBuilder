@@ -15,7 +15,7 @@ const notWorkingStyle = {
 
 export class TAInfo extends Component {
 
-  renderCell = (hour, weekDay) => {
+  renderCell = (weekDay, hour) => {
     const config = this.props.config;
 
     var tasWorking = ""
@@ -34,24 +34,22 @@ export class TAInfo extends Component {
       return <td key={hour + weekDay} style={notWorkingStyle}></td>
     }
 
-
-
   }
 
   renderRow = (hour) => {
     const weekDays = [DayOfWeek.Monday, DayOfWeek.Tuesday, DayOfWeek.Wednesday, DayOfWeek.Thursday, DayOfWeek.Friday, DayOfWeek.Saturday]
     return (<tr key={hour}>
       <td>
-        {OfficeHour.toTimeString(hour)}
+        {hour}
       </td>
       {weekDays.map((weekDay) => {
-        return this.renderCell(hour, weekDay);
+        return this.renderCell(weekDay, hour);
       })}
     </tr>)
   }
 
   renderTable = () => {
-    const hours = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+    const hours = ['8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', '8:00pm']
 
     return hours.map((hour) => {
       return this.renderRow(hour);
@@ -76,6 +74,7 @@ export class TAInfo extends Component {
           <h1>TA Information</h1>
 
           <h2>TA Schedule</h2>
+          <p>*Check TA times below before coming in</p>
           <div className="table-responsive">
             <table className="table table-bordered">
               <thead>

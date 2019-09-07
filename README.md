@@ -87,8 +87,8 @@ All dates **must** be compatible with [moment.js](https://momentjs.com/docs/#/pa
         },
         "officeHours": [{ // List of days and times for office hours
             "dayOfWeek": "Monday",
-            "startHour": 8, // Both of these times are military hours (0-23)
-            "stopHour": 12
+            "startHour": "8:00am", 
+            "stopHour": "3:00pm"
         }], 
         "byAppointment": true // Boolean representing whether appointments can be scheduled
 }
